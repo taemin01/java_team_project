@@ -106,7 +106,7 @@
         </Component>
         <Component class="javax.swing.JLabel" name="jLabel8">
           <Properties>
-            <Property name="text" type="java.lang.String" value="&#xbcc4;&#xba85;"/>
+            <Property name="text" type="java.lang.String" value="&#xb2c9;&#xb124;&#xc784;"/>
           </Properties>
         </Component>
         <Component class="javax.swing.JTextField" name="jTextField3">

@@ -109,7 +109,7 @@ public class MainFrame extends javax.swing.JFrame {
 
         jLabel7.setText("비밀번호 확인");
 
-        jLabel8.setText("별명");
+        jLabel8.setText("닉네임");
 
         btnDuplicateCheck.setText("중복확인");
         btnDuplicateCheck.addActionListener(new java.awt.event.ActionListener() {
