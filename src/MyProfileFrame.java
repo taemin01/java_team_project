@@ -25,178 +25,394 @@ public class MyProfileFrame extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jPanel2 = new javax.swing.JPanel();
-        jLabel2 = new javax.swing.JLabel();
-        jComboBox2 = new javax.swing.JComboBox<>();
-        jTextField2 = new javax.swing.JTextField();
-        jButton4 = new javax.swing.JButton();
-        jButton5 = new javax.swing.JButton();
-        jButton6 = new javax.swing.JButton();
-        jPanel5 = new javax.swing.JPanel();
-        jTabbedPane1 = new javax.swing.JTabbedPane();
-        jPanel4 = new javax.swing.JPanel();
-        jPanel3 = new javax.swing.JPanel();
-        jLabel1 = new javax.swing.JLabel();
-        jLabel3 = new javax.swing.JLabel();
-        jLabel4 = new javax.swing.JLabel();
+        jDialogName = new javax.swing.JDialog();
+        lblNameBefore = new javax.swing.JLabel();
+        txtNameBefore = new javax.swing.JTextField();
+        lblNameAfter = new javax.swing.JLabel();
+        txtNameAfter = new javax.swing.JTextField();
+        btnNameUpd = new javax.swing.JButton();
+        lblNameUpd = new javax.swing.JLabel();
+        jDialogPhone = new javax.swing.JDialog();
+        lblPhoneAfter = new javax.swing.JLabel();
+        txtPhoneAfter = new javax.swing.JTextField();
+        btnPhoneUpd = new javax.swing.JButton();
+        lblPhoneBefore = new javax.swing.JLabel();
+        lblPhoneUpd = new javax.swing.JLabel();
+        txtPhoneBefore = new javax.swing.JTextField();
+        jDialogDel = new javax.swing.JDialog();
+        lblDel = new javax.swing.JLabel();
+        btnDelYes = new javax.swing.JButton();
+        btnDelNo = new javax.swing.JButton();
+        jPaneHeader = new javax.swing.JPanel();
+        lblLogo = new javax.swing.JLabel();
+        comboSearch = new javax.swing.JComboBox<>();
+        txtSearch = new javax.swing.JTextField();
+        btnSearch = new javax.swing.JButton();
+        btnMyProfile = new javax.swing.JButton();
+        btnLogout = new javax.swing.JButton();
+        jPanelBody = new javax.swing.JPanel();
+        BookmarkAndReview = new javax.swing.JTabbedPane();
+        jPanelBookmark = new javax.swing.JPanel();
+        jPanelReview = new javax.swing.JPanel();
+        lblId = new javax.swing.JLabel();
+        lblName = new javax.swing.JLabel();
+        lblPhone = new javax.swing.JLabel();
+        btnNameChange = new javax.swing.JButton();
+        btnPhoneChange = new javax.swing.JButton();
+        btnDel = new javax.swing.JButton();
+
+        lblNameBefore.setText("기존");
+
+        txtNameBefore.setText("홍길동");
+
+        lblNameAfter.setText("변경");
+
+        btnNameUpd.setText("변경");
+
+        lblNameUpd.setText("닉네임");
+
+        javax.swing.GroupLayout jDialogNameLayout = new javax.swing.GroupLayout(jDialogName.getContentPane());
+        jDialogName.getContentPane().setLayout(jDialogNameLayout);
+        jDialogNameLayout.setHorizontalGroup(
+            jDialogNameLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jDialogNameLayout.createSequentialGroup()
+                .addGroup(jDialogNameLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jDialogNameLayout.createSequentialGroup()
+                        .addGap(89, 89, 89)
+                        .addGroup(jDialogNameLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jDialogNameLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                .addGroup(jDialogNameLayout.createSequentialGroup()
+                                    .addComponent(lblNameAfter)
+                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                    .addComponent(txtNameAfter))
+                                .addGroup(jDialogNameLayout.createSequentialGroup()
+                                    .addComponent(lblNameBefore)
+                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                    .addComponent(txtNameBefore, javax.swing.GroupLayout.PREFERRED_SIZE, 170, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addGroup(jDialogNameLayout.createSequentialGroup()
+                                .addGap(61, 61, 61)
+                                .addComponent(btnNameUpd))))
+                    .addGroup(jDialogNameLayout.createSequentialGroup()
+                        .addGap(171, 171, 171)
+                        .addComponent(lblNameUpd)))
+                .addContainerGap(105, Short.MAX_VALUE))
+        );
+        jDialogNameLayout.setVerticalGroup(
+            jDialogNameLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jDialogNameLayout.createSequentialGroup()
+                .addGap(49, 49, 49)
+                .addComponent(lblNameUpd)
+                .addGap(18, 18, 18)
+                .addGroup(jDialogNameLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(lblNameBefore)
+                    .addComponent(txtNameBefore, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jDialogNameLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(lblNameAfter)
+                    .addComponent(txtNameAfter, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addComponent(btnNameUpd)
+                .addContainerGap(79, Short.MAX_VALUE))
+        );
+
+        lblPhoneAfter.setText("변경");
+
+        btnPhoneUpd.setText("변경");
+
+        lblPhoneBefore.setText("기존");
+
+        lblPhoneUpd.setText("전화번호");
+
+        txtPhoneBefore.setText("010-0000-0000");
+
+        javax.swing.GroupLayout jDialogPhoneLayout = new javax.swing.GroupLayout(jDialogPhone.getContentPane());
+        jDialogPhone.getContentPane().setLayout(jDialogPhoneLayout);
+        jDialogPhoneLayout.setHorizontalGroup(
+            jDialogPhoneLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jDialogPhoneLayout.createSequentialGroup()
+                .addGroup(jDialogPhoneLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jDialogPhoneLayout.createSequentialGroup()
+                        .addGap(89, 89, 89)
+                        .addGroup(jDialogPhoneLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jDialogPhoneLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                .addGroup(jDialogPhoneLayout.createSequentialGroup()
+                                    .addComponent(lblPhoneAfter)
+                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                    .addComponent(txtPhoneAfter))
+                                .addGroup(jDialogPhoneLayout.createSequentialGroup()
+                                    .addComponent(lblPhoneBefore)
+                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                    .addComponent(txtPhoneBefore, javax.swing.GroupLayout.PREFERRED_SIZE, 170, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addGroup(jDialogPhoneLayout.createSequentialGroup()
+                                .addGap(61, 61, 61)
+                                .addComponent(btnPhoneUpd))))
+                    .addGroup(jDialogPhoneLayout.createSequentialGroup()
+                        .addGap(171, 171, 171)
+                        .addComponent(lblPhoneUpd)))
+                .addContainerGap(105, Short.MAX_VALUE))
+        );
+        jDialogPhoneLayout.setVerticalGroup(
+            jDialogPhoneLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jDialogPhoneLayout.createSequentialGroup()
+                .addGap(49, 49, 49)
+                .addComponent(lblPhoneUpd)
+                .addGap(18, 18, 18)
+                .addGroup(jDialogPhoneLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(lblPhoneBefore)
+                    .addComponent(txtPhoneBefore, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jDialogPhoneLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(lblPhoneAfter)
+                    .addComponent(txtPhoneAfter, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addComponent(btnPhoneUpd)
+                .addContainerGap(79, Short.MAX_VALUE))
+        );
+
+        lblDel.setText("정말 탈퇴하시겠습니까?");
+
+        btnDelYes.setText("예");
+
+        btnDelNo.setText("아니오");
+
+        javax.swing.GroupLayout jDialogDelLayout = new javax.swing.GroupLayout(jDialogDel.getContentPane());
+        jDialogDel.getContentPane().setLayout(jDialogDelLayout);
+        jDialogDelLayout.setHorizontalGroup(
+            jDialogDelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jDialogDelLayout.createSequentialGroup()
+                .addGroup(jDialogDelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jDialogDelLayout.createSequentialGroup()
+                        .addGap(123, 123, 123)
+                        .addComponent(lblDel))
+                    .addGroup(jDialogDelLayout.createSequentialGroup()
+                        .addGap(113, 113, 113)
+                        .addComponent(btnDelYes, javax.swing.GroupLayout.PREFERRED_SIZE, 72, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(btnDelNo)))
+                .addContainerGap(137, Short.MAX_VALUE))
+        );
+        jDialogDelLayout.setVerticalGroup(
+            jDialogDelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jDialogDelLayout.createSequentialGroup()
+                .addGap(91, 91, 91)
+                .addComponent(lblDel)
+                .addGap(26, 26, 26)
+                .addGroup(jDialogDelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(btnDelNo)
+                    .addComponent(btnDelYes))
+                .addContainerGap(143, Short.MAX_VALUE))
+        );
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        jLabel2.setText("레시피 공유 프로그램");
-        jLabel2.addMouseListener(new java.awt.event.MouseAdapter() {
+        lblLogo.setText("레시피 공유 프로그램");
+        lblLogo.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jLabel2MouseClicked(evt);
+                lblLogoMouseClicked(evt);
             }
         });
 
-        jComboBox2.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "제목", "작성자", "재료" }));
+        comboSearch.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "제목", "작성자", "재료" }));
 
-        jButton4.setText("검색");
-        jButton4.addActionListener(new java.awt.event.ActionListener() {
+        btnSearch.setText("검색");
+        btnSearch.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton4ActionPerformed(evt);
+                btnSearchActionPerformed(evt);
             }
         });
 
-        jButton5.setText("내 정보");
-
-        jButton6.setText("로그아웃");
-        jButton6.addActionListener(new java.awt.event.ActionListener() {
+        btnMyProfile.setText("내 정보");
+        btnMyProfile.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton6ActionPerformed(evt);
+                btnMyProfileActionPerformed(evt);
             }
         });
 
-        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
-        jPanel2.setLayout(jPanel2Layout);
-        jPanel2Layout.setHorizontalGroup(
-            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+        btnLogout.setText("로그아웃");
+        btnLogout.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnLogoutActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout jPaneHeaderLayout = new javax.swing.GroupLayout(jPaneHeader);
+        jPaneHeader.setLayout(jPaneHeaderLayout);
+        jPaneHeaderLayout.setHorizontalGroup(
+            jPaneHeaderLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGap(0, 0, Short.MAX_VALUE)
-            .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(jPanel2Layout.createSequentialGroup()
+            .addGroup(jPaneHeaderLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(jPaneHeaderLayout.createSequentialGroup()
                     .addContainerGap()
-                    .addComponent(jLabel2)
+                    .addComponent(lblLogo)
                     .addGap(46, 46, 46)
-                    .addComponent(jComboBox2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(comboSearch, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                    .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, 180, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(txtSearch, javax.swing.GroupLayout.PREFERRED_SIZE, 180, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                    .addComponent(jButton4, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnSearch, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 12, Short.MAX_VALUE)
-                    .addComponent(jButton5)
+                    .addComponent(btnMyProfile)
                     .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                    .addComponent(jButton6)
+                    .addComponent(btnLogout)
                     .addContainerGap()))
         );
-        jPanel2Layout.setVerticalGroup(
-            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+        jPaneHeaderLayout.setVerticalGroup(
+            jPaneHeaderLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGap(0, 0, Short.MAX_VALUE)
-            .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(jPanel2Layout.createSequentialGroup()
+            .addGroup(jPaneHeaderLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(jPaneHeaderLayout.createSequentialGroup()
                     .addGap(16, 16, 16)
-                    .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(jLabel2)
-                        .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(jButton4)
-                        .addComponent(jButton5)
-                        .addComponent(jButton6)
-                        .addComponent(jComboBox2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPaneHeaderLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(lblLogo)
+                        .addComponent(txtSearch, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(btnSearch)
+                        .addComponent(btnMyProfile)
+                        .addComponent(btnLogout)
+                        .addComponent(comboSearch, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
         );
 
-        javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
-        jPanel4.setLayout(jPanel4Layout);
-        jPanel4Layout.setHorizontalGroup(
-            jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+        javax.swing.GroupLayout jPanelBookmarkLayout = new javax.swing.GroupLayout(jPanelBookmark);
+        jPanelBookmark.setLayout(jPanelBookmarkLayout);
+        jPanelBookmarkLayout.setHorizontalGroup(
+            jPanelBookmarkLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGap(0, 725, Short.MAX_VALUE)
         );
-        jPanel4Layout.setVerticalGroup(
-            jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 439, Short.MAX_VALUE)
+        jPanelBookmarkLayout.setVerticalGroup(
+            jPanelBookmarkLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 394, Short.MAX_VALUE)
         );
 
-        jTabbedPane1.addTab("북마크", jPanel4);
+        BookmarkAndReview.addTab("북마크", jPanelBookmark);
 
-        javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
-        jPanel3.setLayout(jPanel3Layout);
-        jPanel3Layout.setHorizontalGroup(
-            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+        javax.swing.GroupLayout jPanelReviewLayout = new javax.swing.GroupLayout(jPanelReview);
+        jPanelReview.setLayout(jPanelReviewLayout);
+        jPanelReviewLayout.setHorizontalGroup(
+            jPanelReviewLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGap(0, 725, Short.MAX_VALUE)
         );
-        jPanel3Layout.setVerticalGroup(
-            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 439, Short.MAX_VALUE)
+        jPanelReviewLayout.setVerticalGroup(
+            jPanelReviewLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 394, Short.MAX_VALUE)
         );
 
-        jTabbedPane1.addTab("내가 쓴 리뷰", jPanel3);
+        BookmarkAndReview.addTab("내가 쓴 리뷰", jPanelReview);
 
-        jLabel1.setText("아이디 : abbc@naver.com");
+        lblId.setText("아이디 : abbc@naver.com");
 
-        jLabel3.setText("닉네임 : 홍길동");
+        lblName.setText("닉네임 : 홍길동");
 
-        jLabel4.setText("전화번호 : 010-0000-0000");
+        lblPhone.setText("전화번호 : 010-0000-0000");
 
-        javax.swing.GroupLayout jPanel5Layout = new javax.swing.GroupLayout(jPanel5);
-        jPanel5.setLayout(jPanel5Layout);
-        jPanel5Layout.setHorizontalGroup(
-            jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jTabbedPane1, javax.swing.GroupLayout.Alignment.TRAILING)
-            .addGroup(jPanel5Layout.createSequentialGroup()
+        btnNameChange.setText("변경");
+        btnNameChange.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnNameChangeActionPerformed(evt);
+            }
+        });
+
+        btnPhoneChange.setText("변경");
+        btnPhoneChange.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnPhoneChangeActionPerformed(evt);
+            }
+        });
+
+        btnDel.setText("탈퇴");
+
+        javax.swing.GroupLayout jPanelBodyLayout = new javax.swing.GroupLayout(jPanelBody);
+        jPanelBody.setLayout(jPanelBodyLayout);
+        jPanelBodyLayout.setHorizontalGroup(
+            jPanelBodyLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(BookmarkAndReview, javax.swing.GroupLayout.Alignment.TRAILING)
+            .addGroup(jPanelBodyLayout.createSequentialGroup()
                 .addGap(32, 32, 32)
-                .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel4)
-                    .addComponent(jLabel3)
-                    .addComponent(jLabel1))
+                .addGroup(jPanelBodyLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(btnDel)
+                    .addGroup(jPanelBodyLayout.createSequentialGroup()
+                        .addComponent(lblPhone)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(btnPhoneChange))
+                    .addGroup(jPanelBodyLayout.createSequentialGroup()
+                        .addComponent(lblName)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(btnNameChange))
+                    .addComponent(lblId))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
-        jPanel5Layout.setVerticalGroup(
-            jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel5Layout.createSequentialGroup()
+        jPanelBodyLayout.setVerticalGroup(
+            jPanelBodyLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanelBodyLayout.createSequentialGroup()
                 .addGap(38, 38, 38)
-                .addComponent(jLabel1)
+                .addComponent(lblId)
                 .addGap(18, 18, 18)
-                .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 17, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(jPanelBodyLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(lblName, javax.swing.GroupLayout.PREFERRED_SIZE, 17, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnNameChange))
                 .addGap(18, 18, 18)
-                .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 17, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jTabbedPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGroup(jPanelBodyLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(lblPhone, javax.swing.GroupLayout.PREFERRED_SIZE, 17, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnPhoneChange))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(btnDel)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 16, Short.MAX_VALUE)
+                .addComponent(BookmarkAndReview, javax.swing.GroupLayout.PREFERRED_SIZE, 429, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addComponent(jPanel5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(jPaneHeader, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(jPanelBody, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(jPaneHeader, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jPanel5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addComponent(jPanelBody, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jLabel2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel2MouseClicked
+    private void lblLogoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblLogoMouseClicked
         // TODO add your handling code here:
         new SubFrame().setVisible(true);
         this.dispose();
-    }//GEN-LAST:event_jLabel2MouseClicked
+    }//GEN-LAST:event_lblLogoMouseClicked
 
-    private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
+    private void btnSearchActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSearchActionPerformed
         // TODO add your handling code here:
         new SearchResultFrame().setVisible(true);
         this.dispose();
-    }//GEN-LAST:event_jButton4ActionPerformed
+    }//GEN-LAST:event_btnSearchActionPerformed
 
-    private void jButton6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton6ActionPerformed
+    private void btnLogoutActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLogoutActionPerformed
         // TODO add your handling code here:
         new MainFrame().setVisible(true);
         this.dispose();
-    }//GEN-LAST:event_jButton6ActionPerformed
+    }//GEN-LAST:event_btnLogoutActionPerformed
+
+    private void btnNameChangeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnNameChangeActionPerformed
+        // TODO add your handling code here:
+        jDialogName.setSize(400, 350);
+        jDialogName.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_btnNameChangeActionPerformed
+
+    private void btnPhoneChangeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnPhoneChangeActionPerformed
+        // TODO add your handling code here:
+        jDialogPhone.setSize(400, 350);
+        jDialogPhone.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_btnPhoneChangeActionPerformed
+
+    private void btnMyProfileActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnMyProfileActionPerformed
+        // TODO add your handling code here:
+        new MyProfileFrame().setVisible(true);
+    }//GEN-LAST:event_btnMyProfileActionPerformed
 
     /**
      * @param args the command line arguments
@@ -234,19 +450,40 @@ public class MyProfileFrame extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton4;
-    private javax.swing.JButton jButton5;
-    private javax.swing.JButton jButton6;
-    private javax.swing.JComboBox<String> jComboBox2;
-    private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel4;
-    private javax.swing.JPanel jPanel2;
-    private javax.swing.JPanel jPanel3;
-    private javax.swing.JPanel jPanel4;
-    private javax.swing.JPanel jPanel5;
-    private javax.swing.JTabbedPane jTabbedPane1;
-    private javax.swing.JTextField jTextField2;
+    private javax.swing.JTabbedPane BookmarkAndReview;
+    private javax.swing.JButton btnDel;
+    private javax.swing.JButton btnDelNo;
+    private javax.swing.JButton btnDelYes;
+    private javax.swing.JButton btnLogout;
+    private javax.swing.JButton btnMyProfile;
+    private javax.swing.JButton btnNameChange;
+    private javax.swing.JButton btnNameUpd;
+    private javax.swing.JButton btnPhoneChange;
+    private javax.swing.JButton btnPhoneUpd;
+    private javax.swing.JButton btnSearch;
+    private javax.swing.JComboBox<String> comboSearch;
+    private javax.swing.JDialog jDialogDel;
+    private javax.swing.JDialog jDialogName;
+    private javax.swing.JDialog jDialogPhone;
+    private javax.swing.JPanel jPaneHeader;
+    private javax.swing.JPanel jPanelBody;
+    private javax.swing.JPanel jPanelBookmark;
+    private javax.swing.JPanel jPanelReview;
+    private javax.swing.JLabel lblDel;
+    private javax.swing.JLabel lblId;
+    private javax.swing.JLabel lblLogo;
+    private javax.swing.JLabel lblName;
+    private javax.swing.JLabel lblNameAfter;
+    private javax.swing.JLabel lblNameBefore;
+    private javax.swing.JLabel lblNameUpd;
+    private javax.swing.JLabel lblPhone;
+    private javax.swing.JLabel lblPhoneAfter;
+    private javax.swing.JLabel lblPhoneBefore;
+    private javax.swing.JLabel lblPhoneUpd;
+    private javax.swing.JTextField txtNameAfter;
+    private javax.swing.JTextField txtNameBefore;
+    private javax.swing.JTextField txtPhoneAfter;
+    private javax.swing.JTextField txtPhoneBefore;
+    private javax.swing.JTextField txtSearch;
     // End of variables declaration//GEN-END:variables
 }

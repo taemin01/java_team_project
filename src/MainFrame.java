@@ -74,125 +74,125 @@ public class MainFrame extends javax.swing.JFrame {
     private void initComponents() {
 
         buttonGroup1 = new javax.swing.ButtonGroup();
-        jDialog1 = new javax.swing.JDialog();
-        jLabel4 = new javax.swing.JLabel();
-        jLabel5 = new javax.swing.JLabel();
-        jLabel6 = new javax.swing.JLabel();
-        jLabel7 = new javax.swing.JLabel();
-        jLabel8 = new javax.swing.JLabel();
-        jTextField3 = new javax.swing.JTextField();
-        jPasswordField2 = new javax.swing.JPasswordField();
-        jPasswordField3 = new javax.swing.JPasswordField();
-        jTextField2 = new javax.swing.JTextField();
-        btnDuplicateCheck = new javax.swing.JButton();
-        btnSignUp = new javax.swing.JButton();
-        jLabel9 = new javax.swing.JLabel();
-        jTextField4 = new javax.swing.JTextField();
-        jLabel1 = new javax.swing.JLabel();
+        jDialogRegister = new javax.swing.JDialog();
+        lblRegister = new javax.swing.JLabel();
+        lblRegisterId = new javax.swing.JLabel();
+        lblRegisterPass = new javax.swing.JLabel();
+        lblRegisterPassConf = new javax.swing.JLabel();
+        lblRegisterName = new javax.swing.JLabel();
+        txtRegisterId = new javax.swing.JTextField();
+        pwRegisterPass = new javax.swing.JPasswordField();
+        pwRegisterPassConf = new javax.swing.JPasswordField();
+        txtRegisterName = new javax.swing.JTextField();
+        btnDupCheck = new javax.swing.JButton();
+        btnCreate = new javax.swing.JButton();
+        lblRegisterPhone = new javax.swing.JLabel();
+        txtRegisterPhone = new javax.swing.JTextField();
+        lblLogo = new javax.swing.JLabel();
         btnLogin = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
-        jLabel2 = new javax.swing.JLabel();
-        jLabel3 = new javax.swing.JLabel();
-        jRadioButton1 = new javax.swing.JRadioButton();
-        jRadioButton2 = new javax.swing.JRadioButton();
-        jTextField1 = new javax.swing.JTextField();
-        jPasswordField1 = new javax.swing.JPasswordField();
+        btnRegister = new javax.swing.JButton();
+        lblLoginId = new javax.swing.JLabel();
+        lblLoginPass = new javax.swing.JLabel();
+        rbtnUser = new javax.swing.JRadioButton();
+        rbtnAdmin = new javax.swing.JRadioButton();
+        txtLoginId = new javax.swing.JTextField();
+        pwLoginPass = new javax.swing.JPasswordField();
         lblCaptcha = new javax.swing.JLabel();
         txtCaptchaInput = new javax.swing.JTextField();
         btnRefreshCaptcha = new javax.swing.JButton();
 
-        jLabel4.setText("회원가입");
+        lblRegister.setText("회원가입");
 
-        jLabel5.setText("아이디");
+        lblRegisterId.setText("아이디");
 
-        jLabel6.setText("비밀번호");
+        lblRegisterPass.setText("비밀번호");
 
-        jLabel7.setText("비밀번호 확인");
+        lblRegisterPassConf.setText("비밀번호 확인");
 
-        jLabel8.setText("닉네임");
+        lblRegisterName.setText("닉네임");
 
-        btnDuplicateCheck.setText("중복확인");
-        btnDuplicateCheck.addActionListener(new java.awt.event.ActionListener() {
+        btnDupCheck.setText("중복확인");
+        btnDupCheck.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnDuplicateCheckActionPerformed(evt);
+                btnDupCheckActionPerformed(evt);
             }
         });
 
-        btnSignUp.setText("회원가입");
-        btnSignUp.addActionListener(new java.awt.event.ActionListener() {
+        btnCreate.setText("회원가입");
+        btnCreate.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnSignUpActionPerformed(evt);
+                btnCreateActionPerformed(evt);
             }
         });
 
-        jLabel9.setText("전화번호");
+        lblRegisterPhone.setText("전화번호");
 
-        javax.swing.GroupLayout jDialog1Layout = new javax.swing.GroupLayout(jDialog1.getContentPane());
-        jDialog1.getContentPane().setLayout(jDialog1Layout);
-        jDialog1Layout.setHorizontalGroup(
-            jDialog1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jDialog1Layout.createSequentialGroup()
+        javax.swing.GroupLayout jDialogRegisterLayout = new javax.swing.GroupLayout(jDialogRegister.getContentPane());
+        jDialogRegister.getContentPane().setLayout(jDialogRegisterLayout);
+        jDialogRegisterLayout.setHorizontalGroup(
+            jDialogRegisterLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jDialogRegisterLayout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jLabel4)
+                .addComponent(lblRegister)
                 .addGap(180, 180, 180))
-            .addGroup(jDialog1Layout.createSequentialGroup()
-                .addGroup(jDialog1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jDialog1Layout.createSequentialGroup()
+            .addGroup(jDialogRegisterLayout.createSequentialGroup()
+                .addGroup(jDialogRegisterLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jDialogRegisterLayout.createSequentialGroup()
                         .addGap(30, 30, 30)
-                        .addGroup(jDialog1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel7)
-                            .addComponent(jLabel5)
-                            .addComponent(jLabel6)
-                            .addComponent(jLabel8)
-                            .addComponent(jLabel9))
+                        .addGroup(jDialogRegisterLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(lblRegisterPassConf)
+                            .addComponent(lblRegisterId)
+                            .addComponent(lblRegisterPass)
+                            .addComponent(lblRegisterName)
+                            .addComponent(lblRegisterPhone))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(jDialog1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(jTextField3)
-                            .addComponent(jPasswordField2)
-                            .addComponent(jPasswordField3)
-                            .addComponent(jTextField2, javax.swing.GroupLayout.DEFAULT_SIZE, 165, Short.MAX_VALUE)
-                            .addComponent(jTextField4, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 165, Short.MAX_VALUE))
+                        .addGroup(jDialogRegisterLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(txtRegisterId)
+                            .addComponent(pwRegisterPass)
+                            .addComponent(pwRegisterPassConf)
+                            .addComponent(txtRegisterName, javax.swing.GroupLayout.DEFAULT_SIZE, 165, Short.MAX_VALUE)
+                            .addComponent(txtRegisterPhone, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 165, Short.MAX_VALUE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(btnDuplicateCheck))
-                    .addGroup(jDialog1Layout.createSequentialGroup()
+                        .addComponent(btnDupCheck))
+                    .addGroup(jDialogRegisterLayout.createSequentialGroup()
                         .addGap(155, 155, 155)
-                        .addComponent(btnSignUp)))
+                        .addComponent(btnCreate)))
                 .addContainerGap(39, Short.MAX_VALUE))
         );
-        jDialog1Layout.setVerticalGroup(
-            jDialog1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jDialog1Layout.createSequentialGroup()
+        jDialogRegisterLayout.setVerticalGroup(
+            jDialogRegisterLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jDialogRegisterLayout.createSequentialGroup()
                 .addGap(24, 24, 24)
-                .addComponent(jLabel4)
+                .addComponent(lblRegister)
                 .addGap(29, 29, 29)
-                .addGroup(jDialog1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel5)
-                    .addComponent(jTextField3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btnDuplicateCheck))
+                .addGroup(jDialogRegisterLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(lblRegisterId)
+                    .addComponent(txtRegisterId, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnDupCheck))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jDialog1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel6)
-                    .addComponent(jPasswordField2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGroup(jDialogRegisterLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(lblRegisterPass)
+                    .addComponent(pwRegisterPass, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jDialog1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel7)
-                    .addComponent(jPasswordField3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGroup(jDialogRegisterLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(lblRegisterPassConf)
+                    .addComponent(pwRegisterPassConf, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jDialog1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel8)
-                    .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGroup(jDialogRegisterLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(lblRegisterName)
+                    .addComponent(txtRegisterName, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jDialog1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel9)
-                    .addComponent(jTextField4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGroup(jDialogRegisterLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(lblRegisterPhone)
+                    .addComponent(txtRegisterPhone, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(20, 20, 20)
-                .addComponent(btnSignUp)
+                .addComponent(btnCreate)
                 .addContainerGap(48, Short.MAX_VALUE))
         );
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        jLabel1.setText("레시피 공유 프로그램");
+        lblLogo.setText("레시피 공유 프로그램");
 
         btnLogin.setText("로그인");
         btnLogin.addActionListener(new java.awt.event.ActionListener() {
@@ -201,23 +201,23 @@ public class MainFrame extends javax.swing.JFrame {
             }
         });
 
-        jButton2.setText("회원가입");
-        jButton2.addActionListener(new java.awt.event.ActionListener() {
+        btnRegister.setText("회원가입");
+        btnRegister.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton2ActionPerformed(evt);
+                btnRegisterActionPerformed(evt);
             }
         });
 
-        jLabel2.setText("아이디");
+        lblLoginId.setText("아이디");
 
-        jLabel3.setText("비밀번호");
+        lblLoginPass.setText("비밀번호");
 
-        buttonGroup1.add(jRadioButton1);
-        jRadioButton1.setSelected(true);
-        jRadioButton1.setText("사용자");
+        buttonGroup1.add(rbtnUser);
+        rbtnUser.setSelected(true);
+        rbtnUser.setText("사용자");
 
-        buttonGroup1.add(jRadioButton2);
-        jRadioButton2.setText("관리자");
+        buttonGroup1.add(rbtnAdmin);
+        rbtnAdmin.setText("관리자");
 
         btnRefreshCaptcha.setText("새로고침");
         btnRefreshCaptcha.addActionListener(new java.awt.event.ActionListener() {
@@ -234,25 +234,25 @@ public class MainFrame extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
                         .addGap(141, 141, 141)
-                        .addComponent(jLabel1))
+                        .addComponent(lblLogo))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(65, 65, 65)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(jLabel3)
-                            .addComponent(jLabel2))
+                            .addComponent(lblLoginPass)
+                            .addComponent(lblLoginId))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(layout.createSequentialGroup()
-                                .addComponent(jRadioButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 99, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(rbtnUser, javax.swing.GroupLayout.PREFERRED_SIZE, 99, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jRadioButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 99, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addComponent(rbtnAdmin, javax.swing.GroupLayout.PREFERRED_SIZE, 99, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                                .addComponent(jPasswordField1, javax.swing.GroupLayout.Alignment.LEADING)
-                                .addComponent(jTextField1, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 165, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addComponent(pwLoginPass, javax.swing.GroupLayout.Alignment.LEADING)
+                                .addComponent(txtLoginId, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 165, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGroup(layout.createSequentialGroup()
                                 .addComponent(btnLogin, javax.swing.GroupLayout.PREFERRED_SIZE, 74, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jButton2))))
+                                .addComponent(btnRegister))))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(81, 81, 81)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -267,19 +267,19 @@ public class MainFrame extends javax.swing.JFrame {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jLabel1)
+                .addComponent(lblLogo)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel2)
-                    .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(lblLoginId)
+                    .addComponent(txtLoginId, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel3)
-                    .addComponent(jPasswordField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(lblLoginPass)
+                    .addComponent(pwLoginPass, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jRadioButton1)
-                    .addComponent(jRadioButton2))
+                    .addComponent(rbtnUser)
+                    .addComponent(rbtnAdmin))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(lblCaptcha, javax.swing.GroupLayout.PREFERRED_SIZE, 85, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
@@ -288,7 +288,7 @@ public class MainFrame extends javax.swing.JFrame {
                     .addComponent(btnRefreshCaptcha))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 25, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButton2)
+                    .addComponent(btnRegister)
                     .addComponent(btnLogin))
                 .addGap(14, 14, 14))
         );
@@ -304,8 +304,8 @@ public class MainFrame extends javax.swing.JFrame {
 
         try {
             // 사용자 입력값 가져오기
-            String account = jTextField1.getText().trim();
-            char[] passwordChars = jPasswordField1.getPassword();
+            String account = txtLoginId.getText().trim();
+            char[] passwordChars = pwLoginPass.getPassword();
             String password = new String(passwordChars);
             Arrays.fill(passwordChars, '\0'); // 비밀번호 보안을 위해 초기화
 
@@ -357,29 +357,29 @@ public class MainFrame extends javax.swing.JFrame {
 
     }//GEN-LAST:event_btnLoginActionPerformed
 
-    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+    private void btnRegisterActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRegisterActionPerformed
         // TODO add your handling code here:
-        jDialog1.setSize(400, 350);
-        jDialog1.setVisible(true);
-    }//GEN-LAST:event_jButton2ActionPerformed
+        jDialogRegister.setSize(400, 350);
+        jDialogRegister.setVisible(true);
+    }//GEN-LAST:event_btnRegisterActionPerformed
 
     private void btnRefreshCaptchaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRefreshCaptchaActionPerformed
         generateCaptcha();
     }//GEN-LAST:event_btnRefreshCaptchaActionPerformed
 
-    private void btnDuplicateCheckActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDuplicateCheckActionPerformed
+    private void btnDupCheckActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDupCheckActionPerformed
         
-    }//GEN-LAST:event_btnDuplicateCheckActionPerformed
+    }//GEN-LAST:event_btnDupCheckActionPerformed
 
-    private void btnSignUpActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSignUpActionPerformed
-        char[] passwordChars = jPasswordField2.getPassword();
-        char[] passwordCheckChars = jPasswordField3.getPassword();
+    private void btnCreateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCreateActionPerformed
+        char[] passwordChars = pwRegisterPass.getPassword();
+        char[] passwordCheckChars = pwRegisterPassConf.getPassword();
         String password = new String(passwordChars);
         String passwordCheck = new String(passwordCheckChars);
         Arrays.fill(passwordChars, '\0'); // 비밀번호 보안을 위해 초기화
-        String account = jTextField3.getText();
-        String name = jTextField2.getText();
-        String number = jTextField4.getText();
+        String account = txtRegisterId.getText();
+        String name = txtRegisterName.getText();
+        String number = txtRegisterPhone.getText();
         try {
             if(password.equals(passwordCheck)) {
                 String reqeustBody = "{"
@@ -410,7 +410,7 @@ public class MainFrame extends javax.swing.JFrame {
                     JSONObject jsonResponse = new JSONObject(responseBody);
                     JOptionPane.showMessageDialog(null, "회원가입 완료");
                     // 화면 전환
-                    jDialog1.dispose();
+                    jDialogRegister.dispose();
                 } else if (responseBody.trim().startsWith("[")) {
                     // 실패: JSON 배열로 처리
                     JSONArray jsonArray = new JSONArray(responseBody);
@@ -425,13 +425,13 @@ public class MainFrame extends javax.swing.JFrame {
 //                jDialog1.dispose();
             } else {
                 JOptionPane.showMessageDialog(null, "비밀번호가 일치하지 않습니다. 동일하게 입력해주세요.");
-                jPasswordField2.setText("");
-                jPasswordField3.setText("");
+                pwRegisterPass.setText("");
+                pwRegisterPassConf.setText("");
             }
         } catch(Exception e){
             e.printStackTrace();
         }
-    }//GEN-LAST:event_btnSignUpActionPerformed
+    }//GEN-LAST:event_btnCreateActionPerformed
 
     public static void main(String args[]) {
         
@@ -443,32 +443,32 @@ public class MainFrame extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton btnDuplicateCheck;
+    private javax.swing.JButton btnCreate;
+    private javax.swing.JButton btnDupCheck;
     private javax.swing.JButton btnLogin;
     private javax.swing.JButton btnRefreshCaptcha;
-    private javax.swing.JButton btnSignUp;
+    private javax.swing.JButton btnRegister;
     private javax.swing.ButtonGroup buttonGroup1;
-    private javax.swing.JButton jButton2;
-    private javax.swing.JDialog jDialog1;
-    private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel4;
-    private javax.swing.JLabel jLabel5;
-    private javax.swing.JLabel jLabel6;
-    private javax.swing.JLabel jLabel7;
-    private javax.swing.JLabel jLabel8;
-    private javax.swing.JLabel jLabel9;
-    private javax.swing.JPasswordField jPasswordField1;
-    private javax.swing.JPasswordField jPasswordField2;
-    private javax.swing.JPasswordField jPasswordField3;
-    private javax.swing.JRadioButton jRadioButton1;
-    private javax.swing.JRadioButton jRadioButton2;
-    private javax.swing.JTextField jTextField1;
-    private javax.swing.JTextField jTextField2;
-    private javax.swing.JTextField jTextField3;
-    private javax.swing.JTextField jTextField4;
+    private javax.swing.JDialog jDialogRegister;
     private javax.swing.JLabel lblCaptcha;
+    private javax.swing.JLabel lblLoginId;
+    private javax.swing.JLabel lblLoginPass;
+    private javax.swing.JLabel lblLogo;
+    private javax.swing.JLabel lblRegister;
+    private javax.swing.JLabel lblRegisterId;
+    private javax.swing.JLabel lblRegisterName;
+    private javax.swing.JLabel lblRegisterPass;
+    private javax.swing.JLabel lblRegisterPassConf;
+    private javax.swing.JLabel lblRegisterPhone;
+    private javax.swing.JPasswordField pwLoginPass;
+    private javax.swing.JPasswordField pwRegisterPass;
+    private javax.swing.JPasswordField pwRegisterPassConf;
+    private javax.swing.JRadioButton rbtnAdmin;
+    private javax.swing.JRadioButton rbtnUser;
     private javax.swing.JTextField txtCaptchaInput;
+    private javax.swing.JTextField txtLoginId;
+    private javax.swing.JTextField txtRegisterId;
+    private javax.swing.JTextField txtRegisterName;
+    private javax.swing.JTextField txtRegisterPhone;
     // End of variables declaration//GEN-END:variables
 }
