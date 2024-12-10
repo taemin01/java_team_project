@@ -88,10 +88,6 @@ public class SubFrame extends javax.swing.JFrame {
         JOptionPane.showMessageDialog(this, "데이터 로드 중 오류: " + e.getMessage(), "오류", JOptionPane.ERROR_MESSAGE);
     }
 }
-
-
-
-
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {

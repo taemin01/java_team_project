@@ -417,12 +417,10 @@ public class WriteRecipeFrame extends javax.swing.JFrame {
 
     // 텍스트 필드 추가 메서드
     private static void addFormField(DataOutputStream writer, String fieldName, String value, String boundary) throws Exception {
-        writer.writeBytes("--" + boundary + "\r\n");
-        writer.writeBytes("Content-Disposition: form-data; name=\"" + fieldName + "\"\r\n");
-        writer.writeBytes("\r\n");
-        writer.writeBytes(value + "\r\n");
-        writer.write(value.getBytes("UTF-8")); // UTF-8로 데이터 인코딩
-        writer.writeBytes("\r\n");
+        writer.writeBytes("--" + boundary + "\r\n"); // Boundary 시작
+    writer.writeBytes("Content-Disposition: form-data; name=\"" + fieldName + "\"\r\n"); // 필드 이름
+    writer.writeBytes("\r\n"); // 빈 줄
+    writer.writeBytes(value + "\r\n"); // 데이터 쓰기 (중복 제거)
     }
 
     // 파일 필드 추가 메서드

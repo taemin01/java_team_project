@@ -39,9 +39,18 @@ public class SearchResultFrame extends javax.swing.JFrame {
         initComponents();
     }
     
+    private void addRecipeClickEvent(JLabel titleLabel, JSONObject recipeData) {
+    titleLabel.addMouseListener(new java.awt.event.MouseAdapter() {
+        @Override
+        public void mouseClicked(java.awt.event.MouseEvent evt) {
+            new RecipeDetailFrame(recipeData).setVisible(true); // 상세 페이지로 데이터 전달
+        }
+    });
+}
     
     public void displayResults(JSONArray fullResults) {
         this.results = fullResults; // 전체 결과를 저장
+        System.out.println("result : " + results);
         updatePage(); // 현재 페이지를 업데이트
     }
 
@@ -75,6 +84,9 @@ public class SearchResultFrame extends javax.swing.JFrame {
                 lblResultWriter3.setText("작성자: " + results.getJSONObject(i).getString("name"));
                 lblVisit3.setText("조회수: " + results.getJSONObject(i).getInt("visited"));
             }
+            addRecipeClickEvent(lblResultTitle1, results.getJSONObject(i));
+            addRecipeClickEvent(lblResultTitle2, results.getJSONObject(i));
+            addRecipeClickEvent(lblResultTitle3, results.getJSONObject(i));
         }
         
         if (end % 3 == 1) {
@@ -85,6 +97,7 @@ public class SearchResultFrame extends javax.swing.JFrame {
         }
 
         lblCurrentPage.setText(String.valueOf(currentPage)); // 현재 페이지 표시
+        
     }
 
     // 다음 페이지 버튼 클릭 이벤트
