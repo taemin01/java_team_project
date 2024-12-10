@@ -144,13 +144,7 @@
                   <Group type="103" groupAlignment="0" attributes="0">
                       <Component id="jPanelRecipeList3" alignment="0" max="32767" attributes="0"/>
                       <Group type="102" alignment="0" attributes="0">
-                          <EmptySpace min="-2" pref="291" max="-2" attributes="0"/>
-                          <Component id="btnPrePage" min="-2" max="-2" attributes="0"/>
-                          <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                          <Component id="lblCurrentPage" min="-2" max="-2" attributes="0"/>
-                          <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                          <Component id="btnNextPage" min="-2" max="-2" attributes="0"/>
-                          <EmptySpace max="32767" attributes="0"/>
+                          <EmptySpace min="345" pref="634" max="32767" attributes="0"/>
                           <Component id="btnRecipeWrite" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <Component id="jPanelRecipeList2" alignment="1" max="32767" attributes="0"/>
@@ -162,6 +156,15 @@
                       </Group>
                   </Group>
                   <EmptySpace max="-2" attributes="0"/>
+              </Group>
+              <Group type="102" alignment="0" attributes="0">
+                  <EmptySpace min="-2" pref="314" max="-2" attributes="0"/>
+                  <Component id="btnPrePage" min="-2" max="-2" attributes="0"/>
+                  <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                  <Component id="lblCurrentPage" min="-2" max="-2" attributes="0"/>
+                  <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                  <Component id="btnNextPage" min="-2" max="-2" attributes="0"/>
+                  <EmptySpace max="32767" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
@@ -199,11 +202,17 @@
           <Properties>
             <Property name="text" type="java.lang.String" value="&gt;"/>
           </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnNextPageActionPerformed"/>
+          </Events>
         </Component>
         <Component class="javax.swing.JButton" name="btnPrePage">
           <Properties>
             <Property name="text" type="java.lang.String" value="&lt;"/>
           </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnPrePageActionPerformed"/>
+          </Events>
         </Component>
         <Container class="javax.swing.JPanel" name="jPanelRecipeList1">
           <Properties>
@@ -228,11 +237,16 @@
                       <EmptySpace max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
                           <Component id="lblRecipeGrade1" alignment="0" min="-2" max="-2" attributes="0"/>
-                          <Component id="lblRecipeTitle1" alignment="0" min="-2" max="-2" attributes="0"/>
-                          <Group type="102" alignment="0" attributes="0">
-                              <Component id="lblRecipeWiter1" min="-2" max="-2" attributes="0"/>
+                          <Group type="102" alignment="1" attributes="0">
+                              <Group type="103" groupAlignment="0" attributes="0">
+                                  <Component id="lblRecipeWriter1" alignment="0" min="-2" max="-2" attributes="0"/>
+                                  <Component id="lblRecipeTitle1" alignment="0" min="-2" max="-2" attributes="0"/>
+                              </Group>
                               <EmptySpace max="32767" attributes="0"/>
-                              <Component id="lblRecipeCreate1" min="-2" max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="0" attributes="0">
+                                  <Component id="lblRecipeCreate1" min="-2" max="-2" attributes="0"/>
+                                  <Component id="lblVisit1" min="-2" max="-2" attributes="0"/>
+                              </Group>
                           </Group>
                       </Group>
                       <EmptySpace max="-2" attributes="0"/>
@@ -249,12 +263,15 @@
                           <Group type="102" alignment="1" attributes="0">
                               <Group type="103" groupAlignment="1" max="-2" attributes="0">
                                   <Group type="102" alignment="0" attributes="0">
-                                      <Component id="lblRecipeTitle1" min="-2" max="-2" attributes="0"/>
+                                      <Group type="103" groupAlignment="3" attributes="0">
+                                          <Component id="lblRecipeTitle1" alignment="3" min="-2" max="-2" attributes="0"/>
+                                          <Component id="lblVisit1" alignment="3" min="-2" max="-2" attributes="0"/>
+                                      </Group>
                                       <EmptySpace max="-2" attributes="0"/>
                                       <Component id="lblRecipeGrade1" min="-2" max="-2" attributes="0"/>
                                       <EmptySpace max="32767" attributes="0"/>
                                       <Group type="103" groupAlignment="3" attributes="0">
-                                          <Component id="lblRecipeWiter1" alignment="3" min="-2" max="-2" attributes="0"/>
+                                          <Component id="lblRecipeWriter1" alignment="3" min="-2" max="-2" attributes="0"/>
                                           <Component id="lblRecipeCreate1" alignment="3" min="-2" max="-2" attributes="0"/>
                                       </Group>
                                   </Group>
@@ -335,7 +352,7 @@
                 </DimensionLayout>
               </Layout>
             </Container>
-            <Component class="javax.swing.JLabel" name="lblRecipeWiter1">
+            <Component class="javax.swing.JLabel" name="lblRecipeWriter1">
               <Properties>
                 <Property name="text" type="java.lang.String" value="&#xc791;&#xc131;&#xc790; : &#xd64d;&#xae38;&#xb3d9;"/>
               </Properties>
@@ -348,6 +365,11 @@
             <Component class="javax.swing.JLabel" name="lblRecipeCreate1">
               <Properties>
                 <Property name="text" type="java.lang.String" value="&#xc791;&#xc131;&#xb0a0;&#xc9dc; : 2025.01.01"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JLabel" name="lblVisit1">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="&#xc870;&#xd68c;&#xc218; : 0"/>
               </Properties>
             </Component>
           </SubComponents>
@@ -374,15 +396,23 @@
                       <Component id="jPanelRecipeImg2" min="-2" max="-2" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
-                          <Component id="lblRecipeGrade2" alignment="0" min="-2" max="-2" attributes="0"/>
-                          <Component id="lblRecipeTitle2" alignment="0" min="-2" max="-2" attributes="0"/>
                           <Group type="102" alignment="0" attributes="0">
-                              <Component id="lblRecipeWiter2" min="-2" max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="0" attributes="0">
+                                  <Component id="lblRecipeWriter2" alignment="0" min="-2" max="-2" attributes="0"/>
+                                  <Component id="lblRecipeTitle2" alignment="0" min="-2" max="-2" attributes="0"/>
+                              </Group>
                               <EmptySpace max="32767" attributes="0"/>
-                              <Component id="lblRecipeCreate2" min="-2" max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="0" attributes="0">
+                                  <Component id="lblRecipeCreate2" min="-2" max="-2" attributes="0"/>
+                                  <Component id="lblVisit2" min="-2" max="-2" attributes="0"/>
+                              </Group>
+                              <EmptySpace max="-2" attributes="0"/>
+                          </Group>
+                          <Group type="102" alignment="0" attributes="0">
+                              <Component id="lblRecipeGrade2" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace max="32767" attributes="0"/>
                           </Group>
                       </Group>
-                      <EmptySpace max="-2" attributes="0"/>
                       <Component id="btnRecipeBokk2" min="-2" max="-2" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
                   </Group>
@@ -399,12 +429,15 @@
                                   <Group type="102" alignment="1" attributes="0">
                                       <Group type="103" groupAlignment="1" max="-2" attributes="0">
                                           <Group type="102" alignment="0" attributes="0">
-                                              <Component id="lblRecipeTitle2" min="-2" max="-2" attributes="0"/>
+                                              <Group type="103" groupAlignment="3" attributes="0">
+                                                  <Component id="lblRecipeTitle2" alignment="3" min="-2" max="-2" attributes="0"/>
+                                                  <Component id="lblVisit2" alignment="3" min="-2" max="-2" attributes="0"/>
+                                              </Group>
                                               <EmptySpace max="-2" attributes="0"/>
                                               <Component id="lblRecipeGrade2" min="-2" max="-2" attributes="0"/>
                                               <EmptySpace max="32767" attributes="0"/>
                                               <Group type="103" groupAlignment="3" attributes="0">
-                                                  <Component id="lblRecipeWiter2" alignment="3" min="-2" max="-2" attributes="0"/>
+                                                  <Component id="lblRecipeWriter2" alignment="3" min="-2" max="-2" attributes="0"/>
                                                   <Component id="lblRecipeCreate2" alignment="3" min="-2" max="-2" attributes="0"/>
                                               </Group>
                                           </Group>
@@ -490,7 +523,7 @@
                 </DimensionLayout>
               </Layout>
             </Container>
-            <Component class="javax.swing.JLabel" name="lblRecipeWiter2">
+            <Component class="javax.swing.JLabel" name="lblRecipeWriter2">
               <Properties>
                 <Property name="text" type="java.lang.String" value="&#xc791;&#xc131;&#xc790; : &#xd64d;&#xae38;&#xb3d9;"/>
               </Properties>
@@ -503,6 +536,11 @@
             <Component class="javax.swing.JLabel" name="lblRecipeCreate2">
               <Properties>
                 <Property name="text" type="java.lang.String" value="&#xc791;&#xc131;&#xb0a0;&#xc9dc; : 2025.01.01"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JLabel" name="lblVisit2">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="&#xc870;&#xd68c;&#xc218; : 0"/>
               </Properties>
             </Component>
           </SubComponents>
@@ -530,11 +568,16 @@
                       <EmptySpace max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
                           <Component id="lblRecipeGrade3" alignment="0" min="-2" max="-2" attributes="0"/>
-                          <Component id="lblRecipeTitle3" alignment="0" min="-2" max="-2" attributes="0"/>
-                          <Group type="102" attributes="0">
-                              <Component id="lblRecipeWriter3" min="-2" max="-2" attributes="0"/>
-                              <EmptySpace pref="303" max="32767" attributes="0"/>
-                              <Component id="lblRecipeCreate3" min="-2" max="-2" attributes="0"/>
+                          <Group type="102" alignment="1" attributes="0">
+                              <Group type="103" groupAlignment="0" attributes="0">
+                                  <Component id="lblRecipeWriter3" alignment="0" min="-2" max="-2" attributes="0"/>
+                                  <Component id="lblRecipeTitle3" alignment="0" min="-2" max="-2" attributes="0"/>
+                              </Group>
+                              <EmptySpace max="32767" attributes="0"/>
+                              <Group type="103" groupAlignment="0" attributes="0">
+                                  <Component id="lblRecipeCreate3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="lblVisit3" min="-2" max="-2" attributes="0"/>
+                              </Group>
                           </Group>
                       </Group>
                       <EmptySpace max="-2" attributes="0"/>
@@ -553,7 +596,10 @@
                               <Group type="103" groupAlignment="1" max="-2" attributes="0">
                                   <Component id="jPanelRecipeOrder3" alignment="1" max="32767" attributes="0"/>
                                   <Group type="102" alignment="0" attributes="0">
-                                      <Component id="lblRecipeTitle3" min="-2" max="-2" attributes="0"/>
+                                      <Group type="103" groupAlignment="3" attributes="0">
+                                          <Component id="lblRecipeTitle3" alignment="3" min="-2" max="-2" attributes="0"/>
+                                          <Component id="lblVisit3" alignment="3" min="-2" max="-2" attributes="0"/>
+                                      </Group>
                                       <EmptySpace max="-2" attributes="0"/>
                                       <Component id="lblRecipeGrade3" min="-2" max="-2" attributes="0"/>
                                       <EmptySpace max="32767" attributes="0"/>
@@ -648,6 +694,11 @@
             <Component class="javax.swing.JLabel" name="lblRecipeCreate3">
               <Properties>
                 <Property name="text" type="java.lang.String" value="&#xc791;&#xc131;&#xb0a0;&#xc9dc; : 2025.01.01"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JLabel" name="lblVisit3">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="&#xc870;&#xd68c;&#xc218; : 0"/>
               </Properties>
             </Component>
           </SubComponents>

@@ -1,14 +1,25 @@
 
+import java.net.URI;
+import java.net.URLEncoder;
+import java.net.http.HttpClient;
+import java.net.http.HttpRequest;
+import java.net.http.HttpResponse;
 import java.util.ArrayList;
 import java.util.List;
+import javax.swing.JOptionPane;
+import org.json.JSONArray;
+import org.json.JSONObject;
+import util.TokenUtil;
 
 
 public class RecipeListFrame extends javax.swing.JFrame {
-    private static final int ITEMS_PER_PAGE = 3; // 한 페이지에 표시할 항목 수
-    private static int currentPage = 1; // 현재 페이지
+    private int currentPage = 1; // 현재 페이지
+    private final int itemsPerPage = 3; // 한 페이지에 표시할 항목 수
+    private JSONArray results; // 검색 결과 저장
 
     public RecipeListFrame() {
         initComponents();
+        RecipeRequest();
     }
 
     @SuppressWarnings("unchecked")
@@ -32,18 +43,20 @@ public class RecipeListFrame extends javax.swing.JFrame {
         jPanelRecipeOrder1 = new javax.swing.JPanel();
         lblRecipeOrder1 = new javax.swing.JLabel();
         jPanelRecipeImg1 = new javax.swing.JPanel();
-        lblRecipeWiter1 = new javax.swing.JLabel();
+        lblRecipeWriter1 = new javax.swing.JLabel();
         btnRecipeBook1 = new javax.swing.JButton();
         lblRecipeCreate1 = new javax.swing.JLabel();
+        lblVisit1 = new javax.swing.JLabel();
         jPanelRecipeList2 = new javax.swing.JPanel();
         lblRecipeTitle2 = new javax.swing.JLabel();
         lblRecipeGrade2 = new javax.swing.JLabel();
         jPanelRecipeOrder2 = new javax.swing.JPanel();
         lblRecipeOrder2 = new javax.swing.JLabel();
         jPanelRecipeImg2 = new javax.swing.JPanel();
-        lblRecipeWiter2 = new javax.swing.JLabel();
+        lblRecipeWriter2 = new javax.swing.JLabel();
         btnRecipeBokk2 = new javax.swing.JButton();
         lblRecipeCreate2 = new javax.swing.JLabel();
+        lblVisit2 = new javax.swing.JLabel();
         jPanelRecipeList3 = new javax.swing.JPanel();
         lblRecipeTitle3 = new javax.swing.JLabel();
         lblRecipeGrade3 = new javax.swing.JLabel();
@@ -53,6 +66,7 @@ public class RecipeListFrame extends javax.swing.JFrame {
         lblRecipeWriter3 = new javax.swing.JLabel();
         btnRecipeBook3 = new javax.swing.JButton();
         lblRecipeCreate3 = new javax.swing.JLabel();
+        lblVisit3 = new javax.swing.JLabel();
         lblRecipe = new javax.swing.JLabel();
         btnRecipeWrite = new javax.swing.JButton();
 
@@ -128,8 +142,18 @@ public class RecipeListFrame extends javax.swing.JFrame {
         lblCurrentPage.setText("1");
 
         btnNextPage.setText(">");
+        btnNextPage.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnNextPageActionPerformed(evt);
+            }
+        });
 
         btnPrePage.setText("<");
+        btnPrePage.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnPrePageActionPerformed(evt);
+            }
+        });
 
         jPanelRecipeList1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         jPanelRecipeList1.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -174,11 +198,13 @@ public class RecipeListFrame extends javax.swing.JFrame {
             .addGap(0, 58, Short.MAX_VALUE)
         );
 
-        lblRecipeWiter1.setText("작성자 : 홍길동");
+        lblRecipeWriter1.setText("작성자 : 홍길동");
 
         btnRecipeBook1.setText("북마크");
 
         lblRecipeCreate1.setText("작성날짜 : 2025.01.01");
+
+        lblVisit1.setText("조회수 : 0");
 
         javax.swing.GroupLayout jPanelRecipeList1Layout = new javax.swing.GroupLayout(jPanelRecipeList1);
         jPanelRecipeList1.setLayout(jPanelRecipeList1Layout);
@@ -192,11 +218,14 @@ public class RecipeListFrame extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanelRecipeList1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(lblRecipeGrade1)
-                    .addComponent(lblRecipeTitle1)
-                    .addGroup(jPanelRecipeList1Layout.createSequentialGroup()
-                        .addComponent(lblRecipeWiter1)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanelRecipeList1Layout.createSequentialGroup()
+                        .addGroup(jPanelRecipeList1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(lblRecipeWriter1)
+                            .addComponent(lblRecipeTitle1))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(lblRecipeCreate1)))
+                        .addGroup(jPanelRecipeList1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(lblRecipeCreate1)
+                            .addComponent(lblVisit1))))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(btnRecipeBook1)
                 .addContainerGap())
@@ -209,12 +238,14 @@ public class RecipeListFrame extends javax.swing.JFrame {
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanelRecipeList1Layout.createSequentialGroup()
                         .addGroup(jPanelRecipeList1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                             .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanelRecipeList1Layout.createSequentialGroup()
-                                .addComponent(lblRecipeTitle1)
+                                .addGroup(jPanelRecipeList1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                    .addComponent(lblRecipeTitle1)
+                                    .addComponent(lblVisit1))
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(lblRecipeGrade1)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                 .addGroup(jPanelRecipeList1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                    .addComponent(lblRecipeWiter1)
+                                    .addComponent(lblRecipeWriter1)
                                     .addComponent(lblRecipeCreate1)))
                             .addComponent(jPanelRecipeImg1, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(btnRecipeBook1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
@@ -267,11 +298,13 @@ public class RecipeListFrame extends javax.swing.JFrame {
             .addGap(0, 58, Short.MAX_VALUE)
         );
 
-        lblRecipeWiter2.setText("작성자 : 홍길동");
+        lblRecipeWriter2.setText("작성자 : 홍길동");
 
         btnRecipeBokk2.setText("북마크");
 
         lblRecipeCreate2.setText("작성날짜 : 2025.01.01");
+
+        lblVisit2.setText("조회수 : 0");
 
         javax.swing.GroupLayout jPanelRecipeList2Layout = new javax.swing.GroupLayout(jPanelRecipeList2);
         jPanelRecipeList2.setLayout(jPanelRecipeList2Layout);
@@ -284,13 +317,18 @@ public class RecipeListFrame extends javax.swing.JFrame {
                 .addComponent(jPanelRecipeImg2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanelRecipeList2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(lblRecipeGrade2)
-                    .addComponent(lblRecipeTitle2)
                     .addGroup(jPanelRecipeList2Layout.createSequentialGroup()
-                        .addComponent(lblRecipeWiter2)
+                        .addGroup(jPanelRecipeList2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(lblRecipeWriter2)
+                            .addComponent(lblRecipeTitle2))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(lblRecipeCreate2)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(jPanelRecipeList2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(lblRecipeCreate2)
+                            .addComponent(lblVisit2))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED))
+                    .addGroup(jPanelRecipeList2Layout.createSequentialGroup()
+                        .addComponent(lblRecipeGrade2)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
                 .addComponent(btnRecipeBokk2)
                 .addContainerGap())
         );
@@ -305,12 +343,14 @@ public class RecipeListFrame extends javax.swing.JFrame {
                             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanelRecipeList2Layout.createSequentialGroup()
                                 .addGroup(jPanelRecipeList2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                                     .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanelRecipeList2Layout.createSequentialGroup()
-                                        .addComponent(lblRecipeTitle2)
+                                        .addGroup(jPanelRecipeList2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                            .addComponent(lblRecipeTitle2)
+                                            .addComponent(lblVisit2))
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                         .addComponent(lblRecipeGrade2)
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                         .addGroup(jPanelRecipeList2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                            .addComponent(lblRecipeWiter2)
+                                            .addComponent(lblRecipeWriter2)
                                             .addComponent(lblRecipeCreate2)))
                                     .addComponent(jPanelRecipeImg2, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                                 .addGap(6, 6, 6))
@@ -371,6 +411,8 @@ public class RecipeListFrame extends javax.swing.JFrame {
 
         lblRecipeCreate3.setText("작성날짜 : 2025.01.01");
 
+        lblVisit3.setText("조회수 : 0");
+
         javax.swing.GroupLayout jPanelRecipeList3Layout = new javax.swing.GroupLayout(jPanelRecipeList3);
         jPanelRecipeList3.setLayout(jPanelRecipeList3Layout);
         jPanelRecipeList3Layout.setHorizontalGroup(
@@ -383,11 +425,14 @@ public class RecipeListFrame extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanelRecipeList3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(lblRecipeGrade3)
-                    .addComponent(lblRecipeTitle3)
-                    .addGroup(jPanelRecipeList3Layout.createSequentialGroup()
-                        .addComponent(lblRecipeWriter3)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 303, Short.MAX_VALUE)
-                        .addComponent(lblRecipeCreate3)))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanelRecipeList3Layout.createSequentialGroup()
+                        .addGroup(jPanelRecipeList3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(lblRecipeWriter3)
+                            .addComponent(lblRecipeTitle3))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addGroup(jPanelRecipeList3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(lblRecipeCreate3)
+                            .addComponent(lblVisit3))))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(btnRecipeBook3)
                 .addContainerGap())
@@ -402,7 +447,9 @@ public class RecipeListFrame extends javax.swing.JFrame {
                         .addGroup(jPanelRecipeList3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                             .addComponent(jPanelRecipeOrder3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanelRecipeList3Layout.createSequentialGroup()
-                                .addComponent(lblRecipeTitle3)
+                                .addGroup(jPanelRecipeList3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                    .addComponent(lblRecipeTitle3)
+                                    .addComponent(lblVisit3))
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(lblRecipeGrade3)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -432,13 +479,7 @@ public class RecipeListFrame extends javax.swing.JFrame {
                 .addGroup(jPanelBodyLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jPanelRecipeList3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addGroup(jPanelBodyLayout.createSequentialGroup()
-                        .addGap(291, 291, 291)
-                        .addComponent(btnPrePage)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(lblCurrentPage)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(btnNextPage)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addGap(345, 634, Short.MAX_VALUE)
                         .addComponent(btnRecipeWrite))
                     .addComponent(jPanelRecipeList2, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(jPanelRecipeList1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -447,6 +488,14 @@ public class RecipeListFrame extends javax.swing.JFrame {
                         .addComponent(lblRecipe)
                         .addGap(0, 0, Short.MAX_VALUE)))
                 .addContainerGap())
+            .addGroup(jPanelBodyLayout.createSequentialGroup()
+                .addGap(314, 314, 314)
+                .addComponent(btnPrePage)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(lblCurrentPage)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(btnNextPage)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanelBodyLayout.setVerticalGroup(
             jPanelBodyLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -493,6 +542,106 @@ public class RecipeListFrame extends javax.swing.JFrame {
         this.dispose();
     }//GEN-LAST:event_btnLogoutActionPerformed
 
+    
+    // 다음 페이지 버튼 클릭 이벤트
+    private void nextPage() {
+        if (currentPage * itemsPerPage < results.length()) {
+            currentPage++;
+            RecipeRequest();
+        }
+    }
+
+    // 이전 페이지 버튼 클릭 이벤트
+    private void previousPage() {
+        if (currentPage > 1) {
+            currentPage--;
+            RecipeRequest();
+        }
+    }
+    
+    private void RecipeRequest() {
+        try {
+            // HttpClient 객체 생성
+            HttpClient client = HttpClient.newHttpClient();
+
+            //컴포넌트 보이게 초기화
+            jPanelRecipeList1.setVisible(true);
+            jPanelRecipeList2.setVisible(true);
+            jPanelRecipeList3.setVisible(true);
+
+
+            // 검색 요청 URL 생성
+            String url = "https://m4srikufjgyzqbwltnujr7zyae0zlnrv.lambda-url.ap-northeast-2.on.aws/getUserRecipe";
+
+            // HttpRequest 객체 생성
+            HttpRequest request = HttpRequest.newBuilder()
+                    .uri(URI.create(url)) // URL 설정
+                    .GET() // GET 요청 설정
+                    .header("Content-Type", "application/json") // Content-Type 헤더 추가
+                    .header("Authorization", "Bearer " + TokenUtil.loadUserInfo().getString("token")) // 토큰 추가
+                    .build();
+
+            // 요청을 보내고 응답 받기
+            HttpResponse<String> response = client.send(request, HttpResponse.BodyHandlers.ofString());
+
+            // 응답 상태 코드 확인
+            if (response.statusCode() == 200) {
+                // 응답 본문 가져오기
+                String responseBody = response.body();
+
+                // JSON 응답 파싱
+                JSONObject jsonResponse = new JSONObject(responseBody);
+                String resultStatus = jsonResponse.getString("result");
+
+                // 결과 상태 확인
+                if ("success".equals(resultStatus)) {
+                    // 배열 가져오기
+                    results = jsonResponse.getJSONArray("items");
+                    
+                    int start = (currentPage - 1) * itemsPerPage;
+                    int end = Math.min(start + itemsPerPage, results.length());
+
+                    for (int i = 0; i < end; i++) {
+                        if (i % 3 == 0) {
+                            lblRecipeTitle1.setText("제목: " + results.getJSONObject(i).getString("title"));
+                            lblRecipeWriter1.setText("작성자: " + results.getJSONObject(i).getString("name"));
+                            lblVisit1.setText("조회수: " + results.getJSONObject(i).getInt("visited"));
+                        } else if (i % 3 == 1) {
+                            lblRecipeTitle2.setText("제목: " + results.getJSONObject(i).getString("title"));
+                            lblRecipeWriter2.setText("작성자: " + results.getJSONObject(i).getString("name"));
+                            lblVisit2.setText("조회수: " + results.getJSONObject(i).getInt("visited"));
+                        } else if (i % 3 == 2) {
+                            lblRecipeTitle3.setText("제목: " + results.getJSONObject(i).getString("title"));
+                            lblRecipeWriter3.setText("작성자: " + results.getJSONObject(i).getString("name"));
+                            lblVisit3.setText("조회수: " + results.getJSONObject(i).getInt("visited"));
+                        }
+                    }
+
+                    if (end % 3 == 1) {
+                        jPanelRecipeList2.setVisible(false);
+                        jPanelRecipeList3.setVisible(false);
+                    } else if (end % 3 == 2) {
+                        jPanelRecipeList3.setVisible(false);
+                    }
+
+                    lblCurrentPage.setText(String.valueOf(currentPage)); // 현재 페이지 표시
+
+                } else {
+                    // 결과 상태가 실패인 경우
+                    JOptionPane.showMessageDialog(this, "불러오기 실패: 결과가 없습니다.", "정보", JOptionPane.INFORMATION_MESSAGE);
+                }
+            } else {
+                // 응답 상태 코드가 성공이 아닌 경우
+                JOptionPane.showMessageDialog(this, "불러오기 실패: 서버 오류 발생", "오류", JOptionPane.ERROR_MESSAGE);
+            }
+        } catch (Exception e) {
+            // 예외 발생 시 처리
+            e.printStackTrace();
+            JOptionPane.showMessageDialog(this, "불러오기 중 오류가 발생했습니다.", "오류", JOptionPane.ERROR_MESSAGE);
+        }
+    }
+    
+    
     private void btnSearchActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSearchActionPerformed
         // TODO add your handling code here:
         new SearchResultFrame().setVisible(true);
@@ -530,6 +679,16 @@ public class RecipeListFrame extends javax.swing.JFrame {
         new WriteRecipeFrame().setVisible(true);
     }//GEN-LAST:event_btnRecipeWriteActionPerformed
 
+    private void btnPrePageActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnPrePageActionPerformed
+        // TODO add your handling code here:
+        previousPage();
+    }//GEN-LAST:event_btnPrePageActionPerformed
+
+    private void btnNextPageActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnNextPageActionPerformed
+        // TODO add your handling code here:
+        nextPage();
+    }//GEN-LAST:event_btnNextPageActionPerformed
+
     public static void main(String args[]) {
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
         /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
@@ -553,15 +712,10 @@ public class RecipeListFrame extends javax.swing.JFrame {
         }
         //</editor-fold>
         
-        
-        List<String> items = new ArrayList<>();
-        for (int i = 1; i <= items.size(); i++) {
-            items.add("Item " + i);
-        }
 
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new SearchResultFrame().setVisible(true);
+                new RecipeListFrame().setVisible(true);
             }
         });
     }
@@ -603,9 +757,12 @@ public class RecipeListFrame extends javax.swing.JFrame {
     private javax.swing.JLabel lblRecipeTitle1;
     private javax.swing.JLabel lblRecipeTitle2;
     private javax.swing.JLabel lblRecipeTitle3;
-    private javax.swing.JLabel lblRecipeWiter1;
-    private javax.swing.JLabel lblRecipeWiter2;
+    private javax.swing.JLabel lblRecipeWriter1;
+    private javax.swing.JLabel lblRecipeWriter2;
     private javax.swing.JLabel lblRecipeWriter3;
+    private javax.swing.JLabel lblVisit1;
+    private javax.swing.JLabel lblVisit2;
+    private javax.swing.JLabel lblVisit3;
     private javax.swing.JTextField txtSearch;
     // End of variables declaration//GEN-END:variables
 }

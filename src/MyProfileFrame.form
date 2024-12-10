@@ -26,13 +26,13 @@
                               </Group>
                               <Group type="102" alignment="0" attributes="0">
                                   <EmptySpace min="-2" pref="61" max="-2" attributes="0"/>
-                                  <Component id="btnNameUpd" min="-2" max="-2" attributes="0"/>
+                                  <Component id="btnUpdName" min="-2" max="-2" attributes="0"/>
                               </Group>
                           </Group>
                       </Group>
                       <Group type="102" alignment="0" attributes="0">
                           <EmptySpace min="-2" pref="171" max="-2" attributes="0"/>
-                          <Component id="lblNameUpd" min="-2" max="-2" attributes="0"/>
+                          <Component id="lblUpdName" min="-2" max="-2" attributes="0"/>
                       </Group>
                   </Group>
                   <EmptySpace pref="105" max="32767" attributes="0"/>
@@ -43,7 +43,7 @@
           <Group type="103" groupAlignment="0" attributes="0">
               <Group type="102" alignment="0" attributes="0">
                   <EmptySpace min="-2" pref="49" max="-2" attributes="0"/>
-                  <Component id="lblNameUpd" min="-2" max="-2" attributes="0"/>
+                  <Component id="lblUpdName" min="-2" max="-2" attributes="0"/>
                   <EmptySpace type="separate" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
                       <Component id="lblNameBefore" alignment="3" min="-2" max="-2" attributes="0"/>
@@ -55,7 +55,7 @@
                       <Component id="txtNameAfter" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace type="separate" max="-2" attributes="0"/>
-                  <Component id="btnNameUpd" min="-2" max="-2" attributes="0"/>
+                  <Component id="btnUpdName" min="-2" max="-2" attributes="0"/>
                   <EmptySpace pref="79" max="32767" attributes="0"/>
               </Group>
           </Group>
@@ -79,12 +79,12 @@
         </Component>
         <Component class="javax.swing.JTextField" name="txtNameAfter">
         </Component>
-        <Component class="javax.swing.JButton" name="btnNameUpd">
+        <Component class="javax.swing.JButton" name="btnUpdName">
           <Properties>
             <Property name="text" type="java.lang.String" value="&#xbcc0;&#xacbd;"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JLabel" name="lblNameUpd">
+        <Component class="javax.swing.JLabel" name="lblUpdName">
           <Properties>
             <Property name="text" type="java.lang.String" value="&#xb2c9;&#xb124;&#xc784;"/>
           </Properties>
@@ -115,13 +115,13 @@
                               </Group>
                               <Group type="102" alignment="0" attributes="0">
                                   <EmptySpace min="-2" pref="61" max="-2" attributes="0"/>
-                                  <Component id="btnPhoneUpd" min="-2" max="-2" attributes="0"/>
+                                  <Component id="btnUpdPhone" min="-2" max="-2" attributes="0"/>
                               </Group>
                           </Group>
                       </Group>
                       <Group type="102" alignment="0" attributes="0">
                           <EmptySpace min="-2" pref="171" max="-2" attributes="0"/>
-                          <Component id="lblPhoneUpd" min="-2" max="-2" attributes="0"/>
+                          <Component id="lblUpdPhone" min="-2" max="-2" attributes="0"/>
                       </Group>
                   </Group>
                   <EmptySpace pref="105" max="32767" attributes="0"/>
@@ -132,7 +132,7 @@
           <Group type="103" groupAlignment="0" attributes="0">
               <Group type="102" alignment="0" attributes="0">
                   <EmptySpace min="-2" pref="49" max="-2" attributes="0"/>
-                  <Component id="lblPhoneUpd" min="-2" max="-2" attributes="0"/>
+                  <Component id="lblUpdPhone" min="-2" max="-2" attributes="0"/>
                   <EmptySpace type="separate" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
                       <Component id="lblPhoneBefore" alignment="3" min="-2" max="-2" attributes="0"/>
@@ -144,7 +144,7 @@
                       <Component id="txtPhoneAfter" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace type="separate" max="-2" attributes="0"/>
-                  <Component id="btnPhoneUpd" min="-2" max="-2" attributes="0"/>
+                  <Component id="btnUpdPhone" min="-2" max="-2" attributes="0"/>
                   <EmptySpace pref="79" max="32767" attributes="0"/>
               </Group>
           </Group>
@@ -158,7 +158,7 @@
         </Component>
         <Component class="javax.swing.JTextField" name="txtPhoneAfter">
         </Component>
-        <Component class="javax.swing.JButton" name="btnPhoneUpd">
+        <Component class="javax.swing.JButton" name="btnUpdPhone">
           <Properties>
             <Property name="text" type="java.lang.String" value="&#xbcc0;&#xacbd;"/>
           </Properties>
@@ -168,7 +168,7 @@
             <Property name="text" type="java.lang.String" value="&#xae30;&#xc874;"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JLabel" name="lblPhoneUpd">
+        <Component class="javax.swing.JLabel" name="lblUpdPhone">
           <Properties>
             <Property name="text" type="java.lang.String" value="&#xc804;&#xd654;&#xbc88;&#xd638;"/>
           </Properties>
@@ -267,7 +267,7 @@
           <Group type="102" alignment="0" attributes="0">
               <Component id="jPaneHeader" min="-2" pref="43" max="-2" attributes="0"/>
               <EmptySpace max="-2" attributes="0"/>
-              <Component id="jPanelBody" max="32767" attributes="0"/>
+              <Component id="jPanelBody" min="-2" max="-2" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -377,23 +377,44 @@
               <Component id="BookmarkAndReview" alignment="1" max="32767" attributes="0"/>
               <Group type="102" alignment="0" attributes="0">
                   <EmptySpace min="-2" pref="32" max="-2" attributes="0"/>
-                  <Group type="103" groupAlignment="0" attributes="0">
-                      <Component id="lblPhone" min="-2" max="-2" attributes="0"/>
-                      <Component id="lblName" min="-2" max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                      <Group type="102" attributes="0">
+                          <Component id="lblPhone" min="-2" max="-2" attributes="0"/>
+                          <EmptySpace type="separate" max="-2" attributes="0"/>
+                          <Component id="btnPhoneUpd" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <Group type="102" attributes="0">
+                          <Component id="lblName" min="-2" max="-2" attributes="0"/>
+                          <EmptySpace max="32767" attributes="0"/>
+                          <Component id="btnNameUpd" min="-2" max="-2" attributes="0"/>
+                      </Group>
                   </Group>
                   <EmptySpace max="32767" attributes="0"/>
+              </Group>
+              <Group type="102" alignment="1" attributes="0">
+                  <EmptySpace max="32767" attributes="0"/>
+                  <Component id="btnDel" min="-2" max="-2" attributes="0"/>
+                  <EmptySpace min="-2" pref="15" max="-2" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
         <DimensionLayout dim="1">
           <Group type="103" groupAlignment="0" attributes="0">
               <Group type="102" alignment="1" attributes="0">
-                  <EmptySpace min="-2" pref="34" max="-2" attributes="0"/>
-                  <Component id="lblName" min="-2" pref="17" max="-2" attributes="0"/>
+                  <EmptySpace min="-2" pref="31" max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="3" attributes="0">
+                      <Component id="lblName" alignment="3" min="-2" pref="17" max="-2" attributes="0"/>
+                      <Component id="btnNameUpd" alignment="3" min="-2" max="-2" attributes="0"/>
+                  </Group>
                   <EmptySpace type="separate" max="-2" attributes="0"/>
-                  <Component id="lblPhone" min="-2" pref="17" max="-2" attributes="0"/>
-                  <EmptySpace pref="102" max="32767" attributes="0"/>
-                  <Component id="BookmarkAndReview" min="-2" pref="429" max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="3" attributes="0">
+                      <Component id="lblPhone" alignment="3" min="-2" pref="17" max="-2" attributes="0"/>
+                      <Component id="btnPhoneUpd" alignment="3" min="-2" max="-2" attributes="0"/>
+                  </Group>
+                  <EmptySpace min="-2" pref="43" max="-2" attributes="0"/>
+                  <Component id="btnDel" min="-2" max="-2" attributes="0"/>
+                  <EmptySpace max="-2" attributes="0"/>
+                  <Component id="BookmarkAndReview" max="32767" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
@@ -415,15 +436,712 @@
               <Layout>
                 <DimensionLayout dim="0">
                   <Group type="103" groupAlignment="0" attributes="0">
-                      <EmptySpace min="0" pref="725" max="32767" attributes="0"/>
+                      <Group type="102" alignment="0" attributes="0">
+                          <EmptySpace min="-2" pref="321" max="-2" attributes="0"/>
+                          <Component id="btnBookPrePage" min="-2" max="-2" attributes="0"/>
+                          <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                          <Component id="lblBookCurrentPage" min="-2" max="-2" attributes="0"/>
+                          <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                          <Component id="btnBookNextPage" min="-2" max="-2" attributes="0"/>
+                          <EmptySpace max="32767" attributes="0"/>
+                      </Group>
+                      <Group type="102" attributes="0">
+                          <EmptySpace max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="0" attributes="0">
+                              <Component id="jPanelRecipeList1" alignment="0" max="32767" attributes="0"/>
+                              <Component id="jPanelRecipeList2" alignment="0" max="32767" attributes="0"/>
+                              <Component id="jPanelRecipeList3" alignment="0" max="32767" attributes="0"/>
+                              <Component id="jPanelRecipeList4" alignment="0" max="32767" attributes="0"/>
+                          </Group>
+                          <EmptySpace max="-2" attributes="0"/>
+                      </Group>
                   </Group>
                 </DimensionLayout>
                 <DimensionLayout dim="1">
                   <Group type="103" groupAlignment="0" attributes="0">
-                      <EmptySpace min="0" pref="394" max="32767" attributes="0"/>
+                      <Group type="102" alignment="0" attributes="0">
+                          <EmptySpace max="-2" attributes="0"/>
+                          <Component id="jPanelRecipeList1" min="-2" max="-2" attributes="0"/>
+                          <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                          <Component id="jPanelRecipeList2" min="-2" max="-2" attributes="0"/>
+                          <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                          <Component id="jPanelRecipeList3" min="-2" max="-2" attributes="0"/>
+                          <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                          <Component id="jPanelRecipeList4" min="-2" max="-2" attributes="0"/>
+                          <EmptySpace pref="26" max="32767" attributes="0"/>
+                          <Group type="103" groupAlignment="3" attributes="0">
+                              <Component id="lblBookCurrentPage" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="btnBookNextPage" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="btnBookPrePage" alignment="3" min="-2" max="-2" attributes="0"/>
+                          </Group>
+                          <EmptySpace min="-2" pref="24" max="-2" attributes="0"/>
+                      </Group>
                   </Group>
                 </DimensionLayout>
               </Layout>
+              <SubComponents>
+                <Container class="javax.swing.JPanel" name="jPanelRecipeList1">
+                  <Properties>
+                    <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
+                      <Border info="org.netbeans.modules.form.compat2.border.LineBorderInfo">
+                        <LineBorder/>
+                      </Border>
+                    </Property>
+                  </Properties>
+                  <Events>
+                    <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="jPanelRecipeList1MouseClicked"/>
+                  </Events>
+
+                  <Layout>
+                    <DimensionLayout dim="0">
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Group type="102" alignment="0" attributes="0">
+                              <EmptySpace max="-2" attributes="0"/>
+                              <Component id="jPanelRecipeOrder1" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace max="-2" attributes="0"/>
+                              <Component id="jPanelRecipeImg1" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="0" attributes="0">
+                                  <Component id="lblRecipeGrade1" alignment="0" min="-2" max="-2" attributes="0"/>
+                                  <Group type="102" alignment="1" attributes="0">
+                                      <Group type="103" groupAlignment="0" attributes="0">
+                                          <Component id="lblRecipeWriter1" alignment="0" min="-2" max="-2" attributes="0"/>
+                                          <Component id="lblRecipeTitle1" alignment="0" min="-2" max="-2" attributes="0"/>
+                                      </Group>
+                                      <EmptySpace max="32767" attributes="0"/>
+                                      <Group type="103" groupAlignment="0" attributes="0">
+                                          <Component id="lblRecipeCreate1" alignment="0" min="-2" max="-2" attributes="0"/>
+                                          <Component id="lblVisit1" alignment="0" min="-2" max="-2" attributes="0"/>
+                                      </Group>
+                                  </Group>
+                              </Group>
+                              <EmptySpace max="-2" attributes="0"/>
+                              <Component id="btnRecipeBookCancel1" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace max="-2" attributes="0"/>
+                          </Group>
+                      </Group>
+                    </DimensionLayout>
+                    <DimensionLayout dim="1">
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Group type="102" alignment="0" attributes="0">
+                              <EmptySpace max="32767" attributes="0"/>
+                              <Group type="103" groupAlignment="0" attributes="0">
+                                  <Group type="102" alignment="1" attributes="0">
+                                      <Group type="103" groupAlignment="1" max="-2" attributes="0">
+                                          <Group type="102" alignment="0" attributes="0">
+                                              <Group type="103" groupAlignment="3" attributes="0">
+                                                  <Component id="lblRecipeTitle1" alignment="3" min="-2" max="-2" attributes="0"/>
+                                                  <Component id="lblVisit1" alignment="3" min="-2" max="-2" attributes="0"/>
+                                              </Group>
+                                              <EmptySpace max="-2" attributes="0"/>
+                                              <Component id="lblRecipeGrade1" min="-2" max="-2" attributes="0"/>
+                                              <EmptySpace max="32767" attributes="0"/>
+                                              <Group type="103" groupAlignment="3" attributes="0">
+                                                  <Component id="lblRecipeWriter1" alignment="3" min="-2" max="-2" attributes="0"/>
+                                                  <Component id="lblRecipeCreate1" alignment="3" min="-2" max="-2" attributes="0"/>
+                                              </Group>
+                                          </Group>
+                                          <Component id="jPanelRecipeImg1" alignment="0" min="-2" max="-2" attributes="0"/>
+                                          <Component id="btnRecipeBookCancel1" alignment="1" max="32767" attributes="0"/>
+                                      </Group>
+                                      <EmptySpace min="-2" pref="6" max="-2" attributes="0"/>
+                                  </Group>
+                                  <Group type="102" alignment="1" attributes="0">
+                                      <Component id="jPanelRecipeOrder1" min="-2" max="-2" attributes="0"/>
+                                      <EmptySpace max="-2" attributes="0"/>
+                                  </Group>
+                              </Group>
+                          </Group>
+                      </Group>
+                    </DimensionLayout>
+                  </Layout>
+                  <SubComponents>
+                    <Component class="javax.swing.JLabel" name="lblRecipeTitle1">
+                      <Properties>
+                        <Property name="text" type="java.lang.String" value="&#xc81c;&#xbaa9; : &#xae40;&#xce58;"/>
+                      </Properties>
+                    </Component>
+                    <Component class="javax.swing.JLabel" name="lblRecipeGrade1">
+                      <Properties>
+                        <Property name="text" type="java.lang.String" value="&#xd3c9;&#xc810; : 0.0"/>
+                      </Properties>
+                    </Component>
+                    <Container class="javax.swing.JPanel" name="jPanelRecipeOrder1">
+
+                      <Layout>
+                        <DimensionLayout dim="0">
+                          <Group type="103" groupAlignment="0" attributes="0">
+                              <Group type="102" alignment="0" attributes="0">
+                                  <EmptySpace min="-2" pref="16" max="-2" attributes="0"/>
+                                  <Component id="lblRecipeOrder1" min="-2" max="-2" attributes="0"/>
+                                  <EmptySpace pref="18" max="32767" attributes="0"/>
+                              </Group>
+                          </Group>
+                        </DimensionLayout>
+                        <DimensionLayout dim="1">
+                          <Group type="103" groupAlignment="0" attributes="0">
+                              <Group type="102" alignment="0" attributes="0">
+                                  <EmptySpace min="-2" pref="21" max="-2" attributes="0"/>
+                                  <Component id="lblRecipeOrder1" min="-2" max="-2" attributes="0"/>
+                                  <EmptySpace pref="25" max="32767" attributes="0"/>
+                              </Group>
+                          </Group>
+                        </DimensionLayout>
+                      </Layout>
+                      <SubComponents>
+                        <Component class="javax.swing.JLabel" name="lblRecipeOrder1">
+                          <Properties>
+                            <Property name="text" type="java.lang.String" value="1"/>
+                          </Properties>
+                        </Component>
+                      </SubComponents>
+                    </Container>
+                    <Container class="javax.swing.JPanel" name="jPanelRecipeImg1">
+                      <Properties>
+                        <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
+                          <Border info="org.netbeans.modules.form.compat2.border.LineBorderInfo">
+                            <LineBorder/>
+                          </Border>
+                        </Property>
+                      </Properties>
+
+                      <Layout>
+                        <DimensionLayout dim="0">
+                          <Group type="103" groupAlignment="0" attributes="0">
+                              <EmptySpace min="0" pref="58" max="32767" attributes="0"/>
+                          </Group>
+                        </DimensionLayout>
+                        <DimensionLayout dim="1">
+                          <Group type="103" groupAlignment="0" attributes="0">
+                              <EmptySpace min="0" pref="58" max="32767" attributes="0"/>
+                          </Group>
+                        </DimensionLayout>
+                      </Layout>
+                    </Container>
+                    <Component class="javax.swing.JLabel" name="lblRecipeWriter1">
+                      <Properties>
+                        <Property name="text" type="java.lang.String" value="&#xc791;&#xc131;&#xc790; : &#xd64d;&#xae38;&#xb3d9;"/>
+                      </Properties>
+                    </Component>
+                    <Component class="javax.swing.JButton" name="btnRecipeBookCancel1">
+                      <Properties>
+                        <Property name="text" type="java.lang.String" value="&#xcde8;&#xc18c;"/>
+                      </Properties>
+                    </Component>
+                    <Component class="javax.swing.JLabel" name="lblRecipeCreate1">
+                      <Properties>
+                        <Property name="text" type="java.lang.String" value="&#xc791;&#xc131;&#xb0a0;&#xc9dc; : 2025.01.01"/>
+                      </Properties>
+                    </Component>
+                    <Component class="javax.swing.JLabel" name="lblVisit1">
+                      <Properties>
+                        <Property name="text" type="java.lang.String" value="&#xc870;&#xd68c;&#xc218; : 0"/>
+                      </Properties>
+                    </Component>
+                  </SubComponents>
+                </Container>
+                <Container class="javax.swing.JPanel" name="jPanelRecipeList2">
+                  <Properties>
+                    <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
+                      <Border info="org.netbeans.modules.form.compat2.border.LineBorderInfo">
+                        <LineBorder/>
+                      </Border>
+                    </Property>
+                  </Properties>
+                  <Events>
+                    <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="jPanelRecipeList2MouseClicked"/>
+                  </Events>
+
+                  <Layout>
+                    <DimensionLayout dim="0">
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Group type="102" alignment="0" attributes="0">
+                              <EmptySpace max="-2" attributes="0"/>
+                              <Component id="jPanelRecipeOrder2" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace max="-2" attributes="0"/>
+                              <Component id="jPanelRecipeImg2" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="0" attributes="0">
+                                  <Component id="lblRecipeGrade2" alignment="0" min="-2" max="-2" attributes="0"/>
+                                  <Group type="102" alignment="1" attributes="0">
+                                      <Group type="103" groupAlignment="0" attributes="0">
+                                          <Component id="lblRecipeWriter2" alignment="0" min="-2" max="-2" attributes="0"/>
+                                          <Component id="lblRecipeTitle2" alignment="0" min="-2" max="-2" attributes="0"/>
+                                      </Group>
+                                      <EmptySpace pref="304" max="32767" attributes="0"/>
+                                      <Group type="103" groupAlignment="0" attributes="0">
+                                          <Component id="lblRecipeCreate2" alignment="0" min="-2" max="-2" attributes="0"/>
+                                          <Component id="lblVisit2" alignment="0" min="-2" max="-2" attributes="0"/>
+                                      </Group>
+                                  </Group>
+                              </Group>
+                              <EmptySpace max="-2" attributes="0"/>
+                              <Component id="btnRecipeBookCancel2" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace max="-2" attributes="0"/>
+                          </Group>
+                      </Group>
+                    </DimensionLayout>
+                    <DimensionLayout dim="1">
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Group type="102" alignment="0" attributes="0">
+                              <EmptySpace pref="8" max="32767" attributes="0"/>
+                              <Group type="103" groupAlignment="0" attributes="0">
+                                  <Group type="102" alignment="1" attributes="0">
+                                      <Group type="103" groupAlignment="1" max="-2" attributes="0">
+                                          <Group type="102" alignment="0" attributes="0">
+                                              <Group type="103" groupAlignment="3" attributes="0">
+                                                  <Component id="lblRecipeTitle2" alignment="3" min="-2" max="-2" attributes="0"/>
+                                                  <Component id="lblVisit2" alignment="3" min="-2" max="-2" attributes="0"/>
+                                              </Group>
+                                              <EmptySpace max="-2" attributes="0"/>
+                                              <Component id="lblRecipeGrade2" min="-2" max="-2" attributes="0"/>
+                                              <EmptySpace max="32767" attributes="0"/>
+                                              <Group type="103" groupAlignment="3" attributes="0">
+                                                  <Component id="lblRecipeWriter2" alignment="3" min="-2" max="-2" attributes="0"/>
+                                                  <Component id="lblRecipeCreate2" alignment="3" min="-2" max="-2" attributes="0"/>
+                                              </Group>
+                                          </Group>
+                                          <Component id="jPanelRecipeImg2" alignment="0" min="-2" max="-2" attributes="0"/>
+                                          <Component id="btnRecipeBookCancel2" alignment="1" max="32767" attributes="0"/>
+                                      </Group>
+                                      <EmptySpace min="-2" pref="6" max="-2" attributes="0"/>
+                                  </Group>
+                                  <Group type="102" alignment="1" attributes="0">
+                                      <Component id="jPanelRecipeOrder2" min="-2" max="-2" attributes="0"/>
+                                      <EmptySpace max="-2" attributes="0"/>
+                                  </Group>
+                              </Group>
+                          </Group>
+                      </Group>
+                    </DimensionLayout>
+                  </Layout>
+                  <SubComponents>
+                    <Component class="javax.swing.JLabel" name="lblRecipeTitle2">
+                      <Properties>
+                        <Property name="text" type="java.lang.String" value="&#xc81c;&#xbaa9; : &#xae40;&#xce58;"/>
+                      </Properties>
+                    </Component>
+                    <Component class="javax.swing.JLabel" name="lblRecipeGrade2">
+                      <Properties>
+                        <Property name="text" type="java.lang.String" value="&#xd3c9;&#xc810; : 0.0"/>
+                      </Properties>
+                    </Component>
+                    <Container class="javax.swing.JPanel" name="jPanelRecipeOrder2">
+
+                      <Layout>
+                        <DimensionLayout dim="0">
+                          <Group type="103" groupAlignment="0" attributes="0">
+                              <Group type="102" alignment="0" attributes="0">
+                                  <EmptySpace min="-2" pref="16" max="-2" attributes="0"/>
+                                  <Component id="lblRecipeOrder2" min="-2" max="-2" attributes="0"/>
+                                  <EmptySpace pref="18" max="32767" attributes="0"/>
+                              </Group>
+                          </Group>
+                        </DimensionLayout>
+                        <DimensionLayout dim="1">
+                          <Group type="103" groupAlignment="0" attributes="0">
+                              <Group type="102" alignment="0" attributes="0">
+                                  <EmptySpace min="-2" pref="21" max="-2" attributes="0"/>
+                                  <Component id="lblRecipeOrder2" min="-2" max="-2" attributes="0"/>
+                                  <EmptySpace pref="25" max="32767" attributes="0"/>
+                              </Group>
+                          </Group>
+                        </DimensionLayout>
+                      </Layout>
+                      <SubComponents>
+                        <Component class="javax.swing.JLabel" name="lblRecipeOrder2">
+                          <Properties>
+                            <Property name="text" type="java.lang.String" value="2"/>
+                          </Properties>
+                        </Component>
+                      </SubComponents>
+                    </Container>
+                    <Container class="javax.swing.JPanel" name="jPanelRecipeImg2">
+                      <Properties>
+                        <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
+                          <Border info="org.netbeans.modules.form.compat2.border.LineBorderInfo">
+                            <LineBorder/>
+                          </Border>
+                        </Property>
+                      </Properties>
+
+                      <Layout>
+                        <DimensionLayout dim="0">
+                          <Group type="103" groupAlignment="0" attributes="0">
+                              <EmptySpace min="0" pref="58" max="32767" attributes="0"/>
+                          </Group>
+                        </DimensionLayout>
+                        <DimensionLayout dim="1">
+                          <Group type="103" groupAlignment="0" attributes="0">
+                              <EmptySpace min="0" pref="58" max="32767" attributes="0"/>
+                          </Group>
+                        </DimensionLayout>
+                      </Layout>
+                    </Container>
+                    <Component class="javax.swing.JLabel" name="lblRecipeWriter2">
+                      <Properties>
+                        <Property name="text" type="java.lang.String" value="&#xc791;&#xc131;&#xc790; : &#xd64d;&#xae38;&#xb3d9;"/>
+                      </Properties>
+                    </Component>
+                    <Component class="javax.swing.JButton" name="btnRecipeBookCancel2">
+                      <Properties>
+                        <Property name="text" type="java.lang.String" value="&#xcde8;&#xc18c;"/>
+                      </Properties>
+                    </Component>
+                    <Component class="javax.swing.JLabel" name="lblRecipeCreate2">
+                      <Properties>
+                        <Property name="text" type="java.lang.String" value="&#xc791;&#xc131;&#xb0a0;&#xc9dc; : 2025.01.01"/>
+                      </Properties>
+                    </Component>
+                    <Component class="javax.swing.JLabel" name="lblVisit2">
+                      <Properties>
+                        <Property name="text" type="java.lang.String" value="&#xc870;&#xd68c;&#xc218; : 0"/>
+                      </Properties>
+                    </Component>
+                  </SubComponents>
+                </Container>
+                <Container class="javax.swing.JPanel" name="jPanelRecipeList3">
+                  <Properties>
+                    <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
+                      <Border info="org.netbeans.modules.form.compat2.border.LineBorderInfo">
+                        <LineBorder/>
+                      </Border>
+                    </Property>
+                  </Properties>
+                  <Events>
+                    <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="jPanelRecipeList3MouseClicked"/>
+                  </Events>
+
+                  <Layout>
+                    <DimensionLayout dim="0">
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Group type="102" alignment="0" attributes="0">
+                              <EmptySpace max="-2" attributes="0"/>
+                              <Component id="jPanelRecipeOrder3" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace max="-2" attributes="0"/>
+                              <Component id="jPanelRecipeImg3" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="0" attributes="0">
+                                  <Component id="lblRecipeGrade3" alignment="0" min="-2" max="-2" attributes="0"/>
+                                  <Group type="102" alignment="1" attributes="0">
+                                      <Group type="103" groupAlignment="0" attributes="0">
+                                          <Component id="lblRecipeWriter3" alignment="0" min="-2" max="-2" attributes="0"/>
+                                          <Component id="lblRecipeTitle3" alignment="0" min="-2" max="-2" attributes="0"/>
+                                      </Group>
+                                      <EmptySpace pref="304" max="32767" attributes="0"/>
+                                      <Group type="103" groupAlignment="0" attributes="0">
+                                          <Component id="lblRecipeCreate3" alignment="0" min="-2" max="-2" attributes="0"/>
+                                          <Component id="lblVisit3" alignment="0" min="-2" max="-2" attributes="0"/>
+                                      </Group>
+                                  </Group>
+                              </Group>
+                              <EmptySpace max="-2" attributes="0"/>
+                              <Component id="btnRecipeBookCancel3" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace max="-2" attributes="0"/>
+                          </Group>
+                      </Group>
+                    </DimensionLayout>
+                    <DimensionLayout dim="1">
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Group type="102" alignment="0" attributes="0">
+                              <EmptySpace max="32767" attributes="0"/>
+                              <Group type="103" groupAlignment="0" attributes="0">
+                                  <Group type="102" alignment="1" attributes="0">
+                                      <Group type="103" groupAlignment="1" max="-2" attributes="0">
+                                          <Group type="102" alignment="0" attributes="0">
+                                              <Group type="103" groupAlignment="3" attributes="0">
+                                                  <Component id="lblRecipeTitle3" alignment="3" min="-2" max="-2" attributes="0"/>
+                                                  <Component id="lblVisit3" alignment="3" min="-2" max="-2" attributes="0"/>
+                                              </Group>
+                                              <EmptySpace max="-2" attributes="0"/>
+                                              <Component id="lblRecipeGrade3" min="-2" max="-2" attributes="0"/>
+                                              <EmptySpace max="32767" attributes="0"/>
+                                              <Group type="103" groupAlignment="3" attributes="0">
+                                                  <Component id="lblRecipeWriter3" alignment="3" min="-2" max="-2" attributes="0"/>
+                                                  <Component id="lblRecipeCreate3" alignment="3" min="-2" max="-2" attributes="0"/>
+                                              </Group>
+                                          </Group>
+                                          <Component id="jPanelRecipeImg3" alignment="0" min="-2" max="-2" attributes="0"/>
+                                          <Component id="btnRecipeBookCancel3" alignment="1" max="32767" attributes="0"/>
+                                      </Group>
+                                      <EmptySpace min="-2" pref="6" max="-2" attributes="0"/>
+                                  </Group>
+                                  <Group type="102" alignment="1" attributes="0">
+                                      <Component id="jPanelRecipeOrder3" min="-2" max="-2" attributes="0"/>
+                                      <EmptySpace max="-2" attributes="0"/>
+                                  </Group>
+                              </Group>
+                          </Group>
+                      </Group>
+                    </DimensionLayout>
+                  </Layout>
+                  <SubComponents>
+                    <Component class="javax.swing.JLabel" name="lblRecipeTitle3">
+                      <Properties>
+                        <Property name="text" type="java.lang.String" value="&#xc81c;&#xbaa9; : &#xae40;&#xce58;"/>
+                      </Properties>
+                    </Component>
+                    <Component class="javax.swing.JLabel" name="lblRecipeGrade3">
+                      <Properties>
+                        <Property name="text" type="java.lang.String" value="&#xd3c9;&#xc810; : 0.0"/>
+                      </Properties>
+                    </Component>
+                    <Container class="javax.swing.JPanel" name="jPanelRecipeOrder3">
+
+                      <Layout>
+                        <DimensionLayout dim="0">
+                          <Group type="103" groupAlignment="0" attributes="0">
+                              <Group type="102" alignment="0" attributes="0">
+                                  <EmptySpace min="-2" pref="16" max="-2" attributes="0"/>
+                                  <Component id="lblRecipeOrder3" min="-2" max="-2" attributes="0"/>
+                                  <EmptySpace pref="18" max="32767" attributes="0"/>
+                              </Group>
+                          </Group>
+                        </DimensionLayout>
+                        <DimensionLayout dim="1">
+                          <Group type="103" groupAlignment="0" attributes="0">
+                              <Group type="102" alignment="0" attributes="0">
+                                  <EmptySpace min="-2" pref="21" max="-2" attributes="0"/>
+                                  <Component id="lblRecipeOrder3" min="-2" max="-2" attributes="0"/>
+                                  <EmptySpace pref="25" max="32767" attributes="0"/>
+                              </Group>
+                          </Group>
+                        </DimensionLayout>
+                      </Layout>
+                      <SubComponents>
+                        <Component class="javax.swing.JLabel" name="lblRecipeOrder3">
+                          <Properties>
+                            <Property name="text" type="java.lang.String" value="3"/>
+                          </Properties>
+                        </Component>
+                      </SubComponents>
+                    </Container>
+                    <Container class="javax.swing.JPanel" name="jPanelRecipeImg3">
+                      <Properties>
+                        <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
+                          <Border info="org.netbeans.modules.form.compat2.border.LineBorderInfo">
+                            <LineBorder/>
+                          </Border>
+                        </Property>
+                      </Properties>
+
+                      <Layout>
+                        <DimensionLayout dim="0">
+                          <Group type="103" groupAlignment="0" attributes="0">
+                              <EmptySpace min="0" pref="58" max="32767" attributes="0"/>
+                          </Group>
+                        </DimensionLayout>
+                        <DimensionLayout dim="1">
+                          <Group type="103" groupAlignment="0" attributes="0">
+                              <EmptySpace min="0" pref="58" max="32767" attributes="0"/>
+                          </Group>
+                        </DimensionLayout>
+                      </Layout>
+                    </Container>
+                    <Component class="javax.swing.JLabel" name="lblRecipeWriter3">
+                      <Properties>
+                        <Property name="text" type="java.lang.String" value="&#xc791;&#xc131;&#xc790; : &#xd64d;&#xae38;&#xb3d9;"/>
+                      </Properties>
+                    </Component>
+                    <Component class="javax.swing.JButton" name="btnRecipeBookCancel3">
+                      <Properties>
+                        <Property name="text" type="java.lang.String" value="&#xcde8;&#xc18c;"/>
+                      </Properties>
+                    </Component>
+                    <Component class="javax.swing.JLabel" name="lblRecipeCreate3">
+                      <Properties>
+                        <Property name="text" type="java.lang.String" value="&#xc791;&#xc131;&#xb0a0;&#xc9dc; : 2025.01.01"/>
+                      </Properties>
+                    </Component>
+                    <Component class="javax.swing.JLabel" name="lblVisit3">
+                      <Properties>
+                        <Property name="text" type="java.lang.String" value="&#xc870;&#xd68c;&#xc218; : 0"/>
+                      </Properties>
+                    </Component>
+                  </SubComponents>
+                </Container>
+                <Component class="javax.swing.JLabel" name="lblBookCurrentPage">
+                  <Properties>
+                    <Property name="text" type="java.lang.String" value="1"/>
+                  </Properties>
+                </Component>
+                <Component class="javax.swing.JButton" name="btnBookNextPage">
+                  <Properties>
+                    <Property name="text" type="java.lang.String" value="&gt;"/>
+                  </Properties>
+                  <Events>
+                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnBookNextPageActionPerformed"/>
+                  </Events>
+                </Component>
+                <Component class="javax.swing.JButton" name="btnBookPrePage">
+                  <Properties>
+                    <Property name="text" type="java.lang.String" value="&lt;"/>
+                  </Properties>
+                  <Events>
+                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnBookPrePageActionPerformed"/>
+                  </Events>
+                </Component>
+                <Container class="javax.swing.JPanel" name="jPanelRecipeList4">
+                  <Properties>
+                    <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
+                      <Border info="org.netbeans.modules.form.compat2.border.LineBorderInfo">
+                        <LineBorder/>
+                      </Border>
+                    </Property>
+                  </Properties>
+                  <Events>
+                    <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="jPanelRecipeList4MouseClicked"/>
+                  </Events>
+
+                  <Layout>
+                    <DimensionLayout dim="0">
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Group type="102" alignment="0" attributes="0">
+                              <EmptySpace max="-2" attributes="0"/>
+                              <Component id="jPanelRecipeOrder4" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace max="-2" attributes="0"/>
+                              <Component id="jPanelRecipeImg4" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="0" attributes="0">
+                                  <Component id="lblRecipeGrade4" alignment="0" min="-2" max="-2" attributes="0"/>
+                                  <Group type="102" alignment="1" attributes="0">
+                                      <Group type="103" groupAlignment="0" attributes="0">
+                                          <Component id="lblRecipeWriter4" alignment="0" min="-2" max="-2" attributes="0"/>
+                                          <Component id="lblRecipeTitle4" alignment="0" min="-2" max="-2" attributes="0"/>
+                                      </Group>
+                                      <EmptySpace pref="304" max="32767" attributes="0"/>
+                                      <Group type="103" groupAlignment="0" attributes="0">
+                                          <Component id="lblRecipeCreate4" alignment="0" min="-2" max="-2" attributes="0"/>
+                                          <Component id="lblVisit4" alignment="0" min="-2" max="-2" attributes="0"/>
+                                      </Group>
+                                  </Group>
+                              </Group>
+                              <EmptySpace max="-2" attributes="0"/>
+                              <Component id="btnRecipeBookCancel4" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace max="-2" attributes="0"/>
+                          </Group>
+                      </Group>
+                    </DimensionLayout>
+                    <DimensionLayout dim="1">
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Group type="102" alignment="0" attributes="0">
+                              <EmptySpace max="32767" attributes="0"/>
+                              <Group type="103" groupAlignment="0" attributes="0">
+                                  <Group type="102" alignment="1" attributes="0">
+                                      <Group type="103" groupAlignment="1" max="-2" attributes="0">
+                                          <Group type="102" alignment="0" attributes="0">
+                                              <Group type="103" groupAlignment="3" attributes="0">
+                                                  <Component id="lblRecipeTitle4" alignment="3" min="-2" max="-2" attributes="0"/>
+                                                  <Component id="lblVisit4" alignment="3" min="-2" max="-2" attributes="0"/>
+                                              </Group>
+                                              <EmptySpace max="-2" attributes="0"/>
+                                              <Component id="lblRecipeGrade4" min="-2" max="-2" attributes="0"/>
+                                              <EmptySpace max="32767" attributes="0"/>
+                                              <Group type="103" groupAlignment="3" attributes="0">
+                                                  <Component id="lblRecipeWriter4" alignment="3" min="-2" max="-2" attributes="0"/>
+                                                  <Component id="lblRecipeCreate4" alignment="3" min="-2" max="-2" attributes="0"/>
+                                              </Group>
+                                          </Group>
+                                          <Component id="jPanelRecipeImg4" alignment="0" min="-2" max="-2" attributes="0"/>
+                                          <Component id="btnRecipeBookCancel4" alignment="1" max="32767" attributes="0"/>
+                                      </Group>
+                                      <EmptySpace min="-2" pref="6" max="-2" attributes="0"/>
+                                  </Group>
+                                  <Group type="102" alignment="1" attributes="0">
+                                      <Component id="jPanelRecipeOrder4" min="-2" max="-2" attributes="0"/>
+                                      <EmptySpace max="-2" attributes="0"/>
+                                  </Group>
+                              </Group>
+                          </Group>
+                      </Group>
+                    </DimensionLayout>
+                  </Layout>
+                  <SubComponents>
+                    <Component class="javax.swing.JLabel" name="lblRecipeTitle4">
+                      <Properties>
+                        <Property name="text" type="java.lang.String" value="&#xc81c;&#xbaa9; : &#xae40;&#xce58;"/>
+                      </Properties>
+                    </Component>
+                    <Component class="javax.swing.JLabel" name="lblRecipeGrade4">
+                      <Properties>
+                        <Property name="text" type="java.lang.String" value="&#xd3c9;&#xc810; : 0.0"/>
+                      </Properties>
+                    </Component>
+                    <Container class="javax.swing.JPanel" name="jPanelRecipeOrder4">
+
+                      <Layout>
+                        <DimensionLayout dim="0">
+                          <Group type="103" groupAlignment="0" attributes="0">
+                              <Group type="102" alignment="0" attributes="0">
+                                  <EmptySpace min="-2" pref="16" max="-2" attributes="0"/>
+                                  <Component id="lblRecipeOrder4" min="-2" max="-2" attributes="0"/>
+                                  <EmptySpace pref="18" max="32767" attributes="0"/>
+                              </Group>
+                          </Group>
+                        </DimensionLayout>
+                        <DimensionLayout dim="1">
+                          <Group type="103" groupAlignment="0" attributes="0">
+                              <Group type="102" alignment="0" attributes="0">
+                                  <EmptySpace min="-2" pref="21" max="-2" attributes="0"/>
+                                  <Component id="lblRecipeOrder4" min="-2" max="-2" attributes="0"/>
+                                  <EmptySpace pref="25" max="32767" attributes="0"/>
+                              </Group>
+                          </Group>
+                        </DimensionLayout>
+                      </Layout>
+                      <SubComponents>
+                        <Component class="javax.swing.JLabel" name="lblRecipeOrder4">
+                          <Properties>
+                            <Property name="text" type="java.lang.String" value="4"/>
+                          </Properties>
+                        </Component>
+                      </SubComponents>
+                    </Container>
+                    <Container class="javax.swing.JPanel" name="jPanelRecipeImg4">
+                      <Properties>
+                        <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
+                          <Border info="org.netbeans.modules.form.compat2.border.LineBorderInfo">
+                            <LineBorder/>
+                          </Border>
+                        </Property>
+                      </Properties>
+
+                      <Layout>
+                        <DimensionLayout dim="0">
+                          <Group type="103" groupAlignment="0" attributes="0">
+                              <EmptySpace min="0" pref="58" max="32767" attributes="0"/>
+                          </Group>
+                        </DimensionLayout>
+                        <DimensionLayout dim="1">
+                          <Group type="103" groupAlignment="0" attributes="0">
+                              <EmptySpace min="0" pref="58" max="32767" attributes="0"/>
+                          </Group>
+                        </DimensionLayout>
+                      </Layout>
+                    </Container>
+                    <Component class="javax.swing.JLabel" name="lblRecipeWriter4">
+                      <Properties>
+                        <Property name="text" type="java.lang.String" value="&#xc791;&#xc131;&#xc790; : &#xd64d;&#xae38;&#xb3d9;"/>
+                      </Properties>
+                    </Component>
+                    <Component class="javax.swing.JButton" name="btnRecipeBookCancel4">
+                      <Properties>
+                        <Property name="text" type="java.lang.String" value="&#xcde8;&#xc18c;"/>
+                      </Properties>
+                    </Component>
+                    <Component class="javax.swing.JLabel" name="lblRecipeCreate4">
+                      <Properties>
+                        <Property name="text" type="java.lang.String" value="&#xc791;&#xc131;&#xb0a0;&#xc9dc; : 2025.01.01"/>
+                      </Properties>
+                    </Component>
+                    <Component class="javax.swing.JLabel" name="lblVisit4">
+                      <Properties>
+                        <Property name="text" type="java.lang.String" value="&#xc870;&#xd68c;&#xc218; : 0"/>
+                      </Properties>
+                    </Component>
+                  </SubComponents>
+                </Container>
+              </SubComponents>
             </Container>
             <Container class="javax.swing.JPanel" name="jPanelReview">
               <Constraints>
@@ -437,26 +1155,410 @@
               <Layout>
                 <DimensionLayout dim="0">
                   <Group type="103" groupAlignment="0" attributes="0">
-                      <EmptySpace min="0" pref="725" max="32767" attributes="0"/>
+                      <Group type="102" attributes="0">
+                          <EmptySpace max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="0" attributes="0">
+                              <Component id="jScrollPaneReview1" max="32767" attributes="0"/>
+                              <Group type="102" alignment="0" attributes="0">
+                                  <Component id="lblReviewGrade1" min="-2" max="-2" attributes="0"/>
+                                  <EmptySpace max="32767" attributes="0"/>
+                                  <Component id="lblReviewCreate1" min="-2" pref="62" max="-2" attributes="0"/>
+                                  <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                                  <Component id="btnToReview1" min="-2" max="-2" attributes="0"/>
+                              </Group>
+                              <Component id="jScrollPaneReview2" alignment="0" pref="713" max="32767" attributes="0"/>
+                              <Group type="102" alignment="0" attributes="0">
+                                  <Component id="lblReviewGrade2" min="-2" max="-2" attributes="0"/>
+                                  <EmptySpace max="32767" attributes="0"/>
+                                  <Component id="lblReviewCreate2" min="-2" pref="62" max="-2" attributes="0"/>
+                                  <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                                  <Component id="btnToReview2" min="-2" max="-2" attributes="0"/>
+                              </Group>
+                              <Component id="jScrollPaneReview3" alignment="0" pref="713" max="32767" attributes="0"/>
+                              <Group type="102" alignment="0" attributes="0">
+                                  <Component id="lblReviewGrade3" min="-2" max="-2" attributes="0"/>
+                                  <EmptySpace max="32767" attributes="0"/>
+                                  <Component id="lblReviewCreate3" min="-2" pref="62" max="-2" attributes="0"/>
+                                  <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                                  <Component id="btnToReview3" min="-2" max="-2" attributes="0"/>
+                              </Group>
+                          </Group>
+                          <EmptySpace max="-2" attributes="0"/>
+                      </Group>
+                      <Group type="102" alignment="0" attributes="0">
+                          <EmptySpace min="-2" pref="318" max="-2" attributes="0"/>
+                          <Component id="btnReviewPrePage" min="-2" max="-2" attributes="0"/>
+                          <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                          <Component id="lblReviewCurrentPage" min="-2" max="-2" attributes="0"/>
+                          <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                          <Component id="btnReviewNextPage" min="-2" max="-2" attributes="0"/>
+                          <EmptySpace max="32767" attributes="0"/>
+                      </Group>
                   </Group>
                 </DimensionLayout>
                 <DimensionLayout dim="1">
                   <Group type="103" groupAlignment="0" attributes="0">
-                      <EmptySpace min="0" pref="394" max="32767" attributes="0"/>
+                      <Group type="102" alignment="0" attributes="0">
+                          <EmptySpace max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="3" attributes="0">
+                              <Component id="lblReviewCreate1" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="lblReviewGrade1" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="btnToReview1" alignment="3" min="-2" max="-2" attributes="0"/>
+                          </Group>
+                          <EmptySpace max="-2" attributes="0"/>
+                          <Component id="jScrollPaneReview1" min="-2" max="-2" attributes="0"/>
+                          <EmptySpace max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="3" attributes="0">
+                              <Component id="lblReviewCreate2" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="lblReviewGrade2" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="btnToReview2" alignment="3" min="-2" max="-2" attributes="0"/>
+                          </Group>
+                          <EmptySpace max="-2" attributes="0"/>
+                          <Component id="jScrollPaneReview2" min="-2" max="-2" attributes="0"/>
+                          <EmptySpace max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="3" attributes="0">
+                              <Component id="lblReviewCreate3" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="lblReviewGrade3" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="btnToReview3" alignment="3" min="-2" max="-2" attributes="0"/>
+                          </Group>
+                          <EmptySpace max="-2" attributes="0"/>
+                          <Component id="jScrollPaneReview3" min="-2" max="-2" attributes="0"/>
+                          <EmptySpace type="separate" max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="3" attributes="0">
+                              <Component id="lblReviewCurrentPage" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="btnReviewNextPage" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="btnReviewPrePage" alignment="3" min="-2" max="-2" attributes="0"/>
+                          </Group>
+                          <EmptySpace max="32767" attributes="0"/>
+                      </Group>
                   </Group>
                 </DimensionLayout>
               </Layout>
+              <SubComponents>
+                <Container class="javax.swing.JScrollPane" name="jScrollPaneReview1">
+                  <AuxValues>
+                    <AuxValue name="autoScrollPane" type="java.lang.Boolean" value="true"/>
+                  </AuxValues>
+
+                  <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
+                  <SubComponents>
+                    <Component class="javax.swing.JTextArea" name="jTextAreaReview1">
+                      <Properties>
+                        <Property name="columns" type="int" value="20"/>
+                        <Property name="rows" type="int" value="5"/>
+                      </Properties>
+                    </Component>
+                  </SubComponents>
+                </Container>
+                <Component class="javax.swing.JLabel" name="lblReviewCreate1">
+                  <Properties>
+                    <Property name="text" type="java.lang.String" value="2025.01.01"/>
+                  </Properties>
+                </Component>
+                <Component class="javax.swing.JLabel" name="lblReviewGrade1">
+                  <Properties>
+                    <Property name="text" type="java.lang.String" value="&#xc810;&#xc218; : 5"/>
+                  </Properties>
+                </Component>
+                <Component class="javax.swing.JButton" name="btnToReview1">
+                  <Properties>
+                    <Property name="text" type="java.lang.String" value="&#xae00;&#xb85c; &#xc774;&#xb3d9;"/>
+                  </Properties>
+                </Component>
+                <Component class="javax.swing.JButton" name="btnToReview2">
+                  <Properties>
+                    <Property name="text" type="java.lang.String" value="&#xae00;&#xb85c; &#xc774;&#xb3d9;"/>
+                  </Properties>
+                </Component>
+                <Container class="javax.swing.JScrollPane" name="jScrollPaneReview2">
+                  <AuxValues>
+                    <AuxValue name="autoScrollPane" type="java.lang.Boolean" value="true"/>
+                  </AuxValues>
+
+                  <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
+                  <SubComponents>
+                    <Component class="javax.swing.JTextArea" name="jTextAreaReview2">
+                      <Properties>
+                        <Property name="columns" type="int" value="20"/>
+                        <Property name="rows" type="int" value="5"/>
+                      </Properties>
+                    </Component>
+                  </SubComponents>
+                </Container>
+                <Component class="javax.swing.JLabel" name="lblReviewCreate2">
+                  <Properties>
+                    <Property name="text" type="java.lang.String" value="2025.01.01"/>
+                  </Properties>
+                </Component>
+                <Component class="javax.swing.JLabel" name="lblReviewGrade2">
+                  <Properties>
+                    <Property name="text" type="java.lang.String" value="&#xc810;&#xc218; : 5"/>
+                  </Properties>
+                </Component>
+                <Component class="javax.swing.JButton" name="btnToReview3">
+                  <Properties>
+                    <Property name="text" type="java.lang.String" value="&#xae00;&#xb85c; &#xc774;&#xb3d9;"/>
+                  </Properties>
+                </Component>
+                <Container class="javax.swing.JScrollPane" name="jScrollPaneReview3">
+                  <AuxValues>
+                    <AuxValue name="autoScrollPane" type="java.lang.Boolean" value="true"/>
+                  </AuxValues>
+
+                  <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
+                  <SubComponents>
+                    <Component class="javax.swing.JTextArea" name="jTextAreaReview3">
+                      <Properties>
+                        <Property name="columns" type="int" value="20"/>
+                        <Property name="rows" type="int" value="5"/>
+                      </Properties>
+                    </Component>
+                  </SubComponents>
+                </Container>
+                <Component class="javax.swing.JLabel" name="lblReviewCreate3">
+                  <Properties>
+                    <Property name="text" type="java.lang.String" value="2025.01.01"/>
+                  </Properties>
+                </Component>
+                <Component class="javax.swing.JLabel" name="lblReviewGrade3">
+                  <Properties>
+                    <Property name="text" type="java.lang.String" value="&#xc810;&#xc218; : 5"/>
+                  </Properties>
+                </Component>
+                <Component class="javax.swing.JButton" name="btnReviewPrePage">
+                  <Properties>
+                    <Property name="text" type="java.lang.String" value="&lt;"/>
+                  </Properties>
+                  <Events>
+                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnReviewPrePageActionPerformed"/>
+                  </Events>
+                </Component>
+                <Component class="javax.swing.JLabel" name="lblReviewCurrentPage">
+                  <Properties>
+                    <Property name="text" type="java.lang.String" value="1"/>
+                  </Properties>
+                </Component>
+                <Component class="javax.swing.JButton" name="btnReviewNextPage">
+                  <Properties>
+                    <Property name="text" type="java.lang.String" value="&gt;"/>
+                  </Properties>
+                  <Events>
+                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnReviewNextPageActionPerformed"/>
+                  </Events>
+                </Component>
+              </SubComponents>
+            </Container>
+            <Container class="javax.swing.JPanel" name="jPanelComment">
+              <Constraints>
+                <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout" value="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout$JTabbedPaneConstraintsDescription">
+                  <JTabbedPaneConstraints tabName="&#xb0b4;&#xac00; &#xc4f4; &#xb313;&#xae00;">
+                    <Property name="tabTitle" type="java.lang.String" value="&#xb0b4;&#xac00; &#xc4f4; &#xb313;&#xae00;"/>
+                  </JTabbedPaneConstraints>
+                </Constraint>
+              </Constraints>
+
+              <Layout>
+                <DimensionLayout dim="0">
+                  <Group type="103" groupAlignment="0" attributes="0">
+                      <Group type="102" alignment="0" attributes="0">
+                          <EmptySpace max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="0" attributes="0">
+                              <Component id="jScrollPaneComm1" alignment="0" max="32767" attributes="0"/>
+                              <Component id="jScrollPaneComm2" alignment="0" pref="713" max="32767" attributes="0"/>
+                              <Component id="jScrollPaneComm3" alignment="0" pref="713" max="32767" attributes="0"/>
+                              <Group type="102" alignment="1" attributes="0">
+                                  <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+                                  <Group type="103" groupAlignment="0" attributes="0">
+                                      <Group type="102" alignment="1" attributes="0">
+                                          <Component id="lblCommCreate3" min="-2" pref="62" max="-2" attributes="0"/>
+                                          <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                                          <Component id="btnToComm3" min="-2" max="-2" attributes="0"/>
+                                      </Group>
+                                      <Group type="102" alignment="1" attributes="0">
+                                          <Component id="lblCommCreate1" min="-2" pref="62" max="-2" attributes="0"/>
+                                          <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                                          <Component id="btnToComm1" min="-2" max="-2" attributes="0"/>
+                                      </Group>
+                                      <Group type="102" alignment="1" attributes="0">
+                                          <Component id="lblCommCreate2" min="-2" pref="62" max="-2" attributes="0"/>
+                                          <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                                          <Component id="btnToComm2" min="-2" max="-2" attributes="0"/>
+                                      </Group>
+                                  </Group>
+                              </Group>
+                          </Group>
+                          <EmptySpace max="-2" attributes="0"/>
+                      </Group>
+                      <Group type="102" alignment="0" attributes="0">
+                          <EmptySpace min="-2" pref="318" max="-2" attributes="0"/>
+                          <Component id="btnCommPrePage" min="-2" max="-2" attributes="0"/>
+                          <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                          <Component id="lblCommCurrentPage" min="-2" max="-2" attributes="0"/>
+                          <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                          <Component id="btnCommNextPage" min="-2" max="-2" attributes="0"/>
+                          <EmptySpace max="32767" attributes="0"/>
+                      </Group>
+                  </Group>
+                </DimensionLayout>
+                <DimensionLayout dim="1">
+                  <Group type="103" groupAlignment="0" attributes="0">
+                      <Group type="102" alignment="0" attributes="0">
+                          <EmptySpace max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="3" attributes="0">
+                              <Component id="lblCommCreate1" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="btnToComm1" alignment="3" min="-2" max="-2" attributes="0"/>
+                          </Group>
+                          <EmptySpace max="-2" attributes="0"/>
+                          <Component id="jScrollPaneComm1" min="-2" max="-2" attributes="0"/>
+                          <EmptySpace max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="3" attributes="0">
+                              <Component id="lblCommCreate2" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="btnToComm2" alignment="3" min="-2" max="-2" attributes="0"/>
+                          </Group>
+                          <EmptySpace max="-2" attributes="0"/>
+                          <Component id="jScrollPaneComm2" min="-2" max="-2" attributes="0"/>
+                          <EmptySpace max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="3" attributes="0">
+                              <Component id="lblCommCreate3" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="btnToComm3" alignment="3" min="-2" max="-2" attributes="0"/>
+                          </Group>
+                          <EmptySpace max="-2" attributes="0"/>
+                          <Component id="jScrollPaneComm3" min="-2" max="-2" attributes="0"/>
+                          <EmptySpace type="separate" max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="3" attributes="0">
+                              <Component id="lblCommCurrentPage" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="btnCommNextPage" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="btnCommPrePage" alignment="3" min="-2" max="-2" attributes="0"/>
+                          </Group>
+                          <EmptySpace max="32767" attributes="0"/>
+                      </Group>
+                  </Group>
+                </DimensionLayout>
+              </Layout>
+              <SubComponents>
+                <Container class="javax.swing.JScrollPane" name="jScrollPaneComm1">
+                  <AuxValues>
+                    <AuxValue name="autoScrollPane" type="java.lang.Boolean" value="true"/>
+                  </AuxValues>
+
+                  <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
+                  <SubComponents>
+                    <Component class="javax.swing.JTextArea" name="jTextAreaComm1">
+                      <Properties>
+                        <Property name="columns" type="int" value="20"/>
+                        <Property name="rows" type="int" value="5"/>
+                      </Properties>
+                    </Component>
+                  </SubComponents>
+                </Container>
+                <Component class="javax.swing.JLabel" name="lblCommCreate1">
+                  <Properties>
+                    <Property name="text" type="java.lang.String" value="2025.01.01"/>
+                  </Properties>
+                </Component>
+                <Component class="javax.swing.JButton" name="btnToComm1">
+                  <Properties>
+                    <Property name="text" type="java.lang.String" value="&#xae00;&#xb85c; &#xc774;&#xb3d9;"/>
+                  </Properties>
+                </Component>
+                <Component class="javax.swing.JButton" name="btnToComm2">
+                  <Properties>
+                    <Property name="text" type="java.lang.String" value="&#xae00;&#xb85c; &#xc774;&#xb3d9;"/>
+                  </Properties>
+                </Component>
+                <Container class="javax.swing.JScrollPane" name="jScrollPaneComm2">
+                  <AuxValues>
+                    <AuxValue name="autoScrollPane" type="java.lang.Boolean" value="true"/>
+                  </AuxValues>
+
+                  <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
+                  <SubComponents>
+                    <Component class="javax.swing.JTextArea" name="jTextAreaComm2">
+                      <Properties>
+                        <Property name="columns" type="int" value="20"/>
+                        <Property name="rows" type="int" value="5"/>
+                      </Properties>
+                    </Component>
+                  </SubComponents>
+                </Container>
+                <Component class="javax.swing.JLabel" name="lblCommCreate2">
+                  <Properties>
+                    <Property name="text" type="java.lang.String" value="2025.01.01"/>
+                  </Properties>
+                </Component>
+                <Component class="javax.swing.JButton" name="btnToComm3">
+                  <Properties>
+                    <Property name="text" type="java.lang.String" value="&#xae00;&#xb85c; &#xc774;&#xb3d9;"/>
+                  </Properties>
+                </Component>
+                <Container class="javax.swing.JScrollPane" name="jScrollPaneComm3">
+                  <AuxValues>
+                    <AuxValue name="autoScrollPane" type="java.lang.Boolean" value="true"/>
+                  </AuxValues>
+
+                  <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
+                  <SubComponents>
+                    <Component class="javax.swing.JTextArea" name="jTextAreaComm3">
+                      <Properties>
+                        <Property name="columns" type="int" value="20"/>
+                        <Property name="rows" type="int" value="5"/>
+                      </Properties>
+                    </Component>
+                  </SubComponents>
+                </Container>
+                <Component class="javax.swing.JLabel" name="lblCommCreate3">
+                  <Properties>
+                    <Property name="text" type="java.lang.String" value="2025.01.01"/>
+                  </Properties>
+                </Component>
+                <Component class="javax.swing.JButton" name="btnCommPrePage">
+                  <Properties>
+                    <Property name="text" type="java.lang.String" value="&lt;"/>
+                  </Properties>
+                  <Events>
+                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnCommPrePageActionPerformed"/>
+                  </Events>
+                </Component>
+                <Component class="javax.swing.JLabel" name="lblCommCurrentPage">
+                  <Properties>
+                    <Property name="text" type="java.lang.String" value="1"/>
+                  </Properties>
+                </Component>
+                <Component class="javax.swing.JButton" name="btnCommNextPage">
+                  <Properties>
+                    <Property name="text" type="java.lang.String" value="&gt;"/>
+                  </Properties>
+                  <Events>
+                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnCommNextPageActionPerformed"/>
+                  </Events>
+                </Component>
+              </SubComponents>
             </Container>
           </SubComponents>
         </Container>
         <Component class="javax.swing.JLabel" name="lblName">
           <Properties>
-            <Property name="text" type="java.lang.String" value="&#xb2c9;&#xb124;&#xc784; : "/>
+            <Property name="text" type="java.lang.String" value="&#xb2c9;&#xb124;&#xc784; : &#xd64d;&#xae38;&#xb3d9;"/>
           </Properties>
         </Component>
         <Component class="javax.swing.JLabel" name="lblPhone">
           <Properties>
             <Property name="text" type="java.lang.String" value="&#xc804;&#xd654;&#xbc88;&#xd638; : 010-0000-0000"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JButton" name="btnPhoneUpd">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="&#xc218;&#xc815;"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JButton" name="btnNameUpd">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="&#xc218;&#xc815;"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JButton" name="btnDel">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="&#xd0c8;&#xd1f4;"/>
           </Properties>
         </Component>
       </SubComponents>

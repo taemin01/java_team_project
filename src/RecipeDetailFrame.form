@@ -1,6 +1,302 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 
 <Form version="1.3" maxVersion="1.9" type="org.netbeans.modules.form.forminfo.JFrameFormInfo">
+  <NonVisualComponents>
+    <Container class="javax.swing.JDialog" name="jDialogReviewUpd">
+
+      <Layout>
+        <DimensionLayout dim="0">
+          <Group type="103" groupAlignment="0" attributes="0">
+              <Group type="102" attributes="0">
+                  <EmptySpace max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="0" attributes="0">
+                      <Component id="jScrollPane1" max="32767" attributes="0"/>
+                      <Group type="102" alignment="1" attributes="0">
+                          <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+                          <Component id="btnUpdReview" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <Group type="102" alignment="0" attributes="0">
+                          <Component id="lblUpdGrade" min="-2" max="-2" attributes="0"/>
+                          <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                          <Component id="comboUpdGrade" min="-2" max="-2" attributes="0"/>
+                          <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+                      </Group>
+                  </Group>
+                  <EmptySpace max="-2" attributes="0"/>
+              </Group>
+              <Group type="102" alignment="0" attributes="0">
+                  <EmptySpace min="-2" pref="254" max="-2" attributes="0"/>
+                  <Component id="lblUpdReview" min="-2" max="-2" attributes="0"/>
+                  <EmptySpace pref="256" max="32767" attributes="0"/>
+              </Group>
+          </Group>
+        </DimensionLayout>
+        <DimensionLayout dim="1">
+          <Group type="103" groupAlignment="0" attributes="0">
+              <Group type="102" alignment="0" attributes="0">
+                  <EmptySpace max="-2" attributes="0"/>
+                  <Component id="lblUpdReview" min="-2" max="-2" attributes="0"/>
+                  <EmptySpace type="separate" max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="3" attributes="0">
+                      <Component id="comboUpdGrade" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="lblUpdGrade" alignment="3" min="-2" max="-2" attributes="0"/>
+                  </Group>
+                  <EmptySpace max="-2" attributes="0"/>
+                  <Component id="jScrollPane1" min="-2" max="-2" attributes="0"/>
+                  <EmptySpace type="separate" max="-2" attributes="0"/>
+                  <Component id="btnUpdReview" min="-2" max="-2" attributes="0"/>
+                  <EmptySpace pref="23" max="32767" attributes="0"/>
+              </Group>
+          </Group>
+        </DimensionLayout>
+      </Layout>
+      <SubComponents>
+        <Component class="javax.swing.JButton" name="btnUpdReview">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="&#xc218;&#xc815;&#xd558;&#xae30;"/>
+          </Properties>
+        </Component>
+        <Container class="javax.swing.JScrollPane" name="jScrollPane1">
+          <AuxValues>
+            <AuxValue name="autoScrollPane" type="java.lang.Boolean" value="true"/>
+          </AuxValues>
+
+          <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
+          <SubComponents>
+            <Component class="javax.swing.JTextArea" name="jTextAreaUpdateReview">
+              <Properties>
+                <Property name="columns" type="int" value="20"/>
+                <Property name="rows" type="int" value="5"/>
+              </Properties>
+            </Component>
+          </SubComponents>
+        </Container>
+        <Component class="javax.swing.JComboBox" name="comboUpdGrade">
+          <Properties>
+            <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
+              <StringArray count="5">
+                <StringItem index="0" value="5"/>
+                <StringItem index="1" value="4"/>
+                <StringItem index="2" value="3"/>
+                <StringItem index="3" value="2"/>
+                <StringItem index="4" value="1"/>
+              </StringArray>
+            </Property>
+          </Properties>
+          <AuxValues>
+            <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
+          </AuxValues>
+        </Component>
+        <Component class="javax.swing.JLabel" name="lblUpdGrade">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="&#xc810;&#xc218;"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JLabel" name="lblUpdReview">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="&#xb9ac;&#xbdf0; &#xc218;&#xc815;&#xd558;&#xae30;"/>
+          </Properties>
+        </Component>
+      </SubComponents>
+    </Container>
+    <Container class="javax.swing.JDialog" name="jDialogReviewDel">
+
+      <Layout>
+        <DimensionLayout dim="0">
+          <Group type="103" groupAlignment="0" attributes="0">
+              <Group type="102" attributes="0">
+                  <Group type="103" groupAlignment="0" attributes="0">
+                      <Group type="102" alignment="0" attributes="0">
+                          <EmptySpace min="-2" pref="158" max="-2" attributes="0"/>
+                          <Component id="lblDelReview" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <Group type="102" alignment="0" attributes="0">
+                          <EmptySpace min="-2" pref="144" max="-2" attributes="0"/>
+                          <Component id="lblDelReviewConfirm" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <Group type="102" alignment="0" attributes="0">
+                          <EmptySpace min="-2" pref="92" max="-2" attributes="0"/>
+                          <Component id="btnDelReviewYes" min="-2" pref="76" max="-2" attributes="0"/>
+                          <EmptySpace min="-2" pref="50" max="-2" attributes="0"/>
+                          <Component id="btnDelReviewNo" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                  </Group>
+                  <EmptySpace pref="110" max="32767" attributes="0"/>
+              </Group>
+          </Group>
+        </DimensionLayout>
+        <DimensionLayout dim="1">
+          <Group type="103" groupAlignment="0" attributes="0">
+              <Group type="102" alignment="0" attributes="0">
+                  <EmptySpace max="-2" attributes="0"/>
+                  <Component id="lblDelReview" min="-2" max="-2" attributes="0"/>
+                  <EmptySpace min="-2" pref="51" max="-2" attributes="0"/>
+                  <Component id="lblDelReviewConfirm" min="-2" max="-2" attributes="0"/>
+                  <EmptySpace min="-2" pref="54" max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="3" attributes="0">
+                      <Component id="btnDelReviewNo" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="btnDelReviewYes" alignment="3" min="-2" max="-2" attributes="0"/>
+                  </Group>
+                  <EmptySpace pref="42" max="32767" attributes="0"/>
+              </Group>
+          </Group>
+        </DimensionLayout>
+      </Layout>
+      <SubComponents>
+        <Component class="javax.swing.JLabel" name="lblDelReview">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="&#xb9ac;&#xbdf0; &#xc0ad;&#xc81c;&#xd558;&#xae30;"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JLabel" name="lblDelReviewConfirm">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="&#xc0ad;&#xc81c;&#xd558;&#xc2dc;&#xaca0;&#xc2b5;&#xb2c8;&#xae4c;?"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JButton" name="btnDelReviewYes">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="&#xc608;"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JButton" name="btnDelReviewNo">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="&#xc544;&#xb2c8;&#xc624;"/>
+          </Properties>
+        </Component>
+      </SubComponents>
+    </Container>
+    <Container class="javax.swing.JDialog" name="jDialogCommUpd">
+
+      <Layout>
+        <DimensionLayout dim="0">
+          <Group type="103" groupAlignment="0" attributes="0">
+              <Group type="102" attributes="0">
+                  <EmptySpace max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="0" attributes="0">
+                      <Component id="jScrollPane2" alignment="0" max="32767" attributes="0"/>
+                      <Group type="102" alignment="1" attributes="0">
+                          <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+                          <Component id="btnDelComm" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                  </Group>
+                  <EmptySpace max="-2" attributes="0"/>
+              </Group>
+              <Group type="102" alignment="1" attributes="0">
+                  <EmptySpace pref="247" max="32767" attributes="0"/>
+                  <Component id="jLabel1" min="-2" max="-2" attributes="0"/>
+                  <EmptySpace min="-2" pref="246" max="-2" attributes="0"/>
+              </Group>
+          </Group>
+        </DimensionLayout>
+        <DimensionLayout dim="1">
+          <Group type="103" groupAlignment="0" attributes="0">
+              <Group type="102" alignment="0" attributes="0">
+                  <EmptySpace max="-2" attributes="0"/>
+                  <Component id="jLabel1" min="-2" max="-2" attributes="0"/>
+                  <EmptySpace type="separate" max="-2" attributes="0"/>
+                  <Component id="jScrollPane2" min="-2" max="-2" attributes="0"/>
+                  <EmptySpace min="-2" pref="13" max="-2" attributes="0"/>
+                  <Component id="btnDelComm" min="-2" max="-2" attributes="0"/>
+                  <EmptySpace pref="57" max="32767" attributes="0"/>
+              </Group>
+          </Group>
+        </DimensionLayout>
+      </Layout>
+      <SubComponents>
+        <Container class="javax.swing.JScrollPane" name="jScrollPane2">
+          <AuxValues>
+            <AuxValue name="autoScrollPane" type="java.lang.Boolean" value="true"/>
+          </AuxValues>
+
+          <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
+          <SubComponents>
+            <Component class="javax.swing.JTextArea" name="jTextAreaUpdComm">
+              <Properties>
+                <Property name="columns" type="int" value="20"/>
+                <Property name="rows" type="int" value="5"/>
+              </Properties>
+            </Component>
+          </SubComponents>
+        </Container>
+        <Component class="javax.swing.JButton" name="btnDelComm">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="&#xc218;&#xc815;&#xd558;&#xae30;"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JLabel" name="jLabel1">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="&#xb313;&#xae00; &#xc218;&#xc815;&#xd558;&#xae30;"/>
+          </Properties>
+        </Component>
+      </SubComponents>
+    </Container>
+    <Container class="javax.swing.JDialog" name="jDialogCommDel">
+
+      <Layout>
+        <DimensionLayout dim="0">
+          <Group type="103" groupAlignment="0" attributes="0">
+              <Group type="102" alignment="0" attributes="0">
+                  <Group type="103" groupAlignment="0" attributes="0">
+                      <Group type="102" alignment="0" attributes="0">
+                          <EmptySpace min="-2" pref="158" max="-2" attributes="0"/>
+                          <Component id="lblDelComm" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <Group type="102" alignment="0" attributes="0">
+                          <EmptySpace min="-2" pref="144" max="-2" attributes="0"/>
+                          <Component id="lblDelCommConfirm" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <Group type="102" alignment="0" attributes="0">
+                          <EmptySpace min="-2" pref="92" max="-2" attributes="0"/>
+                          <Component id="btnDelCommYes" min="-2" pref="76" max="-2" attributes="0"/>
+                          <EmptySpace min="-2" pref="50" max="-2" attributes="0"/>
+                          <Component id="btnDelCommNo" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                  </Group>
+                  <EmptySpace pref="110" max="32767" attributes="0"/>
+              </Group>
+          </Group>
+        </DimensionLayout>
+        <DimensionLayout dim="1">
+          <Group type="103" groupAlignment="0" attributes="0">
+              <Group type="102" alignment="0" attributes="0">
+                  <EmptySpace max="-2" attributes="0"/>
+                  <Component id="lblDelComm" min="-2" max="-2" attributes="0"/>
+                  <EmptySpace min="-2" pref="51" max="-2" attributes="0"/>
+                  <Component id="lblDelCommConfirm" min="-2" max="-2" attributes="0"/>
+                  <EmptySpace min="-2" pref="54" max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="3" attributes="0">
+                      <Component id="btnDelCommNo" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="btnDelCommYes" alignment="3" min="-2" max="-2" attributes="0"/>
+                  </Group>
+                  <EmptySpace pref="48" max="32767" attributes="0"/>
+              </Group>
+          </Group>
+        </DimensionLayout>
+      </Layout>
+      <SubComponents>
+        <Component class="javax.swing.JLabel" name="lblDelCommConfirm">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="&#xc0ad;&#xc81c;&#xd558;&#xc2dc;&#xaca0;&#xc2b5;&#xb2c8;&#xae4c;?"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JButton" name="btnDelCommYes">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="&#xc608;"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JButton" name="btnDelCommNo">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="&#xc544;&#xb2c8;&#xc624;"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JLabel" name="lblDelComm">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="&#xb313;&#xae00; &#xc0ad;&#xc81c;&#xd558;&#xae30;"/>
+          </Properties>
+        </Component>
+      </SubComponents>
+    </Container>
+  </NonVisualComponents>
   <Properties>
     <Property name="defaultCloseOperation" type="int" value="3"/>
   </Properties>
@@ -198,7 +494,7 @@
                       </Group>
                       <Component id="jPanelImg" min="-2" max="-2" attributes="0"/>
                   </Group>
-                  <EmptySpace pref="12" max="32767" attributes="0"/>
+                  <EmptySpace pref="15" max="32767" attributes="0"/>
                   <Component id="lblNecess" min="-2" max="-2" attributes="0"/>
                   <EmptySpace max="-2" attributes="0"/>
                   <Component id="jScrollPaneNecess" min="-2" max="-2" attributes="0"/>
@@ -211,7 +507,7 @@
                   <EmptySpace max="-2" attributes="0"/>
                   <Component id="lblRefUrl" min="-2" max="-2" attributes="0"/>
                   <EmptySpace max="-2" attributes="0"/>
-                  <Component id="ReviewAndComment" pref="618" max="32767" attributes="0"/>
+                  <Component id="ReviewAndComment" max="32767" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
@@ -260,7 +556,7 @@
               <Layout>
                 <DimensionLayout dim="0">
                   <Group type="103" groupAlignment="0" attributes="0">
-                      <Group type="102" alignment="0" attributes="0">
+                      <Group type="102" attributes="0">
                           <EmptySpace max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="0" attributes="0">
                               <Group type="102" attributes="0">
@@ -288,36 +584,43 @@
                                           <Component id="lblReviewGrade3" min="-2" max="-2" attributes="0"/>
                                       </Group>
                                   </Group>
-                                  <EmptySpace max="32767" attributes="0"/>
+                                  <EmptySpace pref="453" max="32767" attributes="0"/>
                                   <Group type="103" groupAlignment="0" attributes="0">
                                       <Component id="lblReviewCreate1" alignment="1" min="-2" max="-2" attributes="0"/>
+                                      <Component id="lblReviewCreate2" alignment="1" min="-2" max="-2" attributes="0"/>
+                                      <Component id="lblReviewCreate3" alignment="1" min="-2" max="-2" attributes="0"/>
+                                  </Group>
+                              </Group>
+                              <Component id="jScrollPaneReviewWrite" alignment="0" max="32767" attributes="0"/>
+                              <Component id="jScrollPane1Review3" alignment="0" max="32767" attributes="0"/>
+                              <Component id="jScrollPaneReview2" alignment="0" max="32767" attributes="0"/>
+                              <Component id="jScrollPaneReview1" alignment="1" max="32767" attributes="0"/>
+                              <Group type="102" alignment="1" attributes="0">
+                                  <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+                                  <Group type="103" groupAlignment="0" attributes="0">
+                                      <Component id="btnReviewWrite" alignment="1" min="-2" max="-2" attributes="0"/>
                                       <Group type="102" alignment="1" attributes="0">
-                                          <Group type="103" groupAlignment="0" attributes="0">
-                                              <Component id="lblReviewCreate2" alignment="1" min="-2" max="-2" attributes="0"/>
-                                              <Component id="lblReviewCreate3" alignment="1" min="-2" max="-2" attributes="0"/>
-                                          </Group>
+                                          <Component id="btnReviewUpdForm1" min="-2" max="-2" attributes="0"/>
                                           <EmptySpace max="-2" attributes="0"/>
+                                          <Component id="btnReviewDelForm" min="-2" max="-2" attributes="0"/>
+                                      </Group>
+                                      <Group type="102" alignment="1" attributes="0">
+                                          <Component id="btnReviewUpdForm" min="-2" max="-2" attributes="0"/>
+                                          <EmptySpace max="-2" attributes="0"/>
+                                          <Component id="btnReviewDelForm2" min="-2" max="-2" attributes="0"/>
+                                      </Group>
+                                      <Group type="102" alignment="1" attributes="0">
+                                          <Component id="btnReviewUpdForm3" min="-2" max="-2" attributes="0"/>
+                                          <EmptySpace max="-2" attributes="0"/>
+                                          <Component id="btnReviewDelForm3" min="-2" max="-2" attributes="0"/>
                                       </Group>
                                   </Group>
                               </Group>
-                              <Group type="102" alignment="1" attributes="0">
-                                  <Group type="103" groupAlignment="1" attributes="0">
-                                      <Component id="jScrollPaneReviewWrite" alignment="0" max="32767" attributes="0"/>
-                                      <Component id="jScrollPane1Review3" alignment="0" max="32767" attributes="0"/>
-                                      <Component id="jScrollPaneReview2" alignment="0" max="32767" attributes="0"/>
-                                      <Component id="jScrollPaneReview1" alignment="1" max="32767" attributes="0"/>
-                                  </Group>
-                                  <EmptySpace max="-2" attributes="0"/>
-                              </Group>
                           </Group>
-                      </Group>
-                      <Group type="102" alignment="1" attributes="0">
-                          <EmptySpace max="32767" attributes="0"/>
-                          <Component id="btnReviewWrite" min="-2" max="-2" attributes="0"/>
                           <EmptySpace max="-2" attributes="0"/>
                       </Group>
                       <Group type="102" alignment="0" attributes="0">
-                          <EmptySpace min="-2" pref="311" max="-2" attributes="0"/>
+                          <EmptySpace min="-2" pref="324" max="-2" attributes="0"/>
                           <Component id="btnReviewPrePage" min="-2" max="-2" attributes="0"/>
                           <EmptySpace type="unrelated" max="-2" attributes="0"/>
                           <Component id="lblReviewCurrentPage" min="-2" max="-2" attributes="0"/>
@@ -340,6 +643,11 @@
                           <Component id="jScrollPaneReview1" min="-2" max="-2" attributes="0"/>
                           <EmptySpace max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="3" attributes="0">
+                              <Component id="btnReviewUpdForm1" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="btnReviewDelForm" alignment="3" min="-2" max="-2" attributes="0"/>
+                          </Group>
+                          <EmptySpace max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="3" attributes="0">
                               <Component id="lblReviewWriter2" alignment="3" min="-2" max="-2" attributes="0"/>
                               <Component id="lblReviewCreate2" alignment="3" min="-2" max="-2" attributes="0"/>
                               <Component id="lblReviewGrade2" alignment="3" min="-2" max="-2" attributes="0"/>
@@ -348,13 +656,23 @@
                           <Component id="jScrollPaneReview2" min="-2" max="-2" attributes="0"/>
                           <EmptySpace max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="3" attributes="0">
+                              <Component id="btnReviewUpdForm" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="btnReviewDelForm2" alignment="3" min="-2" max="-2" attributes="0"/>
+                          </Group>
+                          <EmptySpace max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="3" attributes="0">
                               <Component id="lblReviewWriter3" alignment="3" min="-2" max="-2" attributes="0"/>
                               <Component id="lblReviewCreate3" alignment="3" min="-2" max="-2" attributes="0"/>
                               <Component id="lblReviewGrade3" alignment="3" min="-2" max="-2" attributes="0"/>
                           </Group>
                           <EmptySpace max="-2" attributes="0"/>
                           <Component id="jScrollPane1Review3" min="-2" max="-2" attributes="0"/>
-                          <EmptySpace type="separate" max="-2" attributes="0"/>
+                          <EmptySpace max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="3" attributes="0">
+                              <Component id="btnReviewUpdForm3" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="btnReviewDelForm3" alignment="3" min="-2" max="-2" attributes="0"/>
+                          </Group>
+                          <EmptySpace min="-2" pref="1" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="3" attributes="0">
                               <Component id="comboReviewGradeWrtie" alignment="3" min="-2" max="-2" attributes="0"/>
                               <Component id="lblReviewWriterWrite" alignment="3" min="-2" max="-2" attributes="0"/>
@@ -362,9 +680,9 @@
                           </Group>
                           <EmptySpace max="-2" attributes="0"/>
                           <Component id="jScrollPaneReviewWrite" min="-2" max="-2" attributes="0"/>
-                          <EmptySpace max="-2" attributes="0"/>
+                          <EmptySpace type="unrelated" max="-2" attributes="0"/>
                           <Component id="btnReviewWrite" min="-2" max="-2" attributes="0"/>
-                          <EmptySpace type="separate" max="-2" attributes="0"/>
+                          <EmptySpace min="-2" pref="41" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="3" attributes="0">
                               <Component id="lblReviewCurrentPage" alignment="3" min="-2" max="-2" attributes="0"/>
                               <Component id="btnReviewNextPage" alignment="3" min="-2" max="-2" attributes="0"/>
@@ -530,6 +848,54 @@
                     <Property name="text" type="java.lang.String" value="&#xc810;&#xc218; :"/>
                   </Properties>
                 </Component>
+                <Component class="javax.swing.JButton" name="btnReviewUpdForm1">
+                  <Properties>
+                    <Property name="text" type="java.lang.String" value="&#xc218;&#xc815;"/>
+                  </Properties>
+                  <Events>
+                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnReviewUpdForm1ActionPerformed"/>
+                  </Events>
+                </Component>
+                <Component class="javax.swing.JButton" name="btnReviewDelForm">
+                  <Properties>
+                    <Property name="text" type="java.lang.String" value="&#xc0ad;&#xc81c;"/>
+                  </Properties>
+                  <Events>
+                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnReviewDelFormActionPerformed"/>
+                  </Events>
+                </Component>
+                <Component class="javax.swing.JButton" name="btnReviewUpdForm">
+                  <Properties>
+                    <Property name="text" type="java.lang.String" value="&#xc218;&#xc815;"/>
+                  </Properties>
+                  <Events>
+                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnReviewUpdFormActionPerformed"/>
+                  </Events>
+                </Component>
+                <Component class="javax.swing.JButton" name="btnReviewDelForm2">
+                  <Properties>
+                    <Property name="text" type="java.lang.String" value="&#xc0ad;&#xc81c;"/>
+                  </Properties>
+                  <Events>
+                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnReviewDelForm2ActionPerformed"/>
+                  </Events>
+                </Component>
+                <Component class="javax.swing.JButton" name="btnReviewUpdForm3">
+                  <Properties>
+                    <Property name="text" type="java.lang.String" value="&#xc218;&#xc815;"/>
+                  </Properties>
+                  <Events>
+                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnReviewUpdForm3ActionPerformed"/>
+                  </Events>
+                </Component>
+                <Component class="javax.swing.JButton" name="btnReviewDelForm3">
+                  <Properties>
+                    <Property name="text" type="java.lang.String" value="&#xc0ad;&#xc81c;"/>
+                  </Properties>
+                  <Events>
+                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnReviewDelForm3ActionPerformed"/>
+                  </Events>
+                </Component>
               </SubComponents>
             </Container>
             <Container class="javax.swing.JPanel" name="jPanelComment">
@@ -545,44 +911,57 @@
                 <DimensionLayout dim="0">
                   <Group type="103" groupAlignment="0" attributes="0">
                       <Group type="102" attributes="0">
+                          <EmptySpace max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="0" attributes="0">
+                              <Component id="jScrollPaneComm1" alignment="1" max="32767" attributes="0"/>
+                              <Component id="jScrollPaneComm2" alignment="0" max="32767" attributes="0"/>
                               <Group type="102" alignment="0" attributes="0">
-                                  <EmptySpace max="-2" attributes="0"/>
+                                  <Component id="lblCommWriter2" min="-2" max="-2" attributes="0"/>
+                                  <EmptySpace max="32767" attributes="0"/>
+                                  <Component id="lblCommCreate2" min="-2" max="-2" attributes="0"/>
+                              </Group>
+                              <Component id="jScrollPaneComm3" alignment="0" max="32767" attributes="0"/>
+                              <Group type="102" alignment="0" attributes="0">
+                                  <Component id="lblCommWriter3" min="-2" max="-2" attributes="0"/>
+                                  <EmptySpace max="32767" attributes="0"/>
+                                  <Component id="lblCommCreate3" min="-2" max="-2" attributes="0"/>
+                              </Group>
+                              <Group type="102" alignment="0" attributes="0">
+                                  <Component id="lblCommWriter1" min="-2" max="-2" attributes="0"/>
+                                  <EmptySpace max="32767" attributes="0"/>
+                                  <Component id="lblCommCreate1" min="-2" max="-2" attributes="0"/>
+                              </Group>
+                              <Group type="102" alignment="0" attributes="0">
+                                  <Component id="lblCommWriterWrite" min="-2" max="-2" attributes="0"/>
+                                  <EmptySpace min="642" pref="642" max="-2" attributes="0"/>
+                              </Group>
+                              <Component id="jScrollPaneCommWrite" alignment="0" max="32767" attributes="0"/>
+                              <Group type="102" alignment="1" attributes="0">
+                                  <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
                                   <Group type="103" groupAlignment="0" attributes="0">
-                                      <Component id="jScrollPaneComm2" alignment="0" pref="725" max="32767" attributes="0"/>
-                                      <Group type="102" alignment="0" attributes="0">
-                                          <Component id="lblCommWriter2" min="-2" max="-2" attributes="0"/>
-                                          <EmptySpace max="32767" attributes="0"/>
-                                          <Component id="lblCommCreate2" min="-2" max="-2" attributes="0"/>
+                                      <Group type="102" alignment="1" attributes="0">
+                                          <Component id="btnCommUpdForm3" min="-2" max="-2" attributes="0"/>
+                                          <EmptySpace max="-2" attributes="0"/>
+                                          <Component id="btnCommDelForm3" min="-2" max="-2" attributes="0"/>
                                       </Group>
-                                      <Component id="jScrollPaneComm3" alignment="0" max="32767" attributes="0"/>
-                                      <Group type="102" alignment="0" attributes="0">
-                                          <Component id="lblCommWriter3" min="-2" max="-2" attributes="0"/>
-                                          <EmptySpace max="32767" attributes="0"/>
-                                          <Component id="lblCommCreate3" min="-2" max="-2" attributes="0"/>
+                                      <Group type="102" alignment="1" attributes="0">
+                                          <Component id="btnCommUpdForm1" min="-2" max="-2" attributes="0"/>
+                                          <EmptySpace max="-2" attributes="0"/>
+                                          <Component id="btnCommDelForm1" min="-2" max="-2" attributes="0"/>
                                       </Group>
-                                      <Component id="jScrollPaneCommWrite" alignment="0" max="32767" attributes="0"/>
-                                      <Group type="102" alignment="0" attributes="0">
-                                          <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
-                                          <Component id="btnCommWrite" min="-2" max="-2" attributes="0"/>
+                                      <Group type="102" alignment="1" attributes="0">
+                                          <Component id="btnCommUpdForm2" min="-2" max="-2" attributes="0"/>
+                                          <EmptySpace max="-2" attributes="0"/>
+                                          <Component id="btnCommDelForm2" min="-2" max="-2" attributes="0"/>
                                       </Group>
-                                      <Group type="102" attributes="0">
-                                          <Component id="lblCommWriterWrite" min="-2" max="-2" attributes="0"/>
-                                          <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
-                                      </Group>
-                                      <Group type="102" alignment="0" attributes="0">
-                                          <Component id="lblCommWriter1" min="-2" max="-2" attributes="0"/>
-                                          <EmptySpace max="32767" attributes="0"/>
-                                          <Component id="lblCommCreate1" min="-2" max="-2" attributes="0"/>
-                                      </Group>
+                                      <Component id="btnCommWrite" alignment="1" min="-2" max="-2" attributes="0"/>
                                   </Group>
                               </Group>
-                              <Component id="jScrollPaneComm1" alignment="0" max="32767" attributes="0"/>
                           </Group>
                           <EmptySpace max="-2" attributes="0"/>
                       </Group>
                       <Group type="102" alignment="0" attributes="0">
-                          <EmptySpace min="-2" pref="314" max="-2" attributes="0"/>
+                          <EmptySpace min="-2" pref="320" max="-2" attributes="0"/>
                           <Component id="btnCommPrePage" min="-2" max="-2" attributes="0"/>
                           <EmptySpace type="unrelated" max="-2" attributes="0"/>
                           <Component id="lblCommCurrentPage" min="-2" max="-2" attributes="0"/>
@@ -604,25 +983,40 @@
                           <Component id="jScrollPaneComm1" min="-2" max="-2" attributes="0"/>
                           <EmptySpace max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="3" attributes="0">
+                              <Component id="btnCommUpdForm1" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="btnCommDelForm1" alignment="3" min="-2" max="-2" attributes="0"/>
+                          </Group>
+                          <EmptySpace max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="3" attributes="0">
                               <Component id="lblCommWriter2" alignment="3" min="-2" max="-2" attributes="0"/>
                               <Component id="lblCommCreate2" alignment="3" min="-2" max="-2" attributes="0"/>
                           </Group>
                           <EmptySpace max="-2" attributes="0"/>
-                          <Component id="jScrollPaneComm2" min="-2" max="-2" attributes="0"/>
+                          <Component id="jScrollPaneComm2" min="-2" pref="91" max="-2" attributes="0"/>
+                          <EmptySpace max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="3" attributes="0">
+                              <Component id="btnCommUpdForm2" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="btnCommDelForm2" alignment="3" min="-2" max="-2" attributes="0"/>
+                          </Group>
                           <EmptySpace max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="3" attributes="0">
                               <Component id="lblCommWriter3" alignment="3" min="-2" max="-2" attributes="0"/>
                               <Component id="lblCommCreate3" alignment="3" min="-2" max="-2" attributes="0"/>
                           </Group>
                           <EmptySpace max="-2" attributes="0"/>
-                          <Component id="jScrollPaneComm3" min="-2" pref="103" max="-2" attributes="0"/>
+                          <Component id="jScrollPaneComm3" min="-2" pref="91" max="-2" attributes="0"/>
+                          <EmptySpace max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="3" attributes="0">
+                              <Component id="btnCommUpdForm3" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="btnCommDelForm3" alignment="3" min="-2" max="-2" attributes="0"/>
+                          </Group>
                           <EmptySpace max="-2" attributes="0"/>
                           <Component id="lblCommWriterWrite" min="-2" max="-2" attributes="0"/>
                           <EmptySpace max="-2" attributes="0"/>
-                          <Component id="jScrollPaneCommWrite" min="-2" pref="103" max="-2" attributes="0"/>
-                          <EmptySpace max="-2" attributes="0"/>
+                          <Component id="jScrollPaneCommWrite" min="-2" pref="91" max="-2" attributes="0"/>
+                          <EmptySpace type="unrelated" max="-2" attributes="0"/>
                           <Component id="btnCommWrite" min="-2" max="-2" attributes="0"/>
-                          <EmptySpace type="separate" max="-2" attributes="0"/>
+                          <EmptySpace pref="42" max="32767" attributes="0"/>
                           <Group type="103" groupAlignment="3" attributes="0">
                               <Component id="lblCommCurrentPage" alignment="3" min="-2" max="-2" attributes="0"/>
                               <Component id="btnCommNextPage" alignment="3" min="-2" max="-2" attributes="0"/>
@@ -751,6 +1145,54 @@
                   <Properties>
                     <Property name="text" type="java.lang.String" value="&#xc791;&#xc131;&#xd558;&#xae30;"/>
                   </Properties>
+                </Component>
+                <Component class="javax.swing.JButton" name="btnCommUpdForm1">
+                  <Properties>
+                    <Property name="text" type="java.lang.String" value="&#xc218;&#xc815;"/>
+                  </Properties>
+                  <Events>
+                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnCommUpdForm1ActionPerformed"/>
+                  </Events>
+                </Component>
+                <Component class="javax.swing.JButton" name="btnCommDelForm1">
+                  <Properties>
+                    <Property name="text" type="java.lang.String" value="&#xc0ad;&#xc81c;"/>
+                  </Properties>
+                  <Events>
+                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnCommDelForm1ActionPerformed"/>
+                  </Events>
+                </Component>
+                <Component class="javax.swing.JButton" name="btnCommUpdForm2">
+                  <Properties>
+                    <Property name="text" type="java.lang.String" value="&#xc218;&#xc815;"/>
+                  </Properties>
+                  <Events>
+                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnCommUpdForm2ActionPerformed"/>
+                  </Events>
+                </Component>
+                <Component class="javax.swing.JButton" name="btnCommDelForm2">
+                  <Properties>
+                    <Property name="text" type="java.lang.String" value="&#xc0ad;&#xc81c;"/>
+                  </Properties>
+                  <Events>
+                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnCommDelForm2ActionPerformed"/>
+                  </Events>
+                </Component>
+                <Component class="javax.swing.JButton" name="btnCommUpdForm3">
+                  <Properties>
+                    <Property name="text" type="java.lang.String" value="&#xc218;&#xc815;"/>
+                  </Properties>
+                  <Events>
+                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnCommUpdForm3ActionPerformed"/>
+                  </Events>
+                </Component>
+                <Component class="javax.swing.JButton" name="btnCommDelForm3">
+                  <Properties>
+                    <Property name="text" type="java.lang.String" value="&#xc0ad;&#xc81c;"/>
+                  </Properties>
+                  <Events>
+                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnCommDelForm3ActionPerformed"/>
+                  </Events>
                 </Component>
               </SubComponents>
             </Container>

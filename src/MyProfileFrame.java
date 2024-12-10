@@ -63,14 +63,14 @@ public class MyProfileFrame extends javax.swing.JFrame {
         txtNameBefore = new javax.swing.JTextField();
         lblNameAfter = new javax.swing.JLabel();
         txtNameAfter = new javax.swing.JTextField();
-        btnNameUpd = new javax.swing.JButton();
-        lblNameUpd = new javax.swing.JLabel();
+        btnUpdName = new javax.swing.JButton();
+        lblUpdName = new javax.swing.JLabel();
         jDialogPhone = new javax.swing.JDialog();
         lblPhoneAfter = new javax.swing.JLabel();
         txtPhoneAfter = new javax.swing.JTextField();
-        btnPhoneUpd = new javax.swing.JButton();
+        btnUpdPhone = new javax.swing.JButton();
         lblPhoneBefore = new javax.swing.JLabel();
-        lblPhoneUpd = new javax.swing.JLabel();
+        lblUpdPhone = new javax.swing.JLabel();
         txtPhoneBefore = new javax.swing.JTextField();
         jDialogDel = new javax.swing.JDialog();
         lblDel = new javax.swing.JLabel();
@@ -86,9 +86,89 @@ public class MyProfileFrame extends javax.swing.JFrame {
         jPanelBody = new javax.swing.JPanel();
         BookmarkAndReview = new javax.swing.JTabbedPane();
         jPanelBookmark = new javax.swing.JPanel();
+        jPanelRecipeList1 = new javax.swing.JPanel();
+        lblRecipeTitle1 = new javax.swing.JLabel();
+        lblRecipeGrade1 = new javax.swing.JLabel();
+        jPanelRecipeOrder1 = new javax.swing.JPanel();
+        lblRecipeOrder1 = new javax.swing.JLabel();
+        jPanelRecipeImg1 = new javax.swing.JPanel();
+        lblRecipeWriter1 = new javax.swing.JLabel();
+        btnRecipeBookCancel1 = new javax.swing.JButton();
+        lblRecipeCreate1 = new javax.swing.JLabel();
+        lblVisit1 = new javax.swing.JLabel();
+        jPanelRecipeList2 = new javax.swing.JPanel();
+        lblRecipeTitle2 = new javax.swing.JLabel();
+        lblRecipeGrade2 = new javax.swing.JLabel();
+        jPanelRecipeOrder2 = new javax.swing.JPanel();
+        lblRecipeOrder2 = new javax.swing.JLabel();
+        jPanelRecipeImg2 = new javax.swing.JPanel();
+        lblRecipeWriter2 = new javax.swing.JLabel();
+        btnRecipeBookCancel2 = new javax.swing.JButton();
+        lblRecipeCreate2 = new javax.swing.JLabel();
+        lblVisit2 = new javax.swing.JLabel();
+        jPanelRecipeList3 = new javax.swing.JPanel();
+        lblRecipeTitle3 = new javax.swing.JLabel();
+        lblRecipeGrade3 = new javax.swing.JLabel();
+        jPanelRecipeOrder3 = new javax.swing.JPanel();
+        lblRecipeOrder3 = new javax.swing.JLabel();
+        jPanelRecipeImg3 = new javax.swing.JPanel();
+        lblRecipeWriter3 = new javax.swing.JLabel();
+        btnRecipeBookCancel3 = new javax.swing.JButton();
+        lblRecipeCreate3 = new javax.swing.JLabel();
+        lblVisit3 = new javax.swing.JLabel();
+        lblBookCurrentPage = new javax.swing.JLabel();
+        btnBookNextPage = new javax.swing.JButton();
+        btnBookPrePage = new javax.swing.JButton();
+        jPanelRecipeList4 = new javax.swing.JPanel();
+        lblRecipeTitle4 = new javax.swing.JLabel();
+        lblRecipeGrade4 = new javax.swing.JLabel();
+        jPanelRecipeOrder4 = new javax.swing.JPanel();
+        lblRecipeOrder4 = new javax.swing.JLabel();
+        jPanelRecipeImg4 = new javax.swing.JPanel();
+        lblRecipeWriter4 = new javax.swing.JLabel();
+        btnRecipeBookCancel4 = new javax.swing.JButton();
+        lblRecipeCreate4 = new javax.swing.JLabel();
+        lblVisit4 = new javax.swing.JLabel();
         jPanelReview = new javax.swing.JPanel();
+        jScrollPaneReview1 = new javax.swing.JScrollPane();
+        jTextAreaReview1 = new javax.swing.JTextArea();
+        lblReviewCreate1 = new javax.swing.JLabel();
+        lblReviewGrade1 = new javax.swing.JLabel();
+        btnToReview1 = new javax.swing.JButton();
+        btnToReview2 = new javax.swing.JButton();
+        jScrollPaneReview2 = new javax.swing.JScrollPane();
+        jTextAreaReview2 = new javax.swing.JTextArea();
+        lblReviewCreate2 = new javax.swing.JLabel();
+        lblReviewGrade2 = new javax.swing.JLabel();
+        btnToReview3 = new javax.swing.JButton();
+        jScrollPaneReview3 = new javax.swing.JScrollPane();
+        jTextAreaReview3 = new javax.swing.JTextArea();
+        lblReviewCreate3 = new javax.swing.JLabel();
+        lblReviewGrade3 = new javax.swing.JLabel();
+        btnReviewPrePage = new javax.swing.JButton();
+        lblReviewCurrentPage = new javax.swing.JLabel();
+        btnReviewNextPage = new javax.swing.JButton();
+        jPanelComment = new javax.swing.JPanel();
+        jScrollPaneComm1 = new javax.swing.JScrollPane();
+        jTextAreaComm1 = new javax.swing.JTextArea();
+        lblCommCreate1 = new javax.swing.JLabel();
+        btnToComm1 = new javax.swing.JButton();
+        btnToComm2 = new javax.swing.JButton();
+        jScrollPaneComm2 = new javax.swing.JScrollPane();
+        jTextAreaComm2 = new javax.swing.JTextArea();
+        lblCommCreate2 = new javax.swing.JLabel();
+        btnToComm3 = new javax.swing.JButton();
+        jScrollPaneComm3 = new javax.swing.JScrollPane();
+        jTextAreaComm3 = new javax.swing.JTextArea();
+        lblCommCreate3 = new javax.swing.JLabel();
+        btnCommPrePage = new javax.swing.JButton();
+        lblCommCurrentPage = new javax.swing.JLabel();
+        btnCommNextPage = new javax.swing.JButton();
         lblName = new javax.swing.JLabel();
         lblPhone = new javax.swing.JLabel();
+        btnPhoneUpd = new javax.swing.JButton();
+        btnNameUpd = new javax.swing.JButton();
+        btnDel = new javax.swing.JButton();
 
         lblNameBefore.setText("기존");
 
@@ -96,9 +176,9 @@ public class MyProfileFrame extends javax.swing.JFrame {
 
         lblNameAfter.setText("변경");
 
-        btnNameUpd.setText("변경");
+        btnUpdName.setText("변경");
 
-        lblNameUpd.setText("닉네임");
+        lblUpdName.setText("닉네임");
 
         javax.swing.GroupLayout jDialogNameLayout = new javax.swing.GroupLayout(jDialogName.getContentPane());
         jDialogName.getContentPane().setLayout(jDialogNameLayout);
@@ -120,17 +200,17 @@ public class MyProfileFrame extends javax.swing.JFrame {
                                     .addComponent(txtNameBefore, javax.swing.GroupLayout.PREFERRED_SIZE, 170, javax.swing.GroupLayout.PREFERRED_SIZE)))
                             .addGroup(jDialogNameLayout.createSequentialGroup()
                                 .addGap(61, 61, 61)
-                                .addComponent(btnNameUpd))))
+                                .addComponent(btnUpdName))))
                     .addGroup(jDialogNameLayout.createSequentialGroup()
                         .addGap(171, 171, 171)
-                        .addComponent(lblNameUpd)))
+                        .addComponent(lblUpdName)))
                 .addContainerGap(105, Short.MAX_VALUE))
         );
         jDialogNameLayout.setVerticalGroup(
             jDialogNameLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jDialogNameLayout.createSequentialGroup()
                 .addGap(49, 49, 49)
-                .addComponent(lblNameUpd)
+                .addComponent(lblUpdName)
                 .addGap(18, 18, 18)
                 .addGroup(jDialogNameLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(lblNameBefore)
@@ -140,17 +220,17 @@ public class MyProfileFrame extends javax.swing.JFrame {
                     .addComponent(lblNameAfter)
                     .addComponent(txtNameAfter, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
-                .addComponent(btnNameUpd)
+                .addComponent(btnUpdName)
                 .addContainerGap(79, Short.MAX_VALUE))
         );
 
         lblPhoneAfter.setText("변경");
 
-        btnPhoneUpd.setText("변경");
+        btnUpdPhone.setText("변경");
 
         lblPhoneBefore.setText("기존");
 
-        lblPhoneUpd.setText("전화번호");
+        lblUpdPhone.setText("전화번호");
 
         txtPhoneBefore.setText("010-0000-0000");
 
@@ -174,17 +254,17 @@ public class MyProfileFrame extends javax.swing.JFrame {
                                     .addComponent(txtPhoneBefore, javax.swing.GroupLayout.PREFERRED_SIZE, 170, javax.swing.GroupLayout.PREFERRED_SIZE)))
                             .addGroup(jDialogPhoneLayout.createSequentialGroup()
                                 .addGap(61, 61, 61)
-                                .addComponent(btnPhoneUpd))))
+                                .addComponent(btnUpdPhone))))
                     .addGroup(jDialogPhoneLayout.createSequentialGroup()
                         .addGap(171, 171, 171)
-                        .addComponent(lblPhoneUpd)))
+                        .addComponent(lblUpdPhone)))
                 .addContainerGap(105, Short.MAX_VALUE))
         );
         jDialogPhoneLayout.setVerticalGroup(
             jDialogPhoneLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jDialogPhoneLayout.createSequentialGroup()
                 .addGap(49, 49, 49)
-                .addComponent(lblPhoneUpd)
+                .addComponent(lblUpdPhone)
                 .addGap(18, 18, 18)
                 .addGroup(jDialogPhoneLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(lblPhoneBefore)
@@ -194,7 +274,7 @@ public class MyProfileFrame extends javax.swing.JFrame {
                     .addComponent(lblPhoneAfter)
                     .addComponent(txtPhoneAfter, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
-                .addComponent(btnPhoneUpd)
+                .addComponent(btnUpdPhone)
                 .addContainerGap(79, Short.MAX_VALUE))
         );
 
@@ -301,35 +381,697 @@ public class MyProfileFrame extends javax.swing.JFrame {
                     .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
         );
 
+        jPanelRecipeList1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        jPanelRecipeList1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jPanelRecipeList1MouseClicked(evt);
+            }
+        });
+
+        lblRecipeTitle1.setText("제목 : 김치");
+
+        lblRecipeGrade1.setText("평점 : 0.0");
+
+        lblRecipeOrder1.setText("1");
+
+        javax.swing.GroupLayout jPanelRecipeOrder1Layout = new javax.swing.GroupLayout(jPanelRecipeOrder1);
+        jPanelRecipeOrder1.setLayout(jPanelRecipeOrder1Layout);
+        jPanelRecipeOrder1Layout.setHorizontalGroup(
+            jPanelRecipeOrder1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanelRecipeOrder1Layout.createSequentialGroup()
+                .addGap(16, 16, 16)
+                .addComponent(lblRecipeOrder1)
+                .addContainerGap(18, Short.MAX_VALUE))
+        );
+        jPanelRecipeOrder1Layout.setVerticalGroup(
+            jPanelRecipeOrder1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanelRecipeOrder1Layout.createSequentialGroup()
+                .addGap(21, 21, 21)
+                .addComponent(lblRecipeOrder1)
+                .addContainerGap(25, Short.MAX_VALUE))
+        );
+
+        jPanelRecipeImg1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+
+        javax.swing.GroupLayout jPanelRecipeImg1Layout = new javax.swing.GroupLayout(jPanelRecipeImg1);
+        jPanelRecipeImg1.setLayout(jPanelRecipeImg1Layout);
+        jPanelRecipeImg1Layout.setHorizontalGroup(
+            jPanelRecipeImg1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 58, Short.MAX_VALUE)
+        );
+        jPanelRecipeImg1Layout.setVerticalGroup(
+            jPanelRecipeImg1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 58, Short.MAX_VALUE)
+        );
+
+        lblRecipeWriter1.setText("작성자 : 홍길동");
+
+        btnRecipeBookCancel1.setText("취소");
+
+        lblRecipeCreate1.setText("작성날짜 : 2025.01.01");
+
+        lblVisit1.setText("조회수 : 0");
+
+        javax.swing.GroupLayout jPanelRecipeList1Layout = new javax.swing.GroupLayout(jPanelRecipeList1);
+        jPanelRecipeList1.setLayout(jPanelRecipeList1Layout);
+        jPanelRecipeList1Layout.setHorizontalGroup(
+            jPanelRecipeList1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanelRecipeList1Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jPanelRecipeOrder1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jPanelRecipeImg1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jPanelRecipeList1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(lblRecipeGrade1)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanelRecipeList1Layout.createSequentialGroup()
+                        .addGroup(jPanelRecipeList1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(lblRecipeWriter1)
+                            .addComponent(lblRecipeTitle1))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addGroup(jPanelRecipeList1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(lblRecipeCreate1)
+                            .addComponent(lblVisit1))))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(btnRecipeBookCancel1)
+                .addContainerGap())
+        );
+        jPanelRecipeList1Layout.setVerticalGroup(
+            jPanelRecipeList1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanelRecipeList1Layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGroup(jPanelRecipeList1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanelRecipeList1Layout.createSequentialGroup()
+                        .addGroup(jPanelRecipeList1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanelRecipeList1Layout.createSequentialGroup()
+                                .addGroup(jPanelRecipeList1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                    .addComponent(lblRecipeTitle1)
+                                    .addComponent(lblVisit1))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(lblRecipeGrade1)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addGroup(jPanelRecipeList1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                    .addComponent(lblRecipeWriter1)
+                                    .addComponent(lblRecipeCreate1)))
+                            .addComponent(jPanelRecipeImg1, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(btnRecipeBookCancel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addGap(6, 6, 6))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanelRecipeList1Layout.createSequentialGroup()
+                        .addComponent(jPanelRecipeOrder1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addContainerGap())))
+        );
+
+        jPanelRecipeList2.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        jPanelRecipeList2.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jPanelRecipeList2MouseClicked(evt);
+            }
+        });
+
+        lblRecipeTitle2.setText("제목 : 김치");
+
+        lblRecipeGrade2.setText("평점 : 0.0");
+
+        lblRecipeOrder2.setText("2");
+
+        javax.swing.GroupLayout jPanelRecipeOrder2Layout = new javax.swing.GroupLayout(jPanelRecipeOrder2);
+        jPanelRecipeOrder2.setLayout(jPanelRecipeOrder2Layout);
+        jPanelRecipeOrder2Layout.setHorizontalGroup(
+            jPanelRecipeOrder2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanelRecipeOrder2Layout.createSequentialGroup()
+                .addGap(16, 16, 16)
+                .addComponent(lblRecipeOrder2)
+                .addContainerGap(18, Short.MAX_VALUE))
+        );
+        jPanelRecipeOrder2Layout.setVerticalGroup(
+            jPanelRecipeOrder2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanelRecipeOrder2Layout.createSequentialGroup()
+                .addGap(21, 21, 21)
+                .addComponent(lblRecipeOrder2)
+                .addContainerGap(25, Short.MAX_VALUE))
+        );
+
+        jPanelRecipeImg2.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+
+        javax.swing.GroupLayout jPanelRecipeImg2Layout = new javax.swing.GroupLayout(jPanelRecipeImg2);
+        jPanelRecipeImg2.setLayout(jPanelRecipeImg2Layout);
+        jPanelRecipeImg2Layout.setHorizontalGroup(
+            jPanelRecipeImg2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 58, Short.MAX_VALUE)
+        );
+        jPanelRecipeImg2Layout.setVerticalGroup(
+            jPanelRecipeImg2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 58, Short.MAX_VALUE)
+        );
+
+        lblRecipeWriter2.setText("작성자 : 홍길동");
+
+        btnRecipeBookCancel2.setText("취소");
+
+        lblRecipeCreate2.setText("작성날짜 : 2025.01.01");
+
+        lblVisit2.setText("조회수 : 0");
+
+        javax.swing.GroupLayout jPanelRecipeList2Layout = new javax.swing.GroupLayout(jPanelRecipeList2);
+        jPanelRecipeList2.setLayout(jPanelRecipeList2Layout);
+        jPanelRecipeList2Layout.setHorizontalGroup(
+            jPanelRecipeList2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanelRecipeList2Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jPanelRecipeOrder2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jPanelRecipeImg2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jPanelRecipeList2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(lblRecipeGrade2)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanelRecipeList2Layout.createSequentialGroup()
+                        .addGroup(jPanelRecipeList2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(lblRecipeWriter2)
+                            .addComponent(lblRecipeTitle2))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 304, Short.MAX_VALUE)
+                        .addGroup(jPanelRecipeList2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(lblRecipeCreate2)
+                            .addComponent(lblVisit2))))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(btnRecipeBookCancel2)
+                .addContainerGap())
+        );
+        jPanelRecipeList2Layout.setVerticalGroup(
+            jPanelRecipeList2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanelRecipeList2Layout.createSequentialGroup()
+                .addContainerGap(8, Short.MAX_VALUE)
+                .addGroup(jPanelRecipeList2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanelRecipeList2Layout.createSequentialGroup()
+                        .addGroup(jPanelRecipeList2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanelRecipeList2Layout.createSequentialGroup()
+                                .addGroup(jPanelRecipeList2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                    .addComponent(lblRecipeTitle2)
+                                    .addComponent(lblVisit2))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(lblRecipeGrade2)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addGroup(jPanelRecipeList2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                    .addComponent(lblRecipeWriter2)
+                                    .addComponent(lblRecipeCreate2)))
+                            .addComponent(jPanelRecipeImg2, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(btnRecipeBookCancel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addGap(6, 6, 6))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanelRecipeList2Layout.createSequentialGroup()
+                        .addComponent(jPanelRecipeOrder2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addContainerGap())))
+        );
+
+        jPanelRecipeList3.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        jPanelRecipeList3.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jPanelRecipeList3MouseClicked(evt);
+            }
+        });
+
+        lblRecipeTitle3.setText("제목 : 김치");
+
+        lblRecipeGrade3.setText("평점 : 0.0");
+
+        lblRecipeOrder3.setText("3");
+
+        javax.swing.GroupLayout jPanelRecipeOrder3Layout = new javax.swing.GroupLayout(jPanelRecipeOrder3);
+        jPanelRecipeOrder3.setLayout(jPanelRecipeOrder3Layout);
+        jPanelRecipeOrder3Layout.setHorizontalGroup(
+            jPanelRecipeOrder3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanelRecipeOrder3Layout.createSequentialGroup()
+                .addGap(16, 16, 16)
+                .addComponent(lblRecipeOrder3)
+                .addContainerGap(18, Short.MAX_VALUE))
+        );
+        jPanelRecipeOrder3Layout.setVerticalGroup(
+            jPanelRecipeOrder3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanelRecipeOrder3Layout.createSequentialGroup()
+                .addGap(21, 21, 21)
+                .addComponent(lblRecipeOrder3)
+                .addContainerGap(25, Short.MAX_VALUE))
+        );
+
+        jPanelRecipeImg3.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+
+        javax.swing.GroupLayout jPanelRecipeImg3Layout = new javax.swing.GroupLayout(jPanelRecipeImg3);
+        jPanelRecipeImg3.setLayout(jPanelRecipeImg3Layout);
+        jPanelRecipeImg3Layout.setHorizontalGroup(
+            jPanelRecipeImg3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 58, Short.MAX_VALUE)
+        );
+        jPanelRecipeImg3Layout.setVerticalGroup(
+            jPanelRecipeImg3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 58, Short.MAX_VALUE)
+        );
+
+        lblRecipeWriter3.setText("작성자 : 홍길동");
+
+        btnRecipeBookCancel3.setText("취소");
+
+        lblRecipeCreate3.setText("작성날짜 : 2025.01.01");
+
+        lblVisit3.setText("조회수 : 0");
+
+        javax.swing.GroupLayout jPanelRecipeList3Layout = new javax.swing.GroupLayout(jPanelRecipeList3);
+        jPanelRecipeList3.setLayout(jPanelRecipeList3Layout);
+        jPanelRecipeList3Layout.setHorizontalGroup(
+            jPanelRecipeList3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanelRecipeList3Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jPanelRecipeOrder3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jPanelRecipeImg3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jPanelRecipeList3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(lblRecipeGrade3)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanelRecipeList3Layout.createSequentialGroup()
+                        .addGroup(jPanelRecipeList3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(lblRecipeWriter3)
+                            .addComponent(lblRecipeTitle3))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 304, Short.MAX_VALUE)
+                        .addGroup(jPanelRecipeList3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(lblRecipeCreate3)
+                            .addComponent(lblVisit3))))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(btnRecipeBookCancel3)
+                .addContainerGap())
+        );
+        jPanelRecipeList3Layout.setVerticalGroup(
+            jPanelRecipeList3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanelRecipeList3Layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGroup(jPanelRecipeList3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanelRecipeList3Layout.createSequentialGroup()
+                        .addGroup(jPanelRecipeList3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanelRecipeList3Layout.createSequentialGroup()
+                                .addGroup(jPanelRecipeList3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                    .addComponent(lblRecipeTitle3)
+                                    .addComponent(lblVisit3))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(lblRecipeGrade3)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addGroup(jPanelRecipeList3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                    .addComponent(lblRecipeWriter3)
+                                    .addComponent(lblRecipeCreate3)))
+                            .addComponent(jPanelRecipeImg3, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(btnRecipeBookCancel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addGap(6, 6, 6))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanelRecipeList3Layout.createSequentialGroup()
+                        .addComponent(jPanelRecipeOrder3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addContainerGap())))
+        );
+
+        lblBookCurrentPage.setText("1");
+
+        btnBookNextPage.setText(">");
+        btnBookNextPage.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnBookNextPageActionPerformed(evt);
+            }
+        });
+
+        btnBookPrePage.setText("<");
+        btnBookPrePage.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnBookPrePageActionPerformed(evt);
+            }
+        });
+
+        jPanelRecipeList4.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        jPanelRecipeList4.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jPanelRecipeList4MouseClicked(evt);
+            }
+        });
+
+        lblRecipeTitle4.setText("제목 : 김치");
+
+        lblRecipeGrade4.setText("평점 : 0.0");
+
+        lblRecipeOrder4.setText("4");
+
+        javax.swing.GroupLayout jPanelRecipeOrder4Layout = new javax.swing.GroupLayout(jPanelRecipeOrder4);
+        jPanelRecipeOrder4.setLayout(jPanelRecipeOrder4Layout);
+        jPanelRecipeOrder4Layout.setHorizontalGroup(
+            jPanelRecipeOrder4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanelRecipeOrder4Layout.createSequentialGroup()
+                .addGap(16, 16, 16)
+                .addComponent(lblRecipeOrder4)
+                .addContainerGap(18, Short.MAX_VALUE))
+        );
+        jPanelRecipeOrder4Layout.setVerticalGroup(
+            jPanelRecipeOrder4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanelRecipeOrder4Layout.createSequentialGroup()
+                .addGap(21, 21, 21)
+                .addComponent(lblRecipeOrder4)
+                .addContainerGap(25, Short.MAX_VALUE))
+        );
+
+        jPanelRecipeImg4.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+
+        javax.swing.GroupLayout jPanelRecipeImg4Layout = new javax.swing.GroupLayout(jPanelRecipeImg4);
+        jPanelRecipeImg4.setLayout(jPanelRecipeImg4Layout);
+        jPanelRecipeImg4Layout.setHorizontalGroup(
+            jPanelRecipeImg4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 58, Short.MAX_VALUE)
+        );
+        jPanelRecipeImg4Layout.setVerticalGroup(
+            jPanelRecipeImg4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 58, Short.MAX_VALUE)
+        );
+
+        lblRecipeWriter4.setText("작성자 : 홍길동");
+
+        btnRecipeBookCancel4.setText("취소");
+
+        lblRecipeCreate4.setText("작성날짜 : 2025.01.01");
+
+        lblVisit4.setText("조회수 : 0");
+
+        javax.swing.GroupLayout jPanelRecipeList4Layout = new javax.swing.GroupLayout(jPanelRecipeList4);
+        jPanelRecipeList4.setLayout(jPanelRecipeList4Layout);
+        jPanelRecipeList4Layout.setHorizontalGroup(
+            jPanelRecipeList4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanelRecipeList4Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jPanelRecipeOrder4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jPanelRecipeImg4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jPanelRecipeList4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(lblRecipeGrade4)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanelRecipeList4Layout.createSequentialGroup()
+                        .addGroup(jPanelRecipeList4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(lblRecipeWriter4)
+                            .addComponent(lblRecipeTitle4))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 304, Short.MAX_VALUE)
+                        .addGroup(jPanelRecipeList4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(lblRecipeCreate4)
+                            .addComponent(lblVisit4))))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(btnRecipeBookCancel4)
+                .addContainerGap())
+        );
+        jPanelRecipeList4Layout.setVerticalGroup(
+            jPanelRecipeList4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanelRecipeList4Layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGroup(jPanelRecipeList4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanelRecipeList4Layout.createSequentialGroup()
+                        .addGroup(jPanelRecipeList4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanelRecipeList4Layout.createSequentialGroup()
+                                .addGroup(jPanelRecipeList4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                    .addComponent(lblRecipeTitle4)
+                                    .addComponent(lblVisit4))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(lblRecipeGrade4)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addGroup(jPanelRecipeList4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                    .addComponent(lblRecipeWriter4)
+                                    .addComponent(lblRecipeCreate4)))
+                            .addComponent(jPanelRecipeImg4, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(btnRecipeBookCancel4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addGap(6, 6, 6))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanelRecipeList4Layout.createSequentialGroup()
+                        .addComponent(jPanelRecipeOrder4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addContainerGap())))
+        );
+
         javax.swing.GroupLayout jPanelBookmarkLayout = new javax.swing.GroupLayout(jPanelBookmark);
         jPanelBookmark.setLayout(jPanelBookmarkLayout);
         jPanelBookmarkLayout.setHorizontalGroup(
             jPanelBookmarkLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 725, Short.MAX_VALUE)
+            .addGroup(jPanelBookmarkLayout.createSequentialGroup()
+                .addGap(321, 321, 321)
+                .addComponent(btnBookPrePage)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(lblBookCurrentPage)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(btnBookNextPage)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(jPanelBookmarkLayout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(jPanelBookmarkLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jPanelRecipeList1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jPanelRecipeList2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jPanelRecipeList3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jPanelRecipeList4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap())
         );
         jPanelBookmarkLayout.setVerticalGroup(
             jPanelBookmarkLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 394, Short.MAX_VALUE)
+            .addGroup(jPanelBookmarkLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jPanelRecipeList1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jPanelRecipeList2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jPanelRecipeList3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jPanelRecipeList4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 26, Short.MAX_VALUE)
+                .addGroup(jPanelBookmarkLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(lblBookCurrentPage)
+                    .addComponent(btnBookNextPage)
+                    .addComponent(btnBookPrePage))
+                .addGap(24, 24, 24))
         );
 
         BookmarkAndReview.addTab("북마크", jPanelBookmark);
+
+        jTextAreaReview1.setColumns(20);
+        jTextAreaReview1.setRows(5);
+        jScrollPaneReview1.setViewportView(jTextAreaReview1);
+
+        lblReviewCreate1.setText("2025.01.01");
+
+        lblReviewGrade1.setText("점수 : 5");
+
+        btnToReview1.setText("글로 이동");
+
+        btnToReview2.setText("글로 이동");
+
+        jTextAreaReview2.setColumns(20);
+        jTextAreaReview2.setRows(5);
+        jScrollPaneReview2.setViewportView(jTextAreaReview2);
+
+        lblReviewCreate2.setText("2025.01.01");
+
+        lblReviewGrade2.setText("점수 : 5");
+
+        btnToReview3.setText("글로 이동");
+
+        jTextAreaReview3.setColumns(20);
+        jTextAreaReview3.setRows(5);
+        jScrollPaneReview3.setViewportView(jTextAreaReview3);
+
+        lblReviewCreate3.setText("2025.01.01");
+
+        lblReviewGrade3.setText("점수 : 5");
+
+        btnReviewPrePage.setText("<");
+        btnReviewPrePage.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnReviewPrePageActionPerformed(evt);
+            }
+        });
+
+        lblReviewCurrentPage.setText("1");
+
+        btnReviewNextPage.setText(">");
+        btnReviewNextPage.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnReviewNextPageActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanelReviewLayout = new javax.swing.GroupLayout(jPanelReview);
         jPanelReview.setLayout(jPanelReviewLayout);
         jPanelReviewLayout.setHorizontalGroup(
             jPanelReviewLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 725, Short.MAX_VALUE)
+            .addGroup(jPanelReviewLayout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(jPanelReviewLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jScrollPaneReview1)
+                    .addGroup(jPanelReviewLayout.createSequentialGroup()
+                        .addComponent(lblReviewGrade1)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(lblReviewCreate1, javax.swing.GroupLayout.PREFERRED_SIZE, 62, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(btnToReview1))
+                    .addComponent(jScrollPaneReview2, javax.swing.GroupLayout.DEFAULT_SIZE, 713, Short.MAX_VALUE)
+                    .addGroup(jPanelReviewLayout.createSequentialGroup()
+                        .addComponent(lblReviewGrade2)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(lblReviewCreate2, javax.swing.GroupLayout.PREFERRED_SIZE, 62, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(btnToReview2))
+                    .addComponent(jScrollPaneReview3, javax.swing.GroupLayout.DEFAULT_SIZE, 713, Short.MAX_VALUE)
+                    .addGroup(jPanelReviewLayout.createSequentialGroup()
+                        .addComponent(lblReviewGrade3)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(lblReviewCreate3, javax.swing.GroupLayout.PREFERRED_SIZE, 62, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(btnToReview3)))
+                .addContainerGap())
+            .addGroup(jPanelReviewLayout.createSequentialGroup()
+                .addGap(318, 318, 318)
+                .addComponent(btnReviewPrePage)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(lblReviewCurrentPage)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(btnReviewNextPage)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanelReviewLayout.setVerticalGroup(
             jPanelReviewLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 394, Short.MAX_VALUE)
+            .addGroup(jPanelReviewLayout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(jPanelReviewLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(lblReviewCreate1)
+                    .addComponent(lblReviewGrade1)
+                    .addComponent(btnToReview1))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jScrollPaneReview1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jPanelReviewLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(lblReviewCreate2)
+                    .addComponent(lblReviewGrade2)
+                    .addComponent(btnToReview2))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jScrollPaneReview2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jPanelReviewLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(lblReviewCreate3)
+                    .addComponent(lblReviewGrade3)
+                    .addComponent(btnToReview3))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jScrollPaneReview3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addGroup(jPanelReviewLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(lblReviewCurrentPage)
+                    .addComponent(btnReviewNextPage)
+                    .addComponent(btnReviewPrePage))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         BookmarkAndReview.addTab("내가 쓴 리뷰", jPanelReview);
 
-        lblName.setText("닉네임 : ");
+        jTextAreaComm1.setColumns(20);
+        jTextAreaComm1.setRows(5);
+        jScrollPaneComm1.setViewportView(jTextAreaComm1);
+
+        lblCommCreate1.setText("2025.01.01");
+
+        btnToComm1.setText("글로 이동");
+
+        btnToComm2.setText("글로 이동");
+
+        jTextAreaComm2.setColumns(20);
+        jTextAreaComm2.setRows(5);
+        jScrollPaneComm2.setViewportView(jTextAreaComm2);
+
+        lblCommCreate2.setText("2025.01.01");
+
+        btnToComm3.setText("글로 이동");
+
+        jTextAreaComm3.setColumns(20);
+        jTextAreaComm3.setRows(5);
+        jScrollPaneComm3.setViewportView(jTextAreaComm3);
+
+        lblCommCreate3.setText("2025.01.01");
+
+        btnCommPrePage.setText("<");
+        btnCommPrePage.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnCommPrePageActionPerformed(evt);
+            }
+        });
+
+        lblCommCurrentPage.setText("1");
+
+        btnCommNextPage.setText(">");
+        btnCommNextPage.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnCommNextPageActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout jPanelCommentLayout = new javax.swing.GroupLayout(jPanelComment);
+        jPanelComment.setLayout(jPanelCommentLayout);
+        jPanelCommentLayout.setHorizontalGroup(
+            jPanelCommentLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanelCommentLayout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(jPanelCommentLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jScrollPaneComm1)
+                    .addComponent(jScrollPaneComm2, javax.swing.GroupLayout.DEFAULT_SIZE, 713, Short.MAX_VALUE)
+                    .addComponent(jScrollPaneComm3, javax.swing.GroupLayout.DEFAULT_SIZE, 713, Short.MAX_VALUE)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanelCommentLayout.createSequentialGroup()
+                        .addGap(0, 0, Short.MAX_VALUE)
+                        .addGroup(jPanelCommentLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanelCommentLayout.createSequentialGroup()
+                                .addComponent(lblCommCreate3, javax.swing.GroupLayout.PREFERRED_SIZE, 62, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(btnToComm3))
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanelCommentLayout.createSequentialGroup()
+                                .addComponent(lblCommCreate1, javax.swing.GroupLayout.PREFERRED_SIZE, 62, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(btnToComm1))
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanelCommentLayout.createSequentialGroup()
+                                .addComponent(lblCommCreate2, javax.swing.GroupLayout.PREFERRED_SIZE, 62, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(btnToComm2)))))
+                .addContainerGap())
+            .addGroup(jPanelCommentLayout.createSequentialGroup()
+                .addGap(318, 318, 318)
+                .addComponent(btnCommPrePage)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(lblCommCurrentPage)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(btnCommNextPage)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+        jPanelCommentLayout.setVerticalGroup(
+            jPanelCommentLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanelCommentLayout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(jPanelCommentLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(lblCommCreate1)
+                    .addComponent(btnToComm1))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jScrollPaneComm1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jPanelCommentLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(lblCommCreate2)
+                    .addComponent(btnToComm2))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jScrollPaneComm2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jPanelCommentLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(lblCommCreate3)
+                    .addComponent(btnToComm3))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jScrollPaneComm3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addGroup(jPanelCommentLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(lblCommCurrentPage)
+                    .addComponent(btnCommNextPage)
+                    .addComponent(btnCommPrePage))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+
+        BookmarkAndReview.addTab("내가 쓴 댓글", jPanelComment);
+
+        lblName.setText("닉네임 : 홍길동");
 
         lblPhone.setText("전화번호 : 010-0000-0000");
+
+        btnPhoneUpd.setText("수정");
+
+        btnNameUpd.setText("수정");
+
+        btnDel.setText("탈퇴");
 
         javax.swing.GroupLayout jPanelBodyLayout = new javax.swing.GroupLayout(jPanelBody);
         jPanelBody.setLayout(jPanelBodyLayout);
@@ -338,20 +1080,36 @@ public class MyProfileFrame extends javax.swing.JFrame {
             .addComponent(BookmarkAndReview, javax.swing.GroupLayout.Alignment.TRAILING)
             .addGroup(jPanelBodyLayout.createSequentialGroup()
                 .addGap(32, 32, 32)
-                .addGroup(jPanelBodyLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(lblPhone)
-                    .addComponent(lblName))
+                .addGroup(jPanelBodyLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addGroup(jPanelBodyLayout.createSequentialGroup()
+                        .addComponent(lblPhone)
+                        .addGap(18, 18, 18)
+                        .addComponent(btnPhoneUpd))
+                    .addGroup(jPanelBodyLayout.createSequentialGroup()
+                        .addComponent(lblName)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(btnNameUpd)))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanelBodyLayout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(btnDel)
+                .addGap(15, 15, 15))
         );
         jPanelBodyLayout.setVerticalGroup(
             jPanelBodyLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanelBodyLayout.createSequentialGroup()
-                .addGap(34, 34, 34)
-                .addComponent(lblName, javax.swing.GroupLayout.PREFERRED_SIZE, 17, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(31, 31, 31)
+                .addGroup(jPanelBodyLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(lblName, javax.swing.GroupLayout.PREFERRED_SIZE, 17, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnNameUpd))
                 .addGap(18, 18, 18)
-                .addComponent(lblPhone, javax.swing.GroupLayout.PREFERRED_SIZE, 17, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 102, Short.MAX_VALUE)
-                .addComponent(BookmarkAndReview, javax.swing.GroupLayout.PREFERRED_SIZE, 429, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGroup(jPanelBodyLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(lblPhone, javax.swing.GroupLayout.PREFERRED_SIZE, 17, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnPhoneUpd))
+                .addGap(43, 43, 43)
+                .addComponent(btnDel)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(BookmarkAndReview))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -366,7 +1124,7 @@ public class MyProfileFrame extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addComponent(jPaneHeader, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jPanelBody, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addComponent(jPanelBody, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
 
         pack();
@@ -394,6 +1152,47 @@ public class MyProfileFrame extends javax.swing.JFrame {
         // TODO add your handling code here:
         new MyProfileFrame().setVisible(true);
     }//GEN-LAST:event_btnMyProfileActionPerformed
+
+    private void jPanelRecipeList1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanelRecipeList1MouseClicked
+        // TODO add your handling code here:
+        //        new RecipeDetailFrame().setVisible(true);
+    }//GEN-LAST:event_jPanelRecipeList1MouseClicked
+
+    private void jPanelRecipeList2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanelRecipeList2MouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jPanelRecipeList2MouseClicked
+
+    private void jPanelRecipeList3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanelRecipeList3MouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jPanelRecipeList3MouseClicked
+
+    private void btnBookNextPageActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBookNextPageActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnBookNextPageActionPerformed
+
+    private void btnBookPrePageActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBookPrePageActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnBookPrePageActionPerformed
+
+    private void btnReviewPrePageActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnReviewPrePageActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnReviewPrePageActionPerformed
+
+    private void btnReviewNextPageActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnReviewNextPageActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnReviewNextPageActionPerformed
+
+    private void jPanelRecipeList4MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanelRecipeList4MouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jPanelRecipeList4MouseClicked
+
+    private void btnCommPrePageActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCommPrePageActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnCommPrePageActionPerformed
+
+    private void btnCommNextPageActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCommNextPageActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnCommNextPageActionPerformed
 
     /**
      * @param args the command line arguments
@@ -432,13 +1231,32 @@ public class MyProfileFrame extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JTabbedPane BookmarkAndReview;
+    private javax.swing.JButton btnBookNextPage;
+    private javax.swing.JButton btnBookPrePage;
+    private javax.swing.JButton btnCommNextPage;
+    private javax.swing.JButton btnCommPrePage;
+    private javax.swing.JButton btnDel;
     private javax.swing.JButton btnDelNo;
     private javax.swing.JButton btnDelYes;
     private javax.swing.JButton btnLogout;
     private javax.swing.JButton btnMyProfile;
     private javax.swing.JButton btnNameUpd;
     private javax.swing.JButton btnPhoneUpd;
+    private javax.swing.JButton btnRecipeBookCancel1;
+    private javax.swing.JButton btnRecipeBookCancel2;
+    private javax.swing.JButton btnRecipeBookCancel3;
+    private javax.swing.JButton btnRecipeBookCancel4;
+    private javax.swing.JButton btnReviewNextPage;
+    private javax.swing.JButton btnReviewPrePage;
     private javax.swing.JButton btnSearch;
+    private javax.swing.JButton btnToComm1;
+    private javax.swing.JButton btnToComm2;
+    private javax.swing.JButton btnToComm3;
+    private javax.swing.JButton btnToReview1;
+    private javax.swing.JButton btnToReview2;
+    private javax.swing.JButton btnToReview3;
+    private javax.swing.JButton btnUpdName;
+    private javax.swing.JButton btnUpdPhone;
     private javax.swing.JComboBox<String> comboSearch;
     private javax.swing.JDialog jDialogDel;
     private javax.swing.JDialog jDialogName;
@@ -446,17 +1264,78 @@ public class MyProfileFrame extends javax.swing.JFrame {
     private javax.swing.JPanel jPaneHeader;
     private javax.swing.JPanel jPanelBody;
     private javax.swing.JPanel jPanelBookmark;
+    private javax.swing.JPanel jPanelComment;
+    private javax.swing.JPanel jPanelRecipeImg1;
+    private javax.swing.JPanel jPanelRecipeImg2;
+    private javax.swing.JPanel jPanelRecipeImg3;
+    private javax.swing.JPanel jPanelRecipeImg4;
+    private javax.swing.JPanel jPanelRecipeList1;
+    private javax.swing.JPanel jPanelRecipeList2;
+    private javax.swing.JPanel jPanelRecipeList3;
+    private javax.swing.JPanel jPanelRecipeList4;
+    private javax.swing.JPanel jPanelRecipeOrder1;
+    private javax.swing.JPanel jPanelRecipeOrder2;
+    private javax.swing.JPanel jPanelRecipeOrder3;
+    private javax.swing.JPanel jPanelRecipeOrder4;
     private javax.swing.JPanel jPanelReview;
+    private javax.swing.JScrollPane jScrollPaneComm1;
+    private javax.swing.JScrollPane jScrollPaneComm2;
+    private javax.swing.JScrollPane jScrollPaneComm3;
+    private javax.swing.JScrollPane jScrollPaneReview1;
+    private javax.swing.JScrollPane jScrollPaneReview2;
+    private javax.swing.JScrollPane jScrollPaneReview3;
+    private javax.swing.JTextArea jTextAreaComm1;
+    private javax.swing.JTextArea jTextAreaComm2;
+    private javax.swing.JTextArea jTextAreaComm3;
+    private javax.swing.JTextArea jTextAreaReview1;
+    private javax.swing.JTextArea jTextAreaReview2;
+    private javax.swing.JTextArea jTextAreaReview3;
+    private javax.swing.JLabel lblBookCurrentPage;
+    private javax.swing.JLabel lblCommCreate1;
+    private javax.swing.JLabel lblCommCreate2;
+    private javax.swing.JLabel lblCommCreate3;
+    private javax.swing.JLabel lblCommCurrentPage;
     private javax.swing.JLabel lblDel;
     private javax.swing.JLabel lblLogo;
     private javax.swing.JLabel lblName;
     private javax.swing.JLabel lblNameAfter;
     private javax.swing.JLabel lblNameBefore;
-    private javax.swing.JLabel lblNameUpd;
     private javax.swing.JLabel lblPhone;
     private javax.swing.JLabel lblPhoneAfter;
     private javax.swing.JLabel lblPhoneBefore;
-    private javax.swing.JLabel lblPhoneUpd;
+    private javax.swing.JLabel lblRecipeCreate1;
+    private javax.swing.JLabel lblRecipeCreate2;
+    private javax.swing.JLabel lblRecipeCreate3;
+    private javax.swing.JLabel lblRecipeCreate4;
+    private javax.swing.JLabel lblRecipeGrade1;
+    private javax.swing.JLabel lblRecipeGrade2;
+    private javax.swing.JLabel lblRecipeGrade3;
+    private javax.swing.JLabel lblRecipeGrade4;
+    private javax.swing.JLabel lblRecipeOrder1;
+    private javax.swing.JLabel lblRecipeOrder2;
+    private javax.swing.JLabel lblRecipeOrder3;
+    private javax.swing.JLabel lblRecipeOrder4;
+    private javax.swing.JLabel lblRecipeTitle1;
+    private javax.swing.JLabel lblRecipeTitle2;
+    private javax.swing.JLabel lblRecipeTitle3;
+    private javax.swing.JLabel lblRecipeTitle4;
+    private javax.swing.JLabel lblRecipeWriter1;
+    private javax.swing.JLabel lblRecipeWriter2;
+    private javax.swing.JLabel lblRecipeWriter3;
+    private javax.swing.JLabel lblRecipeWriter4;
+    private javax.swing.JLabel lblReviewCreate1;
+    private javax.swing.JLabel lblReviewCreate2;
+    private javax.swing.JLabel lblReviewCreate3;
+    private javax.swing.JLabel lblReviewCurrentPage;
+    private javax.swing.JLabel lblReviewGrade1;
+    private javax.swing.JLabel lblReviewGrade2;
+    private javax.swing.JLabel lblReviewGrade3;
+    private javax.swing.JLabel lblUpdName;
+    private javax.swing.JLabel lblUpdPhone;
+    private javax.swing.JLabel lblVisit1;
+    private javax.swing.JLabel lblVisit2;
+    private javax.swing.JLabel lblVisit3;
+    private javax.swing.JLabel lblVisit4;
     private javax.swing.JTextField txtNameAfter;
     private javax.swing.JTextField txtNameBefore;
     private javax.swing.JTextField txtPhoneAfter;

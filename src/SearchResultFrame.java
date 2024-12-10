@@ -47,39 +47,41 @@ public class SearchResultFrame extends javax.swing.JFrame {
 
     // 현재 페이지에 해당하는 항목만 표시
     private void updatePage() {
+        //컴포넌트 보이게 초기화
+        jPanelResultList1.setVisible(true);
+        jPanelResultList2.setVisible(true);
+        jPanelResultList3.setVisible(true);
         
         int start = (currentPage - 1) * itemsPerPage;
         int end = Math.min(start + itemsPerPage, results.length());
         
-        if (end == start + 1) {
-            lblResultTitle1.setText("제목: " + results.getJSONObject(start).getString("title"));
-            lblResultWriter1.setText("작성자: " + results.getJSONObject(start).getString("name"));
-            lblVisit1.setText("조회수: " + results.getJSONObject(start).getInt("visited"));
-            
+        if (end == 0) {
+            jPanelResultList1.setVisible(false);
             jPanelResultList2.setVisible(false);
             jPanelResultList3.setVisible(false);
-        } else if (end == start + 2) {
-            lblResultTitle1.setText("제목: " + results.getJSONObject(start).getString("title"));
-            lblResultWriter1.setText("작성자: " + results.getJSONObject(start).getString("name"));
-            lblVisit1.setText("조회수: " + results.getJSONObject(start).getInt("visited"));
-            
-            lblResultTitle2.setText("제목: " + results.getJSONObject(start + 1).getString("title"));
-            lblResultWriter2.setText("작성자: " + results.getJSONObject(start + 1).getString("name"));
-            lblVisit2.setText("조회수: " + results.getJSONObject(start + 1).getInt("visited"));
-            
+        }
+        
+        for (int i = 0; i < end; i++) {
+            if (i % 3 == 0) {
+                lblResultTitle1.setText("제목: " + results.getJSONObject(i).getString("title"));
+                lblResultWriter1.setText("작성자: " + results.getJSONObject(i).getString("name"));
+                lblVisit1.setText("조회수: " + results.getJSONObject(i).getInt("visited"));
+            } else if (i % 3 == 1) {
+                lblResultTitle2.setText("제목: " + results.getJSONObject(i).getString("title"));
+                lblResultWriter2.setText("작성자: " + results.getJSONObject(i).getString("name"));
+                lblVisit2.setText("조회수: " + results.getJSONObject(i).getInt("visited"));
+            } else if (i % 3 == 2) {
+                lblResultTitle3.setText("제목: " + results.getJSONObject(i).getString("title"));
+                lblResultWriter3.setText("작성자: " + results.getJSONObject(i).getString("name"));
+                lblVisit3.setText("조회수: " + results.getJSONObject(i).getInt("visited"));
+            }
+        }
+        
+        if (end % 3 == 1) {
+            jPanelResultList2.setVisible(false);
             jPanelResultList3.setVisible(false);
-        } else if (end == start + 3) {
-            lblResultTitle1.setText("제목: " + results.getJSONObject(start).getString("title"));
-            lblResultWriter1.setText("작성자: " + results.getJSONObject(start).getString("name"));
-            lblVisit1.setText("조회수: " + results.getJSONObject(start).getInt("visited"));
-            
-            lblResultTitle2.setText("제목: " + results.getJSONObject(start + 1).getString("title"));
-            lblResultWriter2.setText("작성자: " + results.getJSONObject(start + 1).getString("name"));
-            lblVisit2.setText("조회수: " + results.getJSONObject(start + 1).getInt("visited"));
-            
-            lblResultTitle3.setText("제목: " + results.getJSONObject(start+2).getString("title"));
-            lblResultWriter3.setText("작성자: " + results.getJSONObject(start+2).getString("name"));
-            lblVisit3.setText("조회수: " + results.getJSONObject(start+2).getInt("visited"));
+        } else if (end % 3 == 2) {
+            jPanelResultList3.setVisible(false);
         }
 
         lblCurrentPage.setText(String.valueOf(currentPage)); // 현재 페이지 표시
