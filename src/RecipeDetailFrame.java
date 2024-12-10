@@ -1491,7 +1491,7 @@ private void displayCookingSteps(JSONArray detailsArray) {
         // TODO add your handling code here:
         new MyProfileFrame().setVisible(true);
     }//GEN-LAST:event_btnMyProfileActionPerformed
-
+    //댓글 수정 인덱스 부분
     private void handleCommentUpdate(int commentIndex) {
         try {
             // 해당 댓글의 ID와 내용을 가져오기
@@ -1507,7 +1507,7 @@ private void displayCookingSteps(JSONArray detailsArray) {
             javax.swing.JOptionPane.showMessageDialog(this, "댓글 데이터를 가져오는 중 오류 발생!", "오류", javax.swing.JOptionPane.ERROR_MESSAGE);
         }
     }
-    
+    //댓글 삭제 인덱스 부분
    private void handleCommentDelete(int commentIndex) {
         try {
             // 해당 댓글의 ID와 내용을 가져오기
@@ -1552,7 +1552,7 @@ private void displayCookingSteps(JSONArray detailsArray) {
     }//GEN-LAST:event_btnCommDelForm2ActionPerformed
 
     private void btnCommUpdForm3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCommUpdForm3ActionPerformed
-        handleCommentUpdate(2); // 첫 번째 댓글 처리
+        handleCommentUpdate(2);
     }//GEN-LAST:event_btnCommUpdForm3ActionPerformed
 
     private void btnCommDelForm3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCommDelForm3ActionPerformed
@@ -1597,19 +1597,16 @@ private void displayCookingSteps(JSONArray detailsArray) {
             int star = Integer.parseInt(comboReviewGradeWrtie.getSelectedItem().toString());
             // 작성된 리뷰 내용 가져오기
             String comment = jTextArea15.getText();
-
             // 유효성 검사
             if (comment.isEmpty()) {
                 javax.swing.JOptionPane.showMessageDialog(this, "리뷰 내용을 입력하세요!", "오류", javax.swing.JOptionPane.ERROR_MESSAGE);
                 return;
             }
-
             // JSON 데이터 생성
             JSONObject requestBody = new JSONObject();
             requestBody.put("recipe_id", recipeId);
             requestBody.put("star", star);
             requestBody.put("comment", comment);
-
             // 요청 URL
             String url = "https://m4srikufjgyzqbwltnujr7zyae0zlnrv.lambda-url.ap-northeast-2.on.aws/postUserRecipeReview";
 
@@ -1623,16 +1620,13 @@ private void displayCookingSteps(JSONArray detailsArray) {
                     .header("Authorization", "Bearer " + TokenUtil.loadUserInfo().getString("token"))
                     .POST(HttpRequest.BodyPublishers.ofString(requestBody.toString()))
                     .build();
-
             // 요청 전송 및 응답 받기
             HttpResponse<String> response = client.send(request, HttpResponse.BodyHandlers.ofString());
-
             // 응답 처리
             if (response.statusCode() == 200) {
                 JSONObject responseData = new JSONObject(response.body());
                 if (responseData.getString("result").equals("success")) {
                     javax.swing.JOptionPane.showMessageDialog(this, "리뷰가 성공적으로 등록되었습니다!", "성공", javax.swing.JOptionPane.INFORMATION_MESSAGE);
-                    
                 } else {
                     javax.swing.JOptionPane.showMessageDialog(this, "리뷰 등록 실패: " + responseData.getString("message"), "오류", javax.swing.JOptionPane.ERROR_MESSAGE);
                 }
@@ -1645,31 +1639,26 @@ private void displayCookingSteps(JSONArray detailsArray) {
         }
         
     }//GEN-LAST:event_btnReviewWriteActionPerformed
-
+    //댓글 작성 기능 코드
     private void btnCommWriteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCommWriteActionPerformed
         try {
             // 레시피 ID 가져오기
             int recipeId = recipeDataInfo.getInt("id"); // 레시피 ID는 recipeDataInfo에서 가져옴
             // 작성된 댓글 내용 가져오기
             String comment = jTextAreaCommWrite.getText();
-
             // 유효성 검사
             if (comment.isEmpty()) {
                 javax.swing.JOptionPane.showMessageDialog(this, "댓글 내용을 입력하세요!", "오류", javax.swing.JOptionPane.ERROR_MESSAGE);
                 return;
             }
-
             // JSON 데이터 생성
             JSONObject requestBody = new JSONObject();
             requestBody.put("recipe_id", recipeId);
             requestBody.put("comment", comment);
-
             // 요청 URL
             String url = "https://m4srikufjgyzqbwltnujr7zyae0zlnrv.lambda-url.ap-northeast-2.on.aws/postUserRecipeComment";
-
             // HttpClient 생성
             HttpClient client = HttpClient.newHttpClient();
-
             // HttpRequest 생성
             HttpRequest request = HttpRequest.newBuilder()
                     .uri(URI.create(url))
@@ -1677,10 +1666,8 @@ private void displayCookingSteps(JSONArray detailsArray) {
                     .header("Authorization", "Bearer " + TokenUtil.loadUserInfo().getString("token"))
                     .POST(HttpRequest.BodyPublishers.ofString(requestBody.toString()))
                     .build();
-
             // 요청 전송 및 응답 받기
             HttpResponse<String> response = client.send(request, HttpResponse.BodyHandlers.ofString());
-
             // 응답 처리
             if (response.statusCode() == 200) {
                 JSONObject responseData = new JSONObject(response.body());
@@ -1695,7 +1682,7 @@ private void displayCookingSteps(JSONArray detailsArray) {
             }
         } catch (Exception e) {
             e.printStackTrace();
-            javax.swing.JOptionPane.showMessageDialog(this, "리뷰 등록 중 오류 발생!", "오류", javax.swing.JOptionPane.ERROR_MESSAGE);
+            javax.swing.JOptionPane.showMessageDialog(this, "댓글 등록 중 오류 발생!", "오류", javax.swing.JOptionPane.ERROR_MESSAGE);
         }
     }//GEN-LAST:event_btnCommWriteActionPerformed
 
@@ -1708,25 +1695,20 @@ private void displayCookingSteps(JSONArray detailsArray) {
             int star = Integer.parseInt(comboUpdGrade.getSelectedItem().toString());
             // 작성된 리뷰 내용 가져오기
             String comment = lblUpdReview.getText();
-
             // 유효성 검사
             if (comment.isEmpty()) {
                 javax.swing.JOptionPane.showMessageDialog(this, "리뷰 내용을 입력하세요!", "오류", javax.swing.JOptionPane.ERROR_MESSAGE);
                 return;
             }
-
             // JSON 데이터 생성
             JSONObject requestBody = new JSONObject();
             requestBody.put("recipe_id", recipeId);
             requestBody.put("star", star);
             requestBody.put("comment", comment);
-
             // 요청 URL
             String url = "https://m4srikufjgyzqbwltnujr7zyae0zlnrv.lambda-url.ap-northeast-2.on.aws/postUserRecipeReview";
-
             // HttpClient 생성
             HttpClient client = HttpClient.newHttpClient();
-
             // HttpRequest 생성
             HttpRequest request = HttpRequest.newBuilder()
                     .uri(URI.create(url))
@@ -1734,32 +1716,30 @@ private void displayCookingSteps(JSONArray detailsArray) {
                     .header("Authorization", "Bearer " + TokenUtil.loadUserInfo().getString("token"))
                     .POST(HttpRequest.BodyPublishers.ofString(requestBody.toString()))
                     .build();
-
             // 요청 전송 및 응답 받기
             HttpResponse<String> response = client.send(request, HttpResponse.BodyHandlers.ofString());
-
             // 응답 처리
             if (response.statusCode() == 200) {
                 JSONObject responseData = new JSONObject(response.body());
                 if (responseData.getString("result").equals("success")) {
-                    javax.swing.JOptionPane.showMessageDialog(this, "리뷰가 성공적으로 등록되었습니다!", "성공", javax.swing.JOptionPane.INFORMATION_MESSAGE);
+                    javax.swing.JOptionPane.showMessageDialog(this, "리뷰가 성공적으로 수정되었습니다!", "성공", javax.swing.JOptionPane.INFORMATION_MESSAGE);
                     
                 } else {
-                    javax.swing.JOptionPane.showMessageDialog(this, "리뷰 등록 실패: " + responseData.getString("message"), "오류", javax.swing.JOptionPane.ERROR_MESSAGE);
+                    javax.swing.JOptionPane.showMessageDialog(this, "리뷰 수정 실패: " + responseData.getString("message"), "오류", javax.swing.JOptionPane.ERROR_MESSAGE);
                 }
             } else {
                 javax.swing.JOptionPane.showMessageDialog(this, "HTTP 오류: " + response.statusCode(), "오류", javax.swing.JOptionPane.ERROR_MESSAGE);
             }
         } catch (Exception e) {
             e.printStackTrace();
-            javax.swing.JOptionPane.showMessageDialog(this, "리뷰 등록 중 오류 발생!", "오류", javax.swing.JOptionPane.ERROR_MESSAGE);
+            javax.swing.JOptionPane.showMessageDialog(this, "리뷰 수정 중 오류 발생!", "오류", javax.swing.JOptionPane.ERROR_MESSAGE);
         }
     }//GEN-LAST:event_btnUpdReviewActionPerformed
 
     private void btnDelReviewNoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDelReviewNoActionPerformed
         this.dispose();
     }//GEN-LAST:event_btnDelReviewNoActionPerformed
-
+    //리뷰삭제 버튼 누를 시 삭제 이벤트
     private void btnDelReviewYesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDelReviewYesActionPerformed
         try {
             // 레시피 ID 가져오기
@@ -1850,7 +1830,7 @@ private void displayCookingSteps(JSONArray detailsArray) {
     private void btnDelCommNoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDelCommNoActionPerformed
         this.dispose();
     }//GEN-LAST:event_btnDelCommNoActionPerformed
-
+    //댓글 삭제 예 버튼 누를시
     private void btnDelCommYesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDelCommYesActionPerformed
         try {
             // 요청 URL

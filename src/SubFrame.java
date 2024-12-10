@@ -39,14 +39,12 @@ public class SubFrame extends javax.swing.JFrame {
         HttpClient client = HttpClient.newHttpClient();
         String url = "https://m4srikufjgyzqbwltnujr7zyae0zlnrv.lambda-url.ap-northeast-2.on.aws/getUserRecipe";
         String token = TokenUtil.loadUserInfo().getString("token");
-
         HttpRequest request = HttpRequest.newBuilder()
                 .uri(URI.create(url))
                 .GET()
                 .header("Authorization", "Bearer " + token)
                 .header("Content-Type", "application/json")
                 .build();
-
         HttpResponse<String> response = client.send(request, HttpResponse.BodyHandlers.ofString());
 
         if (response.statusCode() == 200) {
@@ -77,7 +75,6 @@ public class SubFrame extends javax.swing.JFrame {
                 lblTitle.setText("제목: " + title);
                 lblGrade.setText("평점: ★ " + grade);
                 lblOrder.setText(order);
-                
                 addRecipeClickEvent(lblTitle, recipe);
             }
         } else {
@@ -870,7 +867,7 @@ public class SubFrame extends javax.swing.JFrame {
             HttpClient client = HttpClient.newHttpClient();
             String token = userInfo.getString("token");
             HttpRequest request = HttpRequest.newBuilder()
-                    .uri(new URI("https://m4srikufjgyzqbwltnujr7zyae0zlnrv.lambda-url.ap-northeast-2.on.aws/userLogout")) // 올바른 엔드포인트
+                    .uri(new URI("https://m4srikufjgyzqbwltnujr7zyae0zlnrv.lambda-url.ap-northeast-2.on.aws/userLogout"))
                     .header("Content-Type", "application/json")
                     .header("Authorization", "Bearer " + token) // 토큰 추가
                     .DELETE()
