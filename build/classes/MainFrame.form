@@ -33,15 +33,13 @@
                               <Component id="txtRegisterName" alignment="0" pref="165" max="32767" attributes="0"/>
                               <Component id="txtRegisterPhone" alignment="1" pref="165" max="32767" attributes="0"/>
                           </Group>
-                          <EmptySpace max="-2" attributes="0"/>
-                          <Component id="btnDupCheck" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <Group type="102" alignment="0" attributes="0">
                           <EmptySpace min="-2" pref="155" max="-2" attributes="0"/>
                           <Component id="btnCreate" min="-2" max="-2" attributes="0"/>
                       </Group>
                   </Group>
-                  <EmptySpace pref="39" max="32767" attributes="0"/>
+                  <EmptySpace pref="119" max="32767" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
@@ -54,7 +52,6 @@
                   <Group type="103" groupAlignment="3" attributes="0">
                       <Component id="lblRegisterId" alignment="3" min="-2" max="-2" attributes="0"/>
                       <Component id="txtRegisterId" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="btnDupCheck" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
@@ -116,14 +113,6 @@
         <Component class="javax.swing.JPasswordField" name="pwRegisterPassConf">
         </Component>
         <Component class="javax.swing.JTextField" name="txtRegisterName">
-        </Component>
-        <Component class="javax.swing.JButton" name="btnDupCheck">
-          <Properties>
-            <Property name="text" type="java.lang.String" value="&#xc911;&#xbcf5;&#xd655;&#xc778;"/>
-          </Properties>
-          <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnDupCheckActionPerformed"/>
-          </Events>
         </Component>
         <Component class="javax.swing.JButton" name="btnCreate">
           <Properties>

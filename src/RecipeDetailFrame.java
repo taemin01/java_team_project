@@ -51,6 +51,8 @@ public class RecipeDetailFrame extends javax.swing.JFrame {
     private JSONArray comments; // 댓글 데이터를 저장할 변수
     private JSONArray review; // 댓글 데이터를 저장할 변수
     private final int itemsPerPage = 3; // 한 페이지당 항목 수
+    private int selectedCommentId;
+
     /**
      * Creates new form RecipeDetailFrame
      */
@@ -130,6 +132,8 @@ public class RecipeDetailFrame extends javax.swing.JFrame {
                 String comment = review.getString("comment");
                 String createdAt = review.getString("createdAt");
                 
+                boolean isCurrentUser = reviewer.equals(TokenUtil.loadUserInfo().getString("userName"));
+                
                 if(star > 5) {
                     star /= 2;
                 }
@@ -138,17 +142,27 @@ public class RecipeDetailFrame extends javax.swing.JFrame {
                     lblReviewWriter1.setText("작성자: " + reviewer);
                     lblReviewGrade1.setText("점수: " + star);
                     jTextAreaReview1.setText(comment);
+                    jTextAreaReview1.setEditable(false);
                     lblReviewCreate1.setText(createdAt);
+                    btnReviewUpdForm1.setVisible(isCurrentUser);
+                    btnReviewDelForm1.setVisible(isCurrentUser);
+                    
                 } else if (i % 3 == 1) { // 두 번째 패널
                     lblReviewWriter2.setText("작성자: " + reviewer);
                     lblReviewGrade2.setText("점수: " + star);
                     jTextAreaReview2.setText(comment);
+                    jTextAreaReview2.setEditable(false);
                     lblReviewCreate2.setText(createdAt);
+                    btnReviewUpdForm2.setVisible(isCurrentUser);
+                    btnReviewDelForm2.setVisible(isCurrentUser);
                 } else if (i % 3 == 2) { // 세 번째 패널
                     lblReviewWriter3.setText("작성자: " + reviewer);
                     lblReviewGrade3.setText("점수: " + star);
                     jTextAreaReview3.setText(comment);
+                    jTextAreaReview3.setEditable(false);
                     lblReviewCreate3.setText(createdAt);
+                    btnReviewUpdForm3.setVisible(isCurrentUser);
+                    btnReviewDelForm3.setVisible(isCurrentUser);
                 }
             }
 
@@ -194,22 +208,35 @@ public class RecipeDetailFrame extends javax.swing.JFrame {
             String commenter = comment.getString("name");
             String content = comment.getString("comment");
             String createdAt = comment.getString("createdAt");
+            
+            // 작성자인지 확인
+        boolean isCurrentUser = commenter.equals(TokenUtil.loadUserInfo().getString("userName"));
 
             if (i % 3 == 0) { // 첫 번째 패널
                 lblCommWriter1.setText("작성자: " + commenter);
                 lblCommCreate1.setText(createdAt);
                 jTextAreaComm1.setText(content);
+                jTextAreaComm1.setEditable(false);
                 jPanel4.setVisible(true);
+                btnCommUpdForm1.setVisible(isCurrentUser);
+                btnCommDelForm1.setVisible(isCurrentUser);
             } else if (i % 3 == 1) { // 두 번째 패널
                 lblCommWriter4.setText("작성자: " + commenter);
                 lblCommCreate4.setText(createdAt);
                 jTextAreaComm4.setText(content);
+                jTextAreaComm4.setEditable(false);
                 jPanel5.setVisible(true);
+                btnCommUpdForm2.setVisible(isCurrentUser);
+                btnCommDelForm2.setVisible(isCurrentUser);
             } else if (i % 3 == 2) { // 세 번째 패널
                 lblCommWriter5.setText("작성자: " + commenter);
                 lblCommCreate5.setText(createdAt);
                 jTextAreaComm5.setText(content);
+                jTextAreaComm5.setEditable(false);
+                
                 jPanel6.setVisible(true);
+                btnCommUpdForm3.setVisible(isCurrentUser);
+                btnCommDelForm3.setVisible(isCurrentUser);
             }
         }
 
@@ -251,8 +278,8 @@ public class RecipeDetailFrame extends javax.swing.JFrame {
         lblWriter.setText("작성자: " + name);
         jTextAreaNecess.setText(ingredient);
         jTextAreaNecess.setEditable(false);
-        lblReviewWriterWrite.setText(name);
-        lblCommWriterWrite.setText(name);
+        lblReviewWriterWrite.setText(TokenUtil.loadUserInfo().getString("userName"));
+        lblCommWriterWrite.setText(TokenUtil.loadUserInfo().getString("userName"));
     } catch (Exception e) {
         e.printStackTrace();
         javax.swing.JOptionPane.showMessageDialog(this, "레시피 데이터를 표시 중 오류 발생!", "오류", javax.swing.JOptionPane.ERROR_MESSAGE);
@@ -391,7 +418,7 @@ private void displayCookingSteps(JSONArray detailsArray) {
         jTextAreaReview1 = new javax.swing.JTextArea();
         lblReviewCreate1 = new javax.swing.JLabel();
         btnReviewUpdForm1 = new javax.swing.JButton();
-        btnReviewDelForm = new javax.swing.JButton();
+        btnReviewDelForm1 = new javax.swing.JButton();
         writeReviewPanel = new javax.swing.JPanel();
         lblReviewWriterWrite = new javax.swing.JLabel();
         lblReviewGradeWrite = new javax.swing.JLabel();
@@ -406,7 +433,7 @@ private void displayCookingSteps(JSONArray detailsArray) {
         jTextAreaReview2 = new javax.swing.JTextArea();
         lblReviewCreate2 = new javax.swing.JLabel();
         btnReviewUpdForm2 = new javax.swing.JButton();
-        btnReviewDelForm1 = new javax.swing.JButton();
+        btnReviewDelForm2 = new javax.swing.JButton();
         jPanel3 = new javax.swing.JPanel();
         lblReviewWriter3 = new javax.swing.JLabel();
         lblReviewGrade3 = new javax.swing.JLabel();
@@ -414,7 +441,7 @@ private void displayCookingSteps(JSONArray detailsArray) {
         jTextAreaReview3 = new javax.swing.JTextArea();
         lblReviewCreate3 = new javax.swing.JLabel();
         btnReviewUpdForm3 = new javax.swing.JButton();
-        btnReviewDelForm2 = new javax.swing.JButton();
+        btnReviewDelForm3 = new javax.swing.JButton();
         jPanelComment = new javax.swing.JPanel();
         lblCommCurrentPage = new javax.swing.JLabel();
         btnCommNextPage = new javax.swing.JButton();
@@ -431,15 +458,15 @@ private void displayCookingSteps(JSONArray detailsArray) {
         jScrollPaneComm4 = new javax.swing.JScrollPane();
         jTextAreaComm4 = new javax.swing.JTextArea();
         lblCommCreate4 = new javax.swing.JLabel();
-        btnCommUpdForm4 = new javax.swing.JButton();
-        btnCommDelForm4 = new javax.swing.JButton();
+        btnCommUpdForm2 = new javax.swing.JButton();
+        btnCommDelForm2 = new javax.swing.JButton();
         jPanel6 = new javax.swing.JPanel();
         lblCommWriter5 = new javax.swing.JLabel();
         jScrollPaneComm5 = new javax.swing.JScrollPane();
         jTextAreaComm5 = new javax.swing.JTextArea();
         lblCommCreate5 = new javax.swing.JLabel();
-        btnCommUpdForm5 = new javax.swing.JButton();
-        btnCommDelForm5 = new javax.swing.JButton();
+        btnCommUpdForm3 = new javax.swing.JButton();
+        btnCommDelForm3 = new javax.swing.JButton();
         writeCommnetPanel = new javax.swing.JPanel();
         lblCommWriterWrite = new javax.swing.JLabel();
         jScrollPaneCommWrite = new javax.swing.JScrollPane();
@@ -447,6 +474,11 @@ private void displayCookingSteps(JSONArray detailsArray) {
         btnCommWrite = new javax.swing.JButton();
 
         btnUpdReview.setText("수정하기");
+        btnUpdReview.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnUpdReviewActionPerformed(evt);
+            }
+        });
 
         jTextAreaUpdateReview.setColumns(20);
         jTextAreaUpdateReview.setRows(5);
@@ -501,8 +533,18 @@ private void displayCookingSteps(JSONArray detailsArray) {
         lblDelReviewConfirm.setText("삭제하시겠습니까?");
 
         btnDelReviewYes.setText("예");
+        btnDelReviewYes.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnDelReviewYesActionPerformed(evt);
+            }
+        });
 
         btnDelReviewNo.setText("아니오");
+        btnDelReviewNo.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnDelReviewNoActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jDialogReviewDelLayout = new javax.swing.GroupLayout(jDialogReviewDel.getContentPane());
         jDialogReviewDel.getContentPane().setLayout(jDialogReviewDelLayout);
@@ -542,6 +584,11 @@ private void displayCookingSteps(JSONArray detailsArray) {
         jScrollPane2.setViewportView(jTextAreaUpdComm);
 
         btnDelComm.setText("수정하기");
+        btnDelComm.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnDelCommActionPerformed(evt);
+            }
+        });
 
         jLabel1.setText("댓글 수정하기");
 
@@ -577,8 +624,18 @@ private void displayCookingSteps(JSONArray detailsArray) {
         lblDelCommConfirm.setText("삭제하시겠습니까?");
 
         btnDelCommYes.setText("예");
+        btnDelCommYes.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnDelCommYesActionPerformed(evt);
+            }
+        });
 
         btnDelCommNo.setText("아니오");
+        btnDelCommNo.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnDelCommNoActionPerformed(evt);
+            }
+        });
 
         lblDelComm.setText("댓글 삭제하기");
 
@@ -778,10 +835,10 @@ private void displayCookingSteps(JSONArray detailsArray) {
             }
         });
 
-        btnReviewDelForm.setText("삭제");
-        btnReviewDelForm.addActionListener(new java.awt.event.ActionListener() {
+        btnReviewDelForm1.setText("삭제");
+        btnReviewDelForm1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnReviewDelFormActionPerformed(evt);
+                btnReviewDelForm1ActionPerformed(evt);
             }
         });
 
@@ -803,7 +860,7 @@ private void displayCookingSteps(JSONArray detailsArray) {
                         .addGap(0, 0, Short.MAX_VALUE)
                         .addComponent(btnReviewUpdForm1)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(btnReviewDelForm)))
+                        .addComponent(btnReviewDelForm1)))
                 .addContainerGap())
         );
         jPanel1Layout.setVerticalGroup(
@@ -819,7 +876,7 @@ private void displayCookingSteps(JSONArray detailsArray) {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btnReviewUpdForm1)
-                    .addComponent(btnReviewDelForm)))
+                    .addComponent(btnReviewDelForm1)))
         );
 
         lblReviewWriterWrite.setText("작성자 : 홍길동");
@@ -891,10 +948,10 @@ private void displayCookingSteps(JSONArray detailsArray) {
             }
         });
 
-        btnReviewDelForm1.setText("삭제");
-        btnReviewDelForm1.addActionListener(new java.awt.event.ActionListener() {
+        btnReviewDelForm2.setText("삭제");
+        btnReviewDelForm2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnReviewDelForm1ActionPerformed(evt);
+                btnReviewDelForm2ActionPerformed(evt);
             }
         });
 
@@ -916,7 +973,7 @@ private void displayCookingSteps(JSONArray detailsArray) {
                         .addGap(0, 0, Short.MAX_VALUE)
                         .addComponent(btnReviewUpdForm2)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(btnReviewDelForm1)))
+                        .addComponent(btnReviewDelForm2)))
                 .addContainerGap())
         );
         jPanel2Layout.setVerticalGroup(
@@ -932,7 +989,7 @@ private void displayCookingSteps(JSONArray detailsArray) {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btnReviewUpdForm2)
-                    .addComponent(btnReviewDelForm1)))
+                    .addComponent(btnReviewDelForm2)))
         );
 
         lblReviewWriter3.setText("작성자 : 홍길동");
@@ -952,10 +1009,10 @@ private void displayCookingSteps(JSONArray detailsArray) {
             }
         });
 
-        btnReviewDelForm2.setText("삭제");
-        btnReviewDelForm2.addActionListener(new java.awt.event.ActionListener() {
+        btnReviewDelForm3.setText("삭제");
+        btnReviewDelForm3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnReviewDelForm2ActionPerformed(evt);
+                btnReviewDelForm3ActionPerformed(evt);
             }
         });
 
@@ -977,7 +1034,7 @@ private void displayCookingSteps(JSONArray detailsArray) {
                         .addGap(0, 0, Short.MAX_VALUE)
                         .addComponent(btnReviewUpdForm3)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(btnReviewDelForm2)))
+                        .addComponent(btnReviewDelForm3)))
                 .addContainerGap())
         );
         jPanel3Layout.setVerticalGroup(
@@ -993,7 +1050,7 @@ private void displayCookingSteps(JSONArray detailsArray) {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btnReviewUpdForm3)
-                    .addComponent(btnReviewDelForm2)))
+                    .addComponent(btnReviewDelForm3)))
         );
 
         javax.swing.GroupLayout jPanelReviewLayout = new javax.swing.GroupLayout(jPanelReview);
@@ -1119,17 +1176,17 @@ private void displayCookingSteps(JSONArray detailsArray) {
 
         lblCommCreate4.setText("2025.01.01");
 
-        btnCommUpdForm4.setText("수정");
-        btnCommUpdForm4.addActionListener(new java.awt.event.ActionListener() {
+        btnCommUpdForm2.setText("수정");
+        btnCommUpdForm2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnCommUpdForm4ActionPerformed(evt);
+                btnCommUpdForm2ActionPerformed(evt);
             }
         });
 
-        btnCommDelForm4.setText("삭제");
-        btnCommDelForm4.addActionListener(new java.awt.event.ActionListener() {
+        btnCommDelForm2.setText("삭제");
+        btnCommDelForm2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnCommDelForm4ActionPerformed(evt);
+                btnCommDelForm2ActionPerformed(evt);
             }
         });
 
@@ -1147,9 +1204,9 @@ private void displayCookingSteps(JSONArray detailsArray) {
                         .addComponent(lblCommCreate4))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel5Layout.createSequentialGroup()
                         .addGap(0, 0, Short.MAX_VALUE)
-                        .addComponent(btnCommUpdForm4)
+                        .addComponent(btnCommUpdForm2)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(btnCommDelForm4)))
+                        .addComponent(btnCommDelForm2)))
                 .addGap(17, 17, 17))
         );
         jPanel5Layout.setVerticalGroup(
@@ -1163,8 +1220,8 @@ private void displayCookingSteps(JSONArray detailsArray) {
                 .addComponent(jScrollPaneComm4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(btnCommUpdForm4)
-                    .addComponent(btnCommDelForm4))
+                    .addComponent(btnCommUpdForm2)
+                    .addComponent(btnCommDelForm2))
                 .addContainerGap(18, Short.MAX_VALUE))
         );
 
@@ -1176,17 +1233,17 @@ private void displayCookingSteps(JSONArray detailsArray) {
 
         lblCommCreate5.setText("2025.01.01");
 
-        btnCommUpdForm5.setText("수정");
-        btnCommUpdForm5.addActionListener(new java.awt.event.ActionListener() {
+        btnCommUpdForm3.setText("수정");
+        btnCommUpdForm3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnCommUpdForm5ActionPerformed(evt);
+                btnCommUpdForm3ActionPerformed(evt);
             }
         });
 
-        btnCommDelForm5.setText("삭제");
-        btnCommDelForm5.addActionListener(new java.awt.event.ActionListener() {
+        btnCommDelForm3.setText("삭제");
+        btnCommDelForm3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnCommDelForm5ActionPerformed(evt);
+                btnCommDelForm3ActionPerformed(evt);
             }
         });
 
@@ -1204,9 +1261,9 @@ private void displayCookingSteps(JSONArray detailsArray) {
                         .addComponent(lblCommCreate5))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel6Layout.createSequentialGroup()
                         .addGap(0, 0, Short.MAX_VALUE)
-                        .addComponent(btnCommUpdForm5)
+                        .addComponent(btnCommUpdForm3)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(btnCommDelForm5)))
+                        .addComponent(btnCommDelForm3)))
                 .addGap(17, 17, 17))
         );
         jPanel6Layout.setVerticalGroup(
@@ -1220,8 +1277,8 @@ private void displayCookingSteps(JSONArray detailsArray) {
                 .addComponent(jScrollPaneComm5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(btnCommUpdForm5)
-                    .addComponent(btnCommDelForm5))
+                    .addComponent(btnCommUpdForm3)
+                    .addComponent(btnCommDelForm3))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
@@ -1435,61 +1492,88 @@ private void displayCookingSteps(JSONArray detailsArray) {
         new MyProfileFrame().setVisible(true);
     }//GEN-LAST:event_btnMyProfileActionPerformed
 
+    private void handleCommentUpdate(int commentIndex) {
+        try {
+            // 해당 댓글의 ID와 내용을 가져오기
+            selectedCommentId = comments.getJSONObject(commentIndex).getInt("id");
+            System.out.println("수정할 댓글 ID: " + selectedCommentId);
+
+            // 수정 다이얼로그를 띄우기
+            jDialogCommUpd.setSize(400, 350);
+            jTextAreaUpdComm.setText(comments.getJSONObject(commentIndex).getString("comment")); // 기존 댓글 내용 설정
+            jDialogCommUpd.setVisible(true);
+        } catch (Exception e) {
+            e.printStackTrace();
+            javax.swing.JOptionPane.showMessageDialog(this, "댓글 데이터를 가져오는 중 오류 발생!", "오류", javax.swing.JOptionPane.ERROR_MESSAGE);
+        }
+    }
+    
+   private void handleCommentDelete(int commentIndex) {
+        try {
+            // 해당 댓글의 ID와 내용을 가져오기
+            selectedCommentId = comments.getJSONObject(commentIndex).getInt("id");
+            System.out.println("삭제할 댓글 ID: " + selectedCommentId);
+
+            // 수정 다이얼로그를 띄우기
+            jDialogCommDel.setSize(400, 350);
+            jDialogCommDel.setVisible(true);
+        } catch (Exception e) {
+            e.printStackTrace();
+            javax.swing.JOptionPane.showMessageDialog(this, "댓글 데이터를 가져오는 중 오류 발생!", "오류", javax.swing.JOptionPane.ERROR_MESSAGE);
+        }
+    }
+    
     private void btnReviewUpdForm1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnReviewUpdForm1ActionPerformed
         // TODO add your handling code here:
         jDialogReviewUpd.setSize(400, 350);
         jDialogReviewUpd.setVisible(true);
     }//GEN-LAST:event_btnReviewUpdForm1ActionPerformed
 
-    private void btnReviewDelFormActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnReviewDelFormActionPerformed
+    private void btnReviewDelForm1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnReviewDelForm1ActionPerformed
         // TODO add your handling code here:
         jDialogReviewDel.setSize(400, 350);
         jDialogReviewDel.setVisible(true);
-    }//GEN-LAST:event_btnReviewDelFormActionPerformed
+    }//GEN-LAST:event_btnReviewDelForm1ActionPerformed
 
     private void btnCommUpdForm1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCommUpdForm1ActionPerformed
-        // TODO add your handling code here:
-        jDialogCommUpd.setSize(400, 350);
-        jDialogCommUpd.setVisible(true);
+        handleCommentUpdate(0); // 첫 번째 댓글 수정 처리
     }//GEN-LAST:event_btnCommUpdForm1ActionPerformed
 
     private void btnCommDelForm1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCommDelForm1ActionPerformed
-        // TODO add your handling code here:
-        jDialogCommDel.setSize(400, 350);
-        jDialogCommDel.setVisible(true);
+        handleCommentDelete(0);
     }//GEN-LAST:event_btnCommDelForm1ActionPerformed
 
-    private void btnCommUpdForm4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCommUpdForm4ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_btnCommUpdForm4ActionPerformed
+    private void btnCommUpdForm2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCommUpdForm2ActionPerformed
+        handleCommentUpdate(1); // 첫 번째 댓글 처리
+    }//GEN-LAST:event_btnCommUpdForm2ActionPerformed
 
-    private void btnCommDelForm4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCommDelForm4ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_btnCommDelForm4ActionPerformed
+    private void btnCommDelForm2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCommDelForm2ActionPerformed
+        handleCommentDelete(2);
+    }//GEN-LAST:event_btnCommDelForm2ActionPerformed
 
-    private void btnCommUpdForm5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCommUpdForm5ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_btnCommUpdForm5ActionPerformed
+    private void btnCommUpdForm3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCommUpdForm3ActionPerformed
+        handleCommentUpdate(2); // 첫 번째 댓글 처리
+    }//GEN-LAST:event_btnCommUpdForm3ActionPerformed
 
-    private void btnCommDelForm5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCommDelForm5ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_btnCommDelForm5ActionPerformed
+    private void btnCommDelForm3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCommDelForm3ActionPerformed
+        handleCommentDelete(3);
+    }//GEN-LAST:event_btnCommDelForm3ActionPerformed
 
     private void btnReviewUpdForm2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnReviewUpdForm2ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_btnReviewUpdForm2ActionPerformed
 
-    private void btnReviewDelForm1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnReviewDelForm1ActionPerformed
+    private void btnReviewDelForm2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnReviewDelForm2ActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_btnReviewDelForm1ActionPerformed
+    }//GEN-LAST:event_btnReviewDelForm2ActionPerformed
 
     private void btnReviewUpdForm3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnReviewUpdForm3ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_btnReviewUpdForm3ActionPerformed
 
-    private void btnReviewDelForm2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnReviewDelForm2ActionPerformed
+    private void btnReviewDelForm3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnReviewDelForm3ActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_btnReviewDelForm2ActionPerformed
+    }//GEN-LAST:event_btnReviewDelForm3ActionPerformed
 
     private void btnReviewNextPageActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnReviewNextPageActionPerformed
         if (reviewCurrentPage * itemsPerPage < review.length()) {
@@ -1516,7 +1600,7 @@ private void displayCookingSteps(JSONArray detailsArray) {
 
             // 유효성 검사
             if (comment.isEmpty()) {
-                javax.swing.JOptionPane.showMessageDialog(this, "댓글 내용을 입력하세요!", "오류", javax.swing.JOptionPane.ERROR_MESSAGE);
+                javax.swing.JOptionPane.showMessageDialog(this, "리뷰 내용을 입력하세요!", "오류", javax.swing.JOptionPane.ERROR_MESSAGE);
                 return;
             }
 
@@ -1615,6 +1699,195 @@ private void displayCookingSteps(JSONArray detailsArray) {
         }
     }//GEN-LAST:event_btnCommWriteActionPerformed
 
+    //리뷰 수정하기
+    private void btnUpdReviewActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnUpdReviewActionPerformed
+        try {
+            // 레시피 ID 가져오기
+            int recipeId = recipeDataInfo.getInt("id"); // 레시피 ID는 recipeDataInfo에서 가져옴
+            // 선택한 별점 가져오기
+            int star = Integer.parseInt(comboUpdGrade.getSelectedItem().toString());
+            // 작성된 리뷰 내용 가져오기
+            String comment = lblUpdReview.getText();
+
+            // 유효성 검사
+            if (comment.isEmpty()) {
+                javax.swing.JOptionPane.showMessageDialog(this, "리뷰 내용을 입력하세요!", "오류", javax.swing.JOptionPane.ERROR_MESSAGE);
+                return;
+            }
+
+            // JSON 데이터 생성
+            JSONObject requestBody = new JSONObject();
+            requestBody.put("recipe_id", recipeId);
+            requestBody.put("star", star);
+            requestBody.put("comment", comment);
+
+            // 요청 URL
+            String url = "https://m4srikufjgyzqbwltnujr7zyae0zlnrv.lambda-url.ap-northeast-2.on.aws/postUserRecipeReview";
+
+            // HttpClient 생성
+            HttpClient client = HttpClient.newHttpClient();
+
+            // HttpRequest 생성
+            HttpRequest request = HttpRequest.newBuilder()
+                    .uri(URI.create(url))
+                    .header("Content-Type", "application/json")
+                    .header("Authorization", "Bearer " + TokenUtil.loadUserInfo().getString("token"))
+                    .POST(HttpRequest.BodyPublishers.ofString(requestBody.toString()))
+                    .build();
+
+            // 요청 전송 및 응답 받기
+            HttpResponse<String> response = client.send(request, HttpResponse.BodyHandlers.ofString());
+
+            // 응답 처리
+            if (response.statusCode() == 200) {
+                JSONObject responseData = new JSONObject(response.body());
+                if (responseData.getString("result").equals("success")) {
+                    javax.swing.JOptionPane.showMessageDialog(this, "리뷰가 성공적으로 등록되었습니다!", "성공", javax.swing.JOptionPane.INFORMATION_MESSAGE);
+                    
+                } else {
+                    javax.swing.JOptionPane.showMessageDialog(this, "리뷰 등록 실패: " + responseData.getString("message"), "오류", javax.swing.JOptionPane.ERROR_MESSAGE);
+                }
+            } else {
+                javax.swing.JOptionPane.showMessageDialog(this, "HTTP 오류: " + response.statusCode(), "오류", javax.swing.JOptionPane.ERROR_MESSAGE);
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+            javax.swing.JOptionPane.showMessageDialog(this, "리뷰 등록 중 오류 발생!", "오류", javax.swing.JOptionPane.ERROR_MESSAGE);
+        }
+    }//GEN-LAST:event_btnUpdReviewActionPerformed
+
+    private void btnDelReviewNoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDelReviewNoActionPerformed
+        this.dispose();
+    }//GEN-LAST:event_btnDelReviewNoActionPerformed
+
+    private void btnDelReviewYesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDelReviewYesActionPerformed
+        try {
+            // 레시피 ID 가져오기
+            int recipeId = recipeDataInfo.getInt("id"); // 레시피 ID는 recipeDataInfo에서 가져옴
+
+            // 요청 URL
+            String url = "https://m4srikufjgyzqbwltnujr7zyae0zlnrv.lambda-url.ap-northeast-2.on.aws/deleteUserRecipeReview/"+recipeId;
+
+            // HttpClient 생성
+            HttpClient client = HttpClient.newHttpClient();
+
+            // HttpRequest 생성
+            HttpRequest request = HttpRequest.newBuilder()
+                    .uri(URI.create(url))
+                    .header("Content-Type", "application/json")
+                    .header("Authorization", "Bearer " + TokenUtil.loadUserInfo().getString("token"))
+                    .DELETE()
+                    .build();
+
+            // 요청 전송 및 응답 받기
+            HttpResponse<String> response = client.send(request, HttpResponse.BodyHandlers.ofString());
+
+            // 응답 처리
+            if (response.statusCode() == 200) {
+                JSONObject responseData = new JSONObject(response.body());
+                if (responseData.getString("result").equals("success")) {
+                    javax.swing.JOptionPane.showMessageDialog(this, "리뷰가 성공적으로 삭제되었습니다!", "성공", javax.swing.JOptionPane.INFORMATION_MESSAGE);
+                   
+                } else {
+                    javax.swing.JOptionPane.showMessageDialog(this, "리뷰 삭제 실패: " + responseData.getString("message"), "오류", javax.swing.JOptionPane.ERROR_MESSAGE);
+                }
+            } else {
+                javax.swing.JOptionPane.showMessageDialog(this, "HTTP 오류: " + response.statusCode(), "오류", javax.swing.JOptionPane.ERROR_MESSAGE);
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+            javax.swing.JOptionPane.showMessageDialog(this, "리뷰 삭제 중 오류 발생!", "오류", javax.swing.JOptionPane.ERROR_MESSAGE);
+        }
+    }//GEN-LAST:event_btnDelReviewYesActionPerformed
+
+    //댓글 수정
+    private void btnDelCommActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDelCommActionPerformed
+        try {
+            // 작성된 댓글 내용 가져오기
+            String comment = jTextAreaUpdComm.getText();
+            // 유효성 검사
+            if (comment.isEmpty()) {
+                javax.swing.JOptionPane.showMessageDialog(this, "댓글 내용을 입력하세요!", "오류", javax.swing.JOptionPane.ERROR_MESSAGE);
+                return;
+            }
+            // JSON 데이터 생성
+            JSONObject requestBody = new JSONObject();
+            requestBody.put("comment_id", selectedCommentId);
+            requestBody.put("comment", comment);
+
+            // 요청 URL
+            String url = "https://m4srikufjgyzqbwltnujr7zyae0zlnrv.lambda-url.ap-northeast-2.on.aws/putUserRecipeComment";
+            // HttpClient 생성
+            HttpClient client = HttpClient.newHttpClient();
+            // HttpRequest 생성
+            HttpRequest request = HttpRequest.newBuilder()
+                    .uri(URI.create(url))
+                    .header("Content-Type", "application/json")
+                    .header("Authorization", "Bearer " + TokenUtil.loadUserInfo().getString("token"))
+                    .PUT(HttpRequest.BodyPublishers.ofString(requestBody.toString()))
+                    .build();
+            // 요청 전송 및 응답 받기
+            HttpResponse<String> response = client.send(request, HttpResponse.BodyHandlers.ofString());
+
+            // 응답 처리
+            if (response.statusCode() == 200) {
+                JSONObject responseData = new JSONObject(response.body());
+                if (responseData.getString("result").equals("success")) {
+                    javax.swing.JOptionPane.showMessageDialog(this, "댓글이 성공적으로 수정되었습니다!", "성공", javax.swing.JOptionPane.INFORMATION_MESSAGE);
+                    
+                } else {
+                    javax.swing.JOptionPane.showMessageDialog(this, "댓글 수정 실패: " + responseData.getString("message"), "오류", javax.swing.JOptionPane.ERROR_MESSAGE);
+                }
+            } else {
+                javax.swing.JOptionPane.showMessageDialog(this, "HTTP 오류: " + response.statusCode(), "오류", javax.swing.JOptionPane.ERROR_MESSAGE);
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+            javax.swing.JOptionPane.showMessageDialog(this, "댓글 수정 중 오류 발생!", "오류", javax.swing.JOptionPane.ERROR_MESSAGE);
+        }
+    }//GEN-LAST:event_btnDelCommActionPerformed
+
+    private void btnDelCommNoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDelCommNoActionPerformed
+        this.dispose();
+    }//GEN-LAST:event_btnDelCommNoActionPerformed
+
+    private void btnDelCommYesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDelCommYesActionPerformed
+        try {
+            // 요청 URL
+            String url = "https://m4srikufjgyzqbwltnujr7zyae0zlnrv.lambda-url.ap-northeast-2.on.aws/deleteUserRecipeComment/"+selectedCommentId;
+
+            // HttpClient 생성
+            HttpClient client = HttpClient.newHttpClient();
+
+            // HttpRequest 생성
+            HttpRequest request = HttpRequest.newBuilder()
+                    .uri(URI.create(url))
+                    .header("Content-Type", "application/json")
+                    .header("Authorization", "Bearer " + TokenUtil.loadUserInfo().getString("token"))
+                    .DELETE()
+                    .build();
+
+            // 요청 전송 및 응답 받기
+            HttpResponse<String> response = client.send(request, HttpResponse.BodyHandlers.ofString());
+
+            // 응답 처리
+            if (response.statusCode() == 200) {
+                JSONObject responseData = new JSONObject(response.body());
+                if (responseData.getString("result").equals("success")) {
+                    javax.swing.JOptionPane.showMessageDialog(this, "댓글이 성공적으로 삭제되었습니다!", "성공", javax.swing.JOptionPane.INFORMATION_MESSAGE);
+                   
+                } else {
+                    javax.swing.JOptionPane.showMessageDialog(this, "댓글 삭제 실패: " + responseData.getString("message"), "오류", javax.swing.JOptionPane.ERROR_MESSAGE);
+                }
+            } else {
+                javax.swing.JOptionPane.showMessageDialog(this, "HTTP 오류: " + response.statusCode(), "오류", javax.swing.JOptionPane.ERROR_MESSAGE);
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+            javax.swing.JOptionPane.showMessageDialog(this, "댓글 삭제 중 오류 발생!", "오류", javax.swing.JOptionPane.ERROR_MESSAGE);
+        }
+    }//GEN-LAST:event_btnDelCommYesActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -1653,13 +1926,13 @@ private void displayCookingSteps(JSONArray detailsArray) {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JTabbedPane ReviewAndComment;
     private javax.swing.JButton btnCommDelForm1;
-    private javax.swing.JButton btnCommDelForm4;
-    private javax.swing.JButton btnCommDelForm5;
+    private javax.swing.JButton btnCommDelForm2;
+    private javax.swing.JButton btnCommDelForm3;
     private javax.swing.JButton btnCommNextPage;
     private javax.swing.JButton btnCommPrePage;
     private javax.swing.JButton btnCommUpdForm1;
-    private javax.swing.JButton btnCommUpdForm4;
-    private javax.swing.JButton btnCommUpdForm5;
+    private javax.swing.JButton btnCommUpdForm2;
+    private javax.swing.JButton btnCommUpdForm3;
     private javax.swing.JButton btnCommWrite;
     private javax.swing.JButton btnDelComm;
     private javax.swing.JButton btnDelCommNo;
@@ -1668,9 +1941,9 @@ private void displayCookingSteps(JSONArray detailsArray) {
     private javax.swing.JButton btnDelReviewYes;
     private javax.swing.JButton btnLogout;
     private javax.swing.JButton btnMyProfile;
-    private javax.swing.JButton btnReviewDelForm;
     private javax.swing.JButton btnReviewDelForm1;
     private javax.swing.JButton btnReviewDelForm2;
+    private javax.swing.JButton btnReviewDelForm3;
     private javax.swing.JButton btnReviewNextPage;
     private javax.swing.JButton btnReviewPrePage;
     private javax.swing.JButton btnReviewUpdForm1;

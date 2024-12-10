@@ -84,7 +84,6 @@ public class MainFrame extends javax.swing.JFrame {
         pwRegisterPass = new javax.swing.JPasswordField();
         pwRegisterPassConf = new javax.swing.JPasswordField();
         txtRegisterName = new javax.swing.JTextField();
-        btnDupCheck = new javax.swing.JButton();
         btnCreate = new javax.swing.JButton();
         lblRegisterPhone = new javax.swing.JLabel();
         txtRegisterPhone = new javax.swing.JTextField();
@@ -110,13 +109,6 @@ public class MainFrame extends javax.swing.JFrame {
         lblRegisterPassConf.setText("비밀번호 확인");
 
         lblRegisterName.setText("닉네임");
-
-        btnDupCheck.setText("중복확인");
-        btnDupCheck.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnDupCheckActionPerformed(evt);
-            }
-        });
 
         btnCreate.setText("회원가입");
         btnCreate.addActionListener(new java.awt.event.ActionListener() {
@@ -151,13 +143,11 @@ public class MainFrame extends javax.swing.JFrame {
                             .addComponent(pwRegisterPass)
                             .addComponent(pwRegisterPassConf)
                             .addComponent(txtRegisterName, javax.swing.GroupLayout.DEFAULT_SIZE, 165, Short.MAX_VALUE)
-                            .addComponent(txtRegisterPhone, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 165, Short.MAX_VALUE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(btnDupCheck))
+                            .addComponent(txtRegisterPhone, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 165, Short.MAX_VALUE)))
                     .addGroup(jDialogRegisterLayout.createSequentialGroup()
                         .addGap(155, 155, 155)
                         .addComponent(btnCreate)))
-                .addContainerGap(39, Short.MAX_VALUE))
+                .addContainerGap(119, Short.MAX_VALUE))
         );
         jDialogRegisterLayout.setVerticalGroup(
             jDialogRegisterLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -167,8 +157,7 @@ public class MainFrame extends javax.swing.JFrame {
                 .addGap(29, 29, 29)
                 .addGroup(jDialogRegisterLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(lblRegisterId)
-                    .addComponent(txtRegisterId, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btnDupCheck))
+                    .addComponent(txtRegisterId, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jDialogRegisterLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(lblRegisterPass)
@@ -296,6 +285,7 @@ public class MainFrame extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    //로그인 코드
     private void btnLoginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLoginActionPerformed
         if (!validateCaptcha()) {
             JOptionPane.showMessageDialog(null, "캡챠 문자 재입력 바랍니다.");
@@ -357,7 +347,7 @@ public class MainFrame extends javax.swing.JFrame {
         }
 
     }//GEN-LAST:event_btnLoginActionPerformed
-
+    
     private void btnRegisterActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRegisterActionPerformed
         // TODO add your handling code here:
         jDialogRegister.setSize(400, 350);
@@ -367,10 +357,6 @@ public class MainFrame extends javax.swing.JFrame {
     private void btnRefreshCaptchaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRefreshCaptchaActionPerformed
         generateCaptcha();
     }//GEN-LAST:event_btnRefreshCaptchaActionPerformed
-
-    private void btnDupCheckActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDupCheckActionPerformed
-        
-    }//GEN-LAST:event_btnDupCheckActionPerformed
 
     private void btnCreateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCreateActionPerformed
         char[] passwordChars = pwRegisterPass.getPassword();
@@ -445,7 +431,6 @@ public class MainFrame extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnCreate;
-    private javax.swing.JButton btnDupCheck;
     private javax.swing.JButton btnLogin;
     private javax.swing.JButton btnRefreshCaptcha;
     private javax.swing.JButton btnRegister;

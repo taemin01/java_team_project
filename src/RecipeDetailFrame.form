@@ -55,6 +55,9 @@
           <Properties>
             <Property name="text" type="java.lang.String" value="&#xc218;&#xc815;&#xd558;&#xae30;"/>
           </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnUpdReviewActionPerformed"/>
+          </Events>
         </Component>
         <Container class="javax.swing.JScrollPane" name="jScrollPane1">
           <AuxValues>
@@ -157,11 +160,17 @@
           <Properties>
             <Property name="text" type="java.lang.String" value="&#xc608;"/>
           </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnDelReviewYesActionPerformed"/>
+          </Events>
         </Component>
         <Component class="javax.swing.JButton" name="btnDelReviewNo">
           <Properties>
             <Property name="text" type="java.lang.String" value="&#xc544;&#xb2c8;&#xc624;"/>
           </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnDelReviewNoActionPerformed"/>
+          </Events>
         </Component>
       </SubComponents>
     </Container>
@@ -222,6 +231,9 @@
           <Properties>
             <Property name="text" type="java.lang.String" value="&#xc218;&#xc815;&#xd558;&#xae30;"/>
           </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnDelCommActionPerformed"/>
+          </Events>
         </Component>
         <Component class="javax.swing.JLabel" name="jLabel1">
           <Properties>
@@ -283,11 +295,17 @@
           <Properties>
             <Property name="text" type="java.lang.String" value="&#xc608;"/>
           </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnDelCommYesActionPerformed"/>
+          </Events>
         </Component>
         <Component class="javax.swing.JButton" name="btnDelCommNo">
           <Properties>
             <Property name="text" type="java.lang.String" value="&#xc544;&#xb2c8;&#xc624;"/>
           </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnDelCommNoActionPerformed"/>
+          </Events>
         </Component>
         <Component class="javax.swing.JLabel" name="lblDelComm">
           <Properties>
@@ -750,7 +768,7 @@
                                           <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
                                           <Component id="btnReviewUpdForm1" min="-2" max="-2" attributes="0"/>
                                           <EmptySpace max="-2" attributes="0"/>
-                                          <Component id="btnReviewDelForm" min="-2" max="-2" attributes="0"/>
+                                          <Component id="btnReviewDelForm1" min="-2" max="-2" attributes="0"/>
                                       </Group>
                                   </Group>
                                   <EmptySpace max="-2" attributes="0"/>
@@ -771,7 +789,7 @@
                                   <EmptySpace max="-2" attributes="0"/>
                                   <Group type="103" groupAlignment="3" attributes="0">
                                       <Component id="btnReviewUpdForm1" alignment="3" min="-2" max="-2" attributes="0"/>
-                                      <Component id="btnReviewDelForm" alignment="3" min="-2" max="-2" attributes="0"/>
+                                      <Component id="btnReviewDelForm1" alignment="3" min="-2" max="-2" attributes="0"/>
                                   </Group>
                               </Group>
                           </Group>
@@ -816,12 +834,12 @@
                             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnReviewUpdForm1ActionPerformed"/>
                           </Events>
                         </Component>
-                        <Component class="javax.swing.JButton" name="btnReviewDelForm">
+                        <Component class="javax.swing.JButton" name="btnReviewDelForm1">
                           <Properties>
                             <Property name="text" type="java.lang.String" value="&#xc0ad;&#xc81c;"/>
                           </Properties>
                           <Events>
-                            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnReviewDelFormActionPerformed"/>
+                            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnReviewDelForm1ActionPerformed"/>
                           </Events>
                         </Component>
                       </SubComponents>
@@ -942,7 +960,7 @@
                                           <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
                                           <Component id="btnReviewUpdForm2" min="-2" max="-2" attributes="0"/>
                                           <EmptySpace max="-2" attributes="0"/>
-                                          <Component id="btnReviewDelForm1" min="-2" max="-2" attributes="0"/>
+                                          <Component id="btnReviewDelForm2" min="-2" max="-2" attributes="0"/>
                                       </Group>
                                   </Group>
                                   <EmptySpace max="-2" attributes="0"/>
@@ -963,7 +981,7 @@
                                   <EmptySpace max="-2" attributes="0"/>
                                   <Group type="103" groupAlignment="3" attributes="0">
                                       <Component id="btnReviewUpdForm2" alignment="3" min="-2" max="-2" attributes="0"/>
-                                      <Component id="btnReviewDelForm1" alignment="3" min="-2" max="-2" attributes="0"/>
+                                      <Component id="btnReviewDelForm2" alignment="3" min="-2" max="-2" attributes="0"/>
                                   </Group>
                               </Group>
                           </Group>
@@ -1008,12 +1026,12 @@
                             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnReviewUpdForm2ActionPerformed"/>
                           </Events>
                         </Component>
-                        <Component class="javax.swing.JButton" name="btnReviewDelForm1">
+                        <Component class="javax.swing.JButton" name="btnReviewDelForm2">
                           <Properties>
                             <Property name="text" type="java.lang.String" value="&#xc0ad;&#xc81c;"/>
                           </Properties>
                           <Events>
-                            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnReviewDelForm1ActionPerformed"/>
+                            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnReviewDelForm2ActionPerformed"/>
                           </Events>
                         </Component>
                       </SubComponents>
@@ -1038,7 +1056,7 @@
                                           <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
                                           <Component id="btnReviewUpdForm3" min="-2" max="-2" attributes="0"/>
                                           <EmptySpace max="-2" attributes="0"/>
-                                          <Component id="btnReviewDelForm2" min="-2" max="-2" attributes="0"/>
+                                          <Component id="btnReviewDelForm3" min="-2" max="-2" attributes="0"/>
                                       </Group>
                                   </Group>
                                   <EmptySpace max="-2" attributes="0"/>
@@ -1059,7 +1077,7 @@
                                   <EmptySpace max="-2" attributes="0"/>
                                   <Group type="103" groupAlignment="3" attributes="0">
                                       <Component id="btnReviewUpdForm3" alignment="3" min="-2" max="-2" attributes="0"/>
-                                      <Component id="btnReviewDelForm2" alignment="3" min="-2" max="-2" attributes="0"/>
+                                      <Component id="btnReviewDelForm3" alignment="3" min="-2" max="-2" attributes="0"/>
                                   </Group>
                               </Group>
                           </Group>
@@ -1104,12 +1122,12 @@
                             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnReviewUpdForm3ActionPerformed"/>
                           </Events>
                         </Component>
-                        <Component class="javax.swing.JButton" name="btnReviewDelForm2">
+                        <Component class="javax.swing.JButton" name="btnReviewDelForm3">
                           <Properties>
                             <Property name="text" type="java.lang.String" value="&#xc0ad;&#xc81c;"/>
                           </Properties>
                           <Events>
-                            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnReviewDelForm2ActionPerformed"/>
+                            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnReviewDelForm3ActionPerformed"/>
                           </Events>
                         </Component>
                       </SubComponents>
@@ -1309,9 +1327,9 @@
                                       </Group>
                                       <Group type="102" alignment="1" attributes="0">
                                           <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
-                                          <Component id="btnCommUpdForm4" min="-2" max="-2" attributes="0"/>
+                                          <Component id="btnCommUpdForm2" min="-2" max="-2" attributes="0"/>
                                           <EmptySpace max="-2" attributes="0"/>
-                                          <Component id="btnCommDelForm4" min="-2" max="-2" attributes="0"/>
+                                          <Component id="btnCommDelForm2" min="-2" max="-2" attributes="0"/>
                                       </Group>
                                   </Group>
                                   <EmptySpace min="-2" pref="17" max="-2" attributes="0"/>
@@ -1330,8 +1348,8 @@
                                   <Component id="jScrollPaneComm4" min="-2" max="-2" attributes="0"/>
                                   <EmptySpace max="-2" attributes="0"/>
                                   <Group type="103" groupAlignment="3" attributes="0">
-                                      <Component id="btnCommUpdForm4" alignment="3" min="-2" max="-2" attributes="0"/>
-                                      <Component id="btnCommDelForm4" alignment="3" min="-2" max="-2" attributes="0"/>
+                                      <Component id="btnCommUpdForm2" alignment="3" min="-2" max="-2" attributes="0"/>
+                                      <Component id="btnCommDelForm2" alignment="3" min="-2" max="-2" attributes="0"/>
                                   </Group>
                                   <EmptySpace pref="18" max="32767" attributes="0"/>
                               </Group>
@@ -1364,20 +1382,20 @@
                             <Property name="text" type="java.lang.String" value="2025.01.01"/>
                           </Properties>
                         </Component>
-                        <Component class="javax.swing.JButton" name="btnCommUpdForm4">
+                        <Component class="javax.swing.JButton" name="btnCommUpdForm2">
                           <Properties>
                             <Property name="text" type="java.lang.String" value="&#xc218;&#xc815;"/>
                           </Properties>
                           <Events>
-                            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnCommUpdForm4ActionPerformed"/>
+                            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnCommUpdForm2ActionPerformed"/>
                           </Events>
                         </Component>
-                        <Component class="javax.swing.JButton" name="btnCommDelForm4">
+                        <Component class="javax.swing.JButton" name="btnCommDelForm2">
                           <Properties>
                             <Property name="text" type="java.lang.String" value="&#xc0ad;&#xc81c;"/>
                           </Properties>
                           <Events>
-                            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnCommDelForm4ActionPerformed"/>
+                            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnCommDelForm2ActionPerformed"/>
                           </Events>
                         </Component>
                       </SubComponents>
@@ -1398,9 +1416,9 @@
                                       </Group>
                                       <Group type="102" alignment="1" attributes="0">
                                           <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
-                                          <Component id="btnCommUpdForm5" min="-2" max="-2" attributes="0"/>
+                                          <Component id="btnCommUpdForm3" min="-2" max="-2" attributes="0"/>
                                           <EmptySpace max="-2" attributes="0"/>
-                                          <Component id="btnCommDelForm5" min="-2" max="-2" attributes="0"/>
+                                          <Component id="btnCommDelForm3" min="-2" max="-2" attributes="0"/>
                                       </Group>
                                   </Group>
                                   <EmptySpace min="-2" pref="17" max="-2" attributes="0"/>
@@ -1419,8 +1437,8 @@
                                   <Component id="jScrollPaneComm5" min="-2" max="-2" attributes="0"/>
                                   <EmptySpace max="-2" attributes="0"/>
                                   <Group type="103" groupAlignment="3" attributes="0">
-                                      <Component id="btnCommUpdForm5" alignment="3" min="-2" max="-2" attributes="0"/>
-                                      <Component id="btnCommDelForm5" alignment="3" min="-2" max="-2" attributes="0"/>
+                                      <Component id="btnCommUpdForm3" alignment="3" min="-2" max="-2" attributes="0"/>
+                                      <Component id="btnCommDelForm3" alignment="3" min="-2" max="-2" attributes="0"/>
                                   </Group>
                                   <EmptySpace max="32767" attributes="0"/>
                               </Group>
@@ -1453,20 +1471,20 @@
                             <Property name="text" type="java.lang.String" value="2025.01.01"/>
                           </Properties>
                         </Component>
-                        <Component class="javax.swing.JButton" name="btnCommUpdForm5">
+                        <Component class="javax.swing.JButton" name="btnCommUpdForm3">
                           <Properties>
                             <Property name="text" type="java.lang.String" value="&#xc218;&#xc815;"/>
                           </Properties>
                           <Events>
-                            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnCommUpdForm5ActionPerformed"/>
+                            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnCommUpdForm3ActionPerformed"/>
                           </Events>
                         </Component>
-                        <Component class="javax.swing.JButton" name="btnCommDelForm5">
+                        <Component class="javax.swing.JButton" name="btnCommDelForm3">
                           <Properties>
                             <Property name="text" type="java.lang.String" value="&#xc0ad;&#xc81c;"/>
                           </Properties>
                           <Events>
-                            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnCommDelForm5ActionPerformed"/>
+                            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnCommDelForm3ActionPerformed"/>
                           </Events>
                         </Component>
                       </SubComponents>
