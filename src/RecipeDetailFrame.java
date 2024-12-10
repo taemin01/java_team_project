@@ -1,3 +1,6 @@
+
+import org.json.JSONObject;
+
 /*
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
@@ -8,12 +11,33 @@
  * @author antaemin
  */
 public class RecipeDetailFrame extends javax.swing.JFrame {
-
+    private JSONObject recipeData; // 전달받은 데이터를 저장할 변수
     /**
      * Creates new form RecipeDetailFrame
      */
-    public RecipeDetailFrame() {
+    public RecipeDetailFrame(JSONObject recipeData) {
+        this.recipeData = recipeData;
         initComponents();
+        displayRecipeDetails(); // 레시피 상세 정보를 화면에 표시
+    }
+    
+    private void displayRecipeDetails() {
+        if (recipeData != null) {
+            try {
+                // JSON 데이터에서 필요한 정보를 추출
+                String title = recipeData.getString("title");
+                String description = recipeData.getString("description");
+                // 추가적으로 필요한 데이터가 있다면 계속해서 추출
+
+                // UI 컴포넌트에 데이터 설정
+                lblTitle.setText("제목: " + title);
+                jTextAreaContent.setText(description);
+                // 필요한 다른 컴포넌트에 데이터 추가
+            } catch (Exception e) {
+                e.printStackTrace();
+                javax.swing.JOptionPane.showMessageDialog(this, "레시피 데이터를 불러오는 중 오류 발생!", "오류", javax.swing.JOptionPane.ERROR_MESSAGE);
+            }
+        }
     }
 
     /**
@@ -621,7 +645,7 @@ public class RecipeDetailFrame extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new RecipeDetailFrame().setVisible(true);
+//                new RecipeDetailFrame().setVisible(true);
             }
         });
     }

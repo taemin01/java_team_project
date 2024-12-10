@@ -337,10 +337,11 @@ public class MainFrame extends javax.swing.JFrame {
                 // 성공 처리
                 int id = jsonResponse.getInt("id");
                 String name = jsonResponse.getString("name");
+                String number = jsonResponse.getString("number");
                 String accessToken = jsonResponse.getString("access_token");
 
                 // 사용자 정보 저장
-                TokenUtil.saveUserInfo(accessToken, name, id);
+                TokenUtil.saveUserInfo(accessToken, name, id, number);
 
                 JOptionPane.showMessageDialog(this, "로그인 성공!");
 

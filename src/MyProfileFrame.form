@@ -378,18 +378,8 @@
               <Group type="102" alignment="0" attributes="0">
                   <EmptySpace min="-2" pref="32" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="0" attributes="0">
-                      <Component id="btnDel" min="-2" max="-2" attributes="0"/>
-                      <Group type="102" attributes="0">
-                          <Component id="lblPhone" min="-2" max="-2" attributes="0"/>
-                          <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                          <Component id="btnPhoneChange" min="-2" max="-2" attributes="0"/>
-                      </Group>
-                      <Group type="102" attributes="0">
-                          <Component id="lblName" min="-2" max="-2" attributes="0"/>
-                          <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                          <Component id="btnNameChange" min="-2" max="-2" attributes="0"/>
-                      </Group>
-                      <Component id="lblId" min="-2" max="-2" attributes="0"/>
+                      <Component id="lblPhone" min="-2" max="-2" attributes="0"/>
+                      <Component id="lblName" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace max="32767" attributes="0"/>
               </Group>
@@ -398,21 +388,11 @@
         <DimensionLayout dim="1">
           <Group type="103" groupAlignment="0" attributes="0">
               <Group type="102" alignment="1" attributes="0">
-                  <EmptySpace min="-2" pref="38" max="-2" attributes="0"/>
-                  <Component id="lblId" min="-2" max="-2" attributes="0"/>
+                  <EmptySpace min="-2" pref="34" max="-2" attributes="0"/>
+                  <Component id="lblName" min="-2" pref="17" max="-2" attributes="0"/>
                   <EmptySpace type="separate" max="-2" attributes="0"/>
-                  <Group type="103" groupAlignment="3" attributes="0">
-                      <Component id="lblName" alignment="3" min="-2" pref="17" max="-2" attributes="0"/>
-                      <Component id="btnNameChange" alignment="3" min="-2" max="-2" attributes="0"/>
-                  </Group>
-                  <EmptySpace type="separate" max="-2" attributes="0"/>
-                  <Group type="103" groupAlignment="3" attributes="0">
-                      <Component id="lblPhone" alignment="3" min="-2" pref="17" max="-2" attributes="0"/>
-                      <Component id="btnPhoneChange" alignment="3" min="-2" max="-2" attributes="0"/>
-                  </Group>
-                  <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                  <Component id="btnDel" min="-2" max="-2" attributes="0"/>
-                  <EmptySpace pref="16" max="32767" attributes="0"/>
+                  <Component id="lblPhone" min="-2" pref="17" max="-2" attributes="0"/>
+                  <EmptySpace pref="102" max="32767" attributes="0"/>
                   <Component id="BookmarkAndReview" min="-2" pref="429" max="-2" attributes="0"/>
               </Group>
           </Group>
@@ -469,40 +449,14 @@
             </Container>
           </SubComponents>
         </Container>
-        <Component class="javax.swing.JLabel" name="lblId">
-          <Properties>
-            <Property name="text" type="java.lang.String" value="&#xc544;&#xc774;&#xb514; : abbc@naver.com"/>
-          </Properties>
-        </Component>
         <Component class="javax.swing.JLabel" name="lblName">
           <Properties>
-            <Property name="text" type="java.lang.String" value="&#xb2c9;&#xb124;&#xc784; : &#xd64d;&#xae38;&#xb3d9;"/>
+            <Property name="text" type="java.lang.String" value="&#xb2c9;&#xb124;&#xc784; : "/>
           </Properties>
         </Component>
         <Component class="javax.swing.JLabel" name="lblPhone">
           <Properties>
             <Property name="text" type="java.lang.String" value="&#xc804;&#xd654;&#xbc88;&#xd638; : 010-0000-0000"/>
-          </Properties>
-        </Component>
-        <Component class="javax.swing.JButton" name="btnNameChange">
-          <Properties>
-            <Property name="text" type="java.lang.String" value="&#xbcc0;&#xacbd;"/>
-          </Properties>
-          <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnNameChangeActionPerformed"/>
-          </Events>
-        </Component>
-        <Component class="javax.swing.JButton" name="btnPhoneChange">
-          <Properties>
-            <Property name="text" type="java.lang.String" value="&#xbcc0;&#xacbd;"/>
-          </Properties>
-          <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnPhoneChangeActionPerformed"/>
-          </Events>
-        </Component>
-        <Component class="javax.swing.JButton" name="btnDel">
-          <Properties>
-            <Property name="text" type="java.lang.String" value="&#xd0c8;&#xd1f4;"/>
           </Properties>
         </Component>
       </SubComponents>

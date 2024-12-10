@@ -21,11 +21,12 @@ public class TokenUtil {
  // JSON 파일로 저장
 
     // 사용자 정보와 토큰 저장
-    public static void saveUserInfo(String token, String userName, int userId) throws IOException {
+    public static void saveUserInfo(String token, String userName, int userId, String number) throws IOException {
         JSONObject json = new JSONObject();
         json.put("token", token);
         json.put("userName", userName);
         json.put("userId", userId);
+        json.put("number", number);
 
         try (BufferedWriter writer = new BufferedWriter(new FileWriter(TOKEN_FILE))) {
             writer.write(json.toString());

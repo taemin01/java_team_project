@@ -1,3 +1,7 @@
+
+import org.json.JSONObject;
+import util.TokenUtil;
+
 /*
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
@@ -8,12 +12,41 @@
  * @author USER
  */
 public class MyProfileFrame extends javax.swing.JFrame {
+    private JSONObject userInfo;
 
     /**
      * Creates new form MyProfileFrame
      */
     public MyProfileFrame() {
         initComponents();
+        loadUserInfo();
+    }
+    
+    private void loadUserInfo() {
+        try {
+
+            userInfo = TokenUtil.loadUserInfo();
+            System.out.println("userInfo: " + userInfo);
+
+            if (userInfo != null) {
+//                lblId.setText("아이디: " + userInfo.getString("userId"));
+                lblName.setText("닉네임: " + userInfo.getString("userName"));
+                lblPhone.setText("전화번호: " + userInfo.getString("number"));
+                
+                // 디버깅 출력
+                
+                System.out.println("lblName 텍스트: " + lblName.getText());
+                System.out.println("lblPhone 텍스트: " + lblPhone.getText());
+            } else {
+                System.out.println("userInfo가 null입니다.");
+            }
+
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
+        
+        
     }
 
     /**
@@ -54,12 +87,8 @@ public class MyProfileFrame extends javax.swing.JFrame {
         BookmarkAndReview = new javax.swing.JTabbedPane();
         jPanelBookmark = new javax.swing.JPanel();
         jPanelReview = new javax.swing.JPanel();
-        lblId = new javax.swing.JLabel();
         lblName = new javax.swing.JLabel();
         lblPhone = new javax.swing.JLabel();
-        btnNameChange = new javax.swing.JButton();
-        btnPhoneChange = new javax.swing.JButton();
-        btnDel = new javax.swing.JButton();
 
         lblNameBefore.setText("기존");
 
@@ -298,27 +327,9 @@ public class MyProfileFrame extends javax.swing.JFrame {
 
         BookmarkAndReview.addTab("내가 쓴 리뷰", jPanelReview);
 
-        lblId.setText("아이디 : abbc@naver.com");
-
-        lblName.setText("닉네임 : 홍길동");
+        lblName.setText("닉네임 : ");
 
         lblPhone.setText("전화번호 : 010-0000-0000");
-
-        btnNameChange.setText("변경");
-        btnNameChange.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnNameChangeActionPerformed(evt);
-            }
-        });
-
-        btnPhoneChange.setText("변경");
-        btnPhoneChange.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnPhoneChangeActionPerformed(evt);
-            }
-        });
-
-        btnDel.setText("탈퇴");
 
         javax.swing.GroupLayout jPanelBodyLayout = new javax.swing.GroupLayout(jPanelBody);
         jPanelBody.setLayout(jPanelBodyLayout);
@@ -328,34 +339,18 @@ public class MyProfileFrame extends javax.swing.JFrame {
             .addGroup(jPanelBodyLayout.createSequentialGroup()
                 .addGap(32, 32, 32)
                 .addGroup(jPanelBodyLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(btnDel)
-                    .addGroup(jPanelBodyLayout.createSequentialGroup()
-                        .addComponent(lblPhone)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(btnPhoneChange))
-                    .addGroup(jPanelBodyLayout.createSequentialGroup()
-                        .addComponent(lblName)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(btnNameChange))
-                    .addComponent(lblId))
+                    .addComponent(lblPhone)
+                    .addComponent(lblName))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanelBodyLayout.setVerticalGroup(
             jPanelBodyLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanelBodyLayout.createSequentialGroup()
-                .addGap(38, 38, 38)
-                .addComponent(lblId)
+                .addGap(34, 34, 34)
+                .addComponent(lblName, javax.swing.GroupLayout.PREFERRED_SIZE, 17, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
-                .addGroup(jPanelBodyLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(lblName, javax.swing.GroupLayout.PREFERRED_SIZE, 17, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btnNameChange))
-                .addGap(18, 18, 18)
-                .addGroup(jPanelBodyLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(lblPhone, javax.swing.GroupLayout.PREFERRED_SIZE, 17, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btnPhoneChange))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(btnDel)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 16, Short.MAX_VALUE)
+                .addComponent(lblPhone, javax.swing.GroupLayout.PREFERRED_SIZE, 17, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 102, Short.MAX_VALUE)
                 .addComponent(BookmarkAndReview, javax.swing.GroupLayout.PREFERRED_SIZE, 429, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
 
@@ -394,20 +389,6 @@ public class MyProfileFrame extends javax.swing.JFrame {
         new MainFrame().setVisible(true);
         this.dispose();
     }//GEN-LAST:event_btnLogoutActionPerformed
-
-    private void btnNameChangeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnNameChangeActionPerformed
-        // TODO add your handling code here:
-        jDialogName.setSize(400, 350);
-        jDialogName.setVisible(true);
-        this.dispose();
-    }//GEN-LAST:event_btnNameChangeActionPerformed
-
-    private void btnPhoneChangeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnPhoneChangeActionPerformed
-        // TODO add your handling code here:
-        jDialogPhone.setSize(400, 350);
-        jDialogPhone.setVisible(true);
-        this.dispose();
-    }//GEN-LAST:event_btnPhoneChangeActionPerformed
 
     private void btnMyProfileActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnMyProfileActionPerformed
         // TODO add your handling code here:
@@ -451,14 +432,11 @@ public class MyProfileFrame extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JTabbedPane BookmarkAndReview;
-    private javax.swing.JButton btnDel;
     private javax.swing.JButton btnDelNo;
     private javax.swing.JButton btnDelYes;
     private javax.swing.JButton btnLogout;
     private javax.swing.JButton btnMyProfile;
-    private javax.swing.JButton btnNameChange;
     private javax.swing.JButton btnNameUpd;
-    private javax.swing.JButton btnPhoneChange;
     private javax.swing.JButton btnPhoneUpd;
     private javax.swing.JButton btnSearch;
     private javax.swing.JComboBox<String> comboSearch;
@@ -470,7 +448,6 @@ public class MyProfileFrame extends javax.swing.JFrame {
     private javax.swing.JPanel jPanelBookmark;
     private javax.swing.JPanel jPanelReview;
     private javax.swing.JLabel lblDel;
-    private javax.swing.JLabel lblId;
     private javax.swing.JLabel lblLogo;
     private javax.swing.JLabel lblName;
     private javax.swing.JLabel lblNameAfter;

@@ -15,6 +15,7 @@ import javax.swing.JPanel;
 import javax.swing.JScrollPane;
 import org.json.JSONArray;
 import org.json.JSONObject;
+import util.TokenUtil;
 
 /*
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
@@ -646,6 +647,7 @@ public class SearchResultFrame extends javax.swing.JFrame {
                     .uri(URI.create(url)) // URL 설정
                     .GET() // GET 요청 설정
                     .header("Content-Type", "application/json") // Content-Type 헤더 추가
+                    .header("Authorization", "Bearer " + TokenUtil.loadUserInfo().getString("token")) // 토큰 추가
                     .build();
 
             // 요청을 보내고 응답 받기

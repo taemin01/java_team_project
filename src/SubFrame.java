@@ -1,10 +1,12 @@
 
 import java.awt.Color;
+import java.awt.Component;
 import java.net.URI;
 import java.net.URLEncoder;
 import java.net.http.HttpClient;
 import java.net.http.HttpRequest;
 import java.net.http.HttpResponse;
+import java.util.ArrayList;
 import javax.swing.BorderFactory;
 import javax.swing.JLabel;
 import javax.swing.JOptionPane;
@@ -12,6 +14,7 @@ import javax.swing.JPanel;
 import org.json.JSONArray;
 import org.json.JSONObject;
 import util.TokenUtil;
+import java.util.List;
 
 
 public class SubFrame extends javax.swing.JFrame {
@@ -19,7 +22,75 @@ public class SubFrame extends javax.swing.JFrame {
 
     public SubFrame() {
         initComponents();
+        updateRecipeTop5UI();
     }
+    
+    private void addRecipeClickEvent(JLabel titleLabel, JSONObject recipeData) {
+    titleLabel.addMouseListener(new java.awt.event.MouseAdapter() {
+        @Override
+        public void mouseClicked(java.awt.event.MouseEvent evt) {
+            new RecipeDetailFrame(recipeData).setVisible(true); // 상세 페이지로 데이터 전달
+        }
+    });
+}
+    
+    private void updateRecipeTop5UI() {
+    try {
+        HttpClient client = HttpClient.newHttpClient();
+        String url = "https://m4srikufjgyzqbwltnujr7zyae0zlnrv.lambda-url.ap-northeast-2.on.aws/getUserRecipe";
+        String token = TokenUtil.loadUserInfo().getString("token");
+
+        HttpRequest request = HttpRequest.newBuilder()
+                .uri(URI.create(url))
+                .GET()
+                .header("Authorization", "Bearer " + token)
+                .header("Content-Type", "application/json")
+                .build();
+
+        HttpResponse<String> response = client.send(request, HttpResponse.BodyHandlers.ofString());
+
+        if (response.statusCode() == 200) {
+            JSONObject jsonResponse = new JSONObject(response.body());
+            JSONArray items = jsonResponse.getJSONArray("items");
+
+            // 응답 데이터를 star 기준으로 정렬
+            List<JSONObject> itemList = new ArrayList<>();
+            for (int i = 0; i < items.length(); i++) {
+                itemList.add(items.getJSONObject(i));
+            }
+            itemList.sort((o1, o2) -> Double.compare(o2.getDouble("star"), o1.getDouble("star")));
+
+            // 각 패널에 데이터 삽입
+            for (int i = 0; i < itemList.size() && i < 5; i++) {
+                JSONObject recipe = itemList.get(i);
+
+                String title = recipe.getString("title"); // 제목
+                String grade = String.format("%.1f", recipe.getDouble("star")); // 평점
+                String order = String.valueOf(i + 1); // 순위
+
+                // 동적으로 컴포넌트 가져오기
+                JLabel lblTitle = (JLabel) this.getClass().getDeclaredField("lblRecipeTitle" + order).get(this);
+                JLabel lblGrade = (JLabel) this.getClass().getDeclaredField("lblRecipeGrade" + order).get(this);
+                JLabel lblOrder = (JLabel) this.getClass().getDeclaredField("lblRecipeOrder" + order).get(this);
+
+                // 데이터 설정
+                lblTitle.setText("제목: " + title);
+                lblGrade.setText("평점: ★ " + grade);
+                lblOrder.setText(order);
+                
+                addRecipeClickEvent(lblTitle, recipe);
+            }
+        } else {
+            JOptionPane.showMessageDialog(this, "서버 오류: 상태 코드 " + response.statusCode(), "오류", JOptionPane.ERROR_MESSAGE);
+        }
+    } catch (Exception e) {
+        e.printStackTrace();
+        JOptionPane.showMessageDialog(this, "데이터 로드 중 오류: " + e.getMessage(), "오류", JOptionPane.ERROR_MESSAGE);
+    }
+}
+
+
+
 
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
@@ -73,36 +144,6 @@ public class SubFrame extends javax.swing.JFrame {
         jPanelRecipeOrder5 = new javax.swing.JPanel();
         lblRecipeOrder5 = new javax.swing.JLabel();
         jPanelRecipeImg5 = new javax.swing.JPanel();
-        jPanelRecipe6 = new javax.swing.JPanel();
-        lblRecipeTitle6 = new javax.swing.JLabel();
-        lblRecipeGrade6 = new javax.swing.JLabel();
-        jPanelRecipeOrder6 = new javax.swing.JPanel();
-        lblRecipeOrder6 = new javax.swing.JLabel();
-        jPanelRecipeImg6 = new javax.swing.JPanel();
-        jPanelRecipe7 = new javax.swing.JPanel();
-        lblRecipeTitle7 = new javax.swing.JLabel();
-        lblRecipeGrade7 = new javax.swing.JLabel();
-        jPanelRecipeOrder7 = new javax.swing.JPanel();
-        lblRecipeOrder7 = new javax.swing.JLabel();
-        jPanelRecipeImg7 = new javax.swing.JPanel();
-        jPanelRecipe8 = new javax.swing.JPanel();
-        lblRecipeTitle8 = new javax.swing.JLabel();
-        lblRecipeGrade8 = new javax.swing.JLabel();
-        jPanelRecipeOrder8 = new javax.swing.JPanel();
-        lblRecipeOrder8 = new javax.swing.JLabel();
-        jPanelRecipeImg8 = new javax.swing.JPanel();
-        jPanelRecipe9 = new javax.swing.JPanel();
-        lblRecipeTitle9 = new javax.swing.JLabel();
-        lblRecipeGrade9 = new javax.swing.JLabel();
-        jPanelRecipeOrder9 = new javax.swing.JPanel();
-        lblRecipeOrder9 = new javax.swing.JLabel();
-        jPanelRecipeImg9 = new javax.swing.JPanel();
-        jPanelRecipe10 = new javax.swing.JPanel();
-        lblRecipeTitle10 = new javax.swing.JLabel();
-        lblRecipeGrade10 = new javax.swing.JLabel();
-        jPanelRecipeOrder10 = new javax.swing.JPanel();
-        lblRecipeOrder10 = new javax.swing.JLabel();
-        jPanelRecipeImg10 = new javax.swing.JPanel();
         jPanelNews = new javax.swing.JPanel();
         lblNews = new javax.swing.JLabel();
         jScrollPaneNews = new javax.swing.JScrollPane();
@@ -223,12 +264,12 @@ public class SubFrame extends javax.swing.JFrame {
                     .addComponent(lblNotice)
                     .addComponent(btnNotice))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jScrollPaneNotice, javax.swing.GroupLayout.DEFAULT_SIZE, 336, Short.MAX_VALUE))
+                .addComponent(jScrollPaneNotice, javax.swing.GroupLayout.DEFAULT_SIZE, 357, Short.MAX_VALUE))
         );
 
         jPanelRecipe.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
 
-        lblRecipe.setText("레시피 TOP 10");
+        lblRecipe.setText("레시피 TOP 5");
 
         btnRecipe.setFont(new java.awt.Font("맑은 고딕", 0, 8)); // NOI18N
         btnRecipe.setText("바로가기");
@@ -291,7 +332,7 @@ public class SubFrame extends javax.swing.JFrame {
                 .addGroup(jPanelRecipe1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(lblRecipeTitle1)
                     .addComponent(lblRecipeGrade1))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(83, Short.MAX_VALUE))
         );
         jPanelRecipe1Layout.setVerticalGroup(
             jPanelRecipe1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -575,341 +616,6 @@ public class SubFrame extends javax.swing.JFrame {
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
-        jPanelRecipe6.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-
-        lblRecipeTitle6.setText("제목");
-
-        lblRecipeGrade6.setText("평점");
-
-        lblRecipeOrder6.setText("6");
-
-        javax.swing.GroupLayout jPanelRecipeOrder6Layout = new javax.swing.GroupLayout(jPanelRecipeOrder6);
-        jPanelRecipeOrder6.setLayout(jPanelRecipeOrder6Layout);
-        jPanelRecipeOrder6Layout.setHorizontalGroup(
-            jPanelRecipeOrder6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanelRecipeOrder6Layout.createSequentialGroup()
-                .addGap(16, 16, 16)
-                .addComponent(lblRecipeOrder6)
-                .addContainerGap(18, Short.MAX_VALUE))
-        );
-        jPanelRecipeOrder6Layout.setVerticalGroup(
-            jPanelRecipeOrder6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanelRecipeOrder6Layout.createSequentialGroup()
-                .addGap(21, 21, 21)
-                .addComponent(lblRecipeOrder6)
-                .addContainerGap(22, Short.MAX_VALUE))
-        );
-
-        jPanelRecipeImg6.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-
-        javax.swing.GroupLayout jPanelRecipeImg6Layout = new javax.swing.GroupLayout(jPanelRecipeImg6);
-        jPanelRecipeImg6.setLayout(jPanelRecipeImg6Layout);
-        jPanelRecipeImg6Layout.setHorizontalGroup(
-            jPanelRecipeImg6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 58, Short.MAX_VALUE)
-        );
-        jPanelRecipeImg6Layout.setVerticalGroup(
-            jPanelRecipeImg6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 0, Short.MAX_VALUE)
-        );
-
-        javax.swing.GroupLayout jPanelRecipe6Layout = new javax.swing.GroupLayout(jPanelRecipe6);
-        jPanelRecipe6.setLayout(jPanelRecipe6Layout);
-        jPanelRecipe6Layout.setHorizontalGroup(
-            jPanelRecipe6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanelRecipe6Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jPanelRecipeOrder6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jPanelRecipeImg6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanelRecipe6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(lblRecipeTitle6)
-                    .addComponent(lblRecipeGrade6))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-        );
-        jPanelRecipe6Layout.setVerticalGroup(
-            jPanelRecipe6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanelRecipe6Layout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(jPanelRecipe6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                    .addComponent(jPanelRecipeOrder6, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanelRecipe6Layout.createSequentialGroup()
-                        .addComponent(lblRecipeTitle6)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(lblRecipeGrade6))
-                    .addComponent(jPanelRecipeImg6, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-        );
-
-        jPanelRecipe7.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-
-        lblRecipeTitle7.setText("제목");
-
-        lblRecipeGrade7.setText("평점");
-
-        lblRecipeOrder7.setText("7");
-
-        javax.swing.GroupLayout jPanelRecipeOrder7Layout = new javax.swing.GroupLayout(jPanelRecipeOrder7);
-        jPanelRecipeOrder7.setLayout(jPanelRecipeOrder7Layout);
-        jPanelRecipeOrder7Layout.setHorizontalGroup(
-            jPanelRecipeOrder7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanelRecipeOrder7Layout.createSequentialGroup()
-                .addGap(16, 16, 16)
-                .addComponent(lblRecipeOrder7)
-                .addContainerGap(18, Short.MAX_VALUE))
-        );
-        jPanelRecipeOrder7Layout.setVerticalGroup(
-            jPanelRecipeOrder7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanelRecipeOrder7Layout.createSequentialGroup()
-                .addGap(21, 21, 21)
-                .addComponent(lblRecipeOrder7)
-                .addContainerGap(22, Short.MAX_VALUE))
-        );
-
-        jPanelRecipeImg7.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-
-        javax.swing.GroupLayout jPanelRecipeImg7Layout = new javax.swing.GroupLayout(jPanelRecipeImg7);
-        jPanelRecipeImg7.setLayout(jPanelRecipeImg7Layout);
-        jPanelRecipeImg7Layout.setHorizontalGroup(
-            jPanelRecipeImg7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 58, Short.MAX_VALUE)
-        );
-        jPanelRecipeImg7Layout.setVerticalGroup(
-            jPanelRecipeImg7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 0, Short.MAX_VALUE)
-        );
-
-        javax.swing.GroupLayout jPanelRecipe7Layout = new javax.swing.GroupLayout(jPanelRecipe7);
-        jPanelRecipe7.setLayout(jPanelRecipe7Layout);
-        jPanelRecipe7Layout.setHorizontalGroup(
-            jPanelRecipe7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanelRecipe7Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jPanelRecipeOrder7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jPanelRecipeImg7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanelRecipe7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(lblRecipeTitle7)
-                    .addComponent(lblRecipeGrade7))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-        );
-        jPanelRecipe7Layout.setVerticalGroup(
-            jPanelRecipe7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanelRecipe7Layout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(jPanelRecipe7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                    .addComponent(jPanelRecipeOrder7, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanelRecipe7Layout.createSequentialGroup()
-                        .addComponent(lblRecipeTitle7)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(lblRecipeGrade7))
-                    .addComponent(jPanelRecipeImg7, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-        );
-
-        jPanelRecipe8.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-
-        lblRecipeTitle8.setText("제목");
-
-        lblRecipeGrade8.setText("평점");
-
-        lblRecipeOrder8.setText("8");
-
-        javax.swing.GroupLayout jPanelRecipeOrder8Layout = new javax.swing.GroupLayout(jPanelRecipeOrder8);
-        jPanelRecipeOrder8.setLayout(jPanelRecipeOrder8Layout);
-        jPanelRecipeOrder8Layout.setHorizontalGroup(
-            jPanelRecipeOrder8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanelRecipeOrder8Layout.createSequentialGroup()
-                .addGap(16, 16, 16)
-                .addComponent(lblRecipeOrder8)
-                .addContainerGap(18, Short.MAX_VALUE))
-        );
-        jPanelRecipeOrder8Layout.setVerticalGroup(
-            jPanelRecipeOrder8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanelRecipeOrder8Layout.createSequentialGroup()
-                .addGap(21, 21, 21)
-                .addComponent(lblRecipeOrder8)
-                .addContainerGap(22, Short.MAX_VALUE))
-        );
-
-        jPanelRecipeImg8.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-
-        javax.swing.GroupLayout jPanelRecipeImg8Layout = new javax.swing.GroupLayout(jPanelRecipeImg8);
-        jPanelRecipeImg8.setLayout(jPanelRecipeImg8Layout);
-        jPanelRecipeImg8Layout.setHorizontalGroup(
-            jPanelRecipeImg8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 58, Short.MAX_VALUE)
-        );
-        jPanelRecipeImg8Layout.setVerticalGroup(
-            jPanelRecipeImg8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 0, Short.MAX_VALUE)
-        );
-
-        javax.swing.GroupLayout jPanelRecipe8Layout = new javax.swing.GroupLayout(jPanelRecipe8);
-        jPanelRecipe8.setLayout(jPanelRecipe8Layout);
-        jPanelRecipe8Layout.setHorizontalGroup(
-            jPanelRecipe8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanelRecipe8Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jPanelRecipeOrder8, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jPanelRecipeImg8, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanelRecipe8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(lblRecipeTitle8)
-                    .addComponent(lblRecipeGrade8))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-        );
-        jPanelRecipe8Layout.setVerticalGroup(
-            jPanelRecipe8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanelRecipe8Layout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(jPanelRecipe8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                    .addComponent(jPanelRecipeOrder8, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanelRecipe8Layout.createSequentialGroup()
-                        .addComponent(lblRecipeTitle8)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(lblRecipeGrade8))
-                    .addComponent(jPanelRecipeImg8, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-        );
-
-        jPanelRecipe9.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-
-        lblRecipeTitle9.setText("제목");
-
-        lblRecipeGrade9.setText("평점");
-
-        lblRecipeOrder9.setText("9");
-
-        javax.swing.GroupLayout jPanelRecipeOrder9Layout = new javax.swing.GroupLayout(jPanelRecipeOrder9);
-        jPanelRecipeOrder9.setLayout(jPanelRecipeOrder9Layout);
-        jPanelRecipeOrder9Layout.setHorizontalGroup(
-            jPanelRecipeOrder9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanelRecipeOrder9Layout.createSequentialGroup()
-                .addGap(16, 16, 16)
-                .addComponent(lblRecipeOrder9)
-                .addContainerGap(18, Short.MAX_VALUE))
-        );
-        jPanelRecipeOrder9Layout.setVerticalGroup(
-            jPanelRecipeOrder9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanelRecipeOrder9Layout.createSequentialGroup()
-                .addGap(21, 21, 21)
-                .addComponent(lblRecipeOrder9)
-                .addContainerGap(22, Short.MAX_VALUE))
-        );
-
-        jPanelRecipeImg9.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-
-        javax.swing.GroupLayout jPanelRecipeImg9Layout = new javax.swing.GroupLayout(jPanelRecipeImg9);
-        jPanelRecipeImg9.setLayout(jPanelRecipeImg9Layout);
-        jPanelRecipeImg9Layout.setHorizontalGroup(
-            jPanelRecipeImg9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 58, Short.MAX_VALUE)
-        );
-        jPanelRecipeImg9Layout.setVerticalGroup(
-            jPanelRecipeImg9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 0, Short.MAX_VALUE)
-        );
-
-        javax.swing.GroupLayout jPanelRecipe9Layout = new javax.swing.GroupLayout(jPanelRecipe9);
-        jPanelRecipe9.setLayout(jPanelRecipe9Layout);
-        jPanelRecipe9Layout.setHorizontalGroup(
-            jPanelRecipe9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanelRecipe9Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jPanelRecipeOrder9, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jPanelRecipeImg9, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanelRecipe9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(lblRecipeTitle9)
-                    .addComponent(lblRecipeGrade9))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-        );
-        jPanelRecipe9Layout.setVerticalGroup(
-            jPanelRecipe9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanelRecipe9Layout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(jPanelRecipe9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                    .addComponent(jPanelRecipeOrder9, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanelRecipe9Layout.createSequentialGroup()
-                        .addComponent(lblRecipeTitle9)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(lblRecipeGrade9))
-                    .addComponent(jPanelRecipeImg9, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-        );
-
-        jPanelRecipe10.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-
-        lblRecipeTitle10.setText("제목");
-
-        lblRecipeGrade10.setText("평점");
-
-        lblRecipeOrder10.setText("10");
-
-        javax.swing.GroupLayout jPanelRecipeOrder10Layout = new javax.swing.GroupLayout(jPanelRecipeOrder10);
-        jPanelRecipeOrder10.setLayout(jPanelRecipeOrder10Layout);
-        jPanelRecipeOrder10Layout.setHorizontalGroup(
-            jPanelRecipeOrder10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanelRecipeOrder10Layout.createSequentialGroup()
-                .addGap(16, 16, 16)
-                .addComponent(lblRecipeOrder10)
-                .addContainerGap(18, Short.MAX_VALUE))
-        );
-        jPanelRecipeOrder10Layout.setVerticalGroup(
-            jPanelRecipeOrder10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanelRecipeOrder10Layout.createSequentialGroup()
-                .addGap(21, 21, 21)
-                .addComponent(lblRecipeOrder10)
-                .addContainerGap(22, Short.MAX_VALUE))
-        );
-
-        jPanelRecipeImg10.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-
-        javax.swing.GroupLayout jPanelRecipeImg10Layout = new javax.swing.GroupLayout(jPanelRecipeImg10);
-        jPanelRecipeImg10.setLayout(jPanelRecipeImg10Layout);
-        jPanelRecipeImg10Layout.setHorizontalGroup(
-            jPanelRecipeImg10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 58, Short.MAX_VALUE)
-        );
-        jPanelRecipeImg10Layout.setVerticalGroup(
-            jPanelRecipeImg10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 0, Short.MAX_VALUE)
-        );
-
-        javax.swing.GroupLayout jPanelRecipe10Layout = new javax.swing.GroupLayout(jPanelRecipe10);
-        jPanelRecipe10.setLayout(jPanelRecipe10Layout);
-        jPanelRecipe10Layout.setHorizontalGroup(
-            jPanelRecipe10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanelRecipe10Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jPanelRecipeOrder10, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jPanelRecipeImg10, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanelRecipe10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(lblRecipeTitle10)
-                    .addComponent(lblRecipeGrade10))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-        );
-        jPanelRecipe10Layout.setVerticalGroup(
-            jPanelRecipe10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanelRecipe10Layout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(jPanelRecipe10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                    .addComponent(jPanelRecipeOrder10, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanelRecipe10Layout.createSequentialGroup()
-                        .addComponent(lblRecipeTitle10)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(lblRecipeGrade10))
-                    .addComponent(jPanelRecipeImg10, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-        );
-
         javax.swing.GroupLayout jPanelRecipeTop10Layout = new javax.swing.GroupLayout(jPanelRecipeTop10);
         jPanelRecipeTop10.setLayout(jPanelRecipeTop10Layout);
         jPanelRecipeTop10Layout.setHorizontalGroup(
@@ -921,12 +627,7 @@ public class SubFrame extends javax.swing.JFrame {
                     .addComponent(jPanelRecipe2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(jPanelRecipe3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(jPanelRecipe4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jPanelRecipe5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jPanelRecipe6, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jPanelRecipe7, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jPanelRecipe8, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jPanelRecipe9, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jPanelRecipe10, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(jPanelRecipe5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap())
         );
         jPanelRecipeTop10Layout.setVerticalGroup(
@@ -942,17 +643,7 @@ public class SubFrame extends javax.swing.JFrame {
                 .addComponent(jPanelRecipe4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jPanelRecipe5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jPanelRecipe6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jPanelRecipe7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jPanelRecipe8, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jPanelRecipe9, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jPanelRecipe10, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(134, Short.MAX_VALUE))
+                .addContainerGap(534, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout jPanelRecipeLayout = new javax.swing.GroupLayout(jPanelRecipe);
@@ -1012,7 +703,7 @@ public class SubFrame extends javax.swing.JFrame {
             .addGroup(jPanelNewsLayout.createSequentialGroup()
                 .addGap(82, 82, 82)
                 .addComponent(lblNews)
-                .addGap(18, 18, Short.MAX_VALUE)
+                .addGap(18, 25, Short.MAX_VALUE)
                 .addComponent(btnNews, javax.swing.GroupLayout.PREFERRED_SIZE, 62, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
             .addComponent(jScrollPaneNews, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
@@ -1025,7 +716,7 @@ public class SubFrame extends javax.swing.JFrame {
                     .addComponent(lblNews)
                     .addComponent(btnNews))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jScrollPaneNews, javax.swing.GroupLayout.DEFAULT_SIZE, 335, Short.MAX_VALUE))
+                .addComponent(jScrollPaneNews, javax.swing.GroupLayout.DEFAULT_SIZE, 357, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout jPanelBodyLayout = new javax.swing.GroupLayout(jPanelBody);
@@ -1035,14 +726,11 @@ public class SubFrame extends javax.swing.JFrame {
             .addGroup(jPanelBodyLayout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jPanelNotice, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(262, 262, 262)
+                .addGap(8, 8, 8)
+                .addComponent(jScrollPaneRecipe, javax.swing.GroupLayout.DEFAULT_SIZE, 250, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jPanelNews, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addContainerGap())
-            .addGroup(jPanelBodyLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(jPanelBodyLayout.createSequentialGroup()
-                    .addGap(239, 239, 239)
-                    .addComponent(jScrollPaneRecipe, javax.swing.GroupLayout.DEFAULT_SIZE, 248, Short.MAX_VALUE)
-                    .addGap(240, 240, 240)))
         );
         jPanelBodyLayout.setVerticalGroup(
             jPanelBodyLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -1050,13 +738,9 @@ public class SubFrame extends javax.swing.JFrame {
                 .addContainerGap()
                 .addGroup(jPanelBodyLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jPanelNotice, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jPanelNews, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(jPanelNews, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jScrollPaneRecipe, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE))
                 .addContainerGap())
-            .addGroup(jPanelBodyLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(jPanelBodyLayout.createSequentialGroup()
-                    .addContainerGap()
-                    .addComponent(jScrollPaneRecipe, javax.swing.GroupLayout.DEFAULT_SIZE, 368, Short.MAX_VALUE)
-                    .addContainerGap()))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -1116,6 +800,7 @@ public class SubFrame extends javax.swing.JFrame {
                     .uri(URI.create(url)) // URL 설정
                     .GET() // GET 요청 설정
                     .header("Content-Type", "application/json") // Content-Type 헤더 추가
+                    .header("Authorization", "Bearer " + TokenUtil.loadUserInfo().getString("token")) // 토큰 추가
                     .build();
 
             // 요청을 보내고 응답 받기
@@ -1192,7 +877,7 @@ public class SubFrame extends javax.swing.JFrame {
                     .uri(new URI("https://m4srikufjgyzqbwltnujr7zyae0zlnrv.lambda-url.ap-northeast-2.on.aws/userLogout")) // 올바른 엔드포인트
                     .header("Content-Type", "application/json")
                     .header("Authorization", "Bearer " + token) // 토큰 추가
-                    .POST(HttpRequest.BodyPublishers.noBody()) // POST 요청
+                    .DELETE()
                     .build();
 
             // 응답 받기
@@ -1216,7 +901,6 @@ public class SubFrame extends javax.swing.JFrame {
             e.printStackTrace();
             JOptionPane.showMessageDialog(this, "로그아웃 중 오류가 발생했습니다.", "오류", JOptionPane.ERROR_MESSAGE);
         }
-
     }//GEN-LAST:event_btnLogoutActionPerformed
 
     private void lblLogoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblLogoMouseClicked
@@ -1275,35 +959,20 @@ public class SubFrame extends javax.swing.JFrame {
     private javax.swing.JPanel jPanelNotice;
     private javax.swing.JPanel jPanelRecipe;
     private javax.swing.JPanel jPanelRecipe1;
-    private javax.swing.JPanel jPanelRecipe10;
     private javax.swing.JPanel jPanelRecipe2;
     private javax.swing.JPanel jPanelRecipe3;
     private javax.swing.JPanel jPanelRecipe4;
     private javax.swing.JPanel jPanelRecipe5;
-    private javax.swing.JPanel jPanelRecipe6;
-    private javax.swing.JPanel jPanelRecipe7;
-    private javax.swing.JPanel jPanelRecipe8;
-    private javax.swing.JPanel jPanelRecipe9;
     private javax.swing.JPanel jPanelRecipeImg1;
-    private javax.swing.JPanel jPanelRecipeImg10;
     private javax.swing.JPanel jPanelRecipeImg2;
     private javax.swing.JPanel jPanelRecipeImg3;
     private javax.swing.JPanel jPanelRecipeImg4;
     private javax.swing.JPanel jPanelRecipeImg5;
-    private javax.swing.JPanel jPanelRecipeImg6;
-    private javax.swing.JPanel jPanelRecipeImg7;
-    private javax.swing.JPanel jPanelRecipeImg8;
-    private javax.swing.JPanel jPanelRecipeImg9;
     private javax.swing.JPanel jPanelRecipeOrder1;
-    private javax.swing.JPanel jPanelRecipeOrder10;
     private javax.swing.JPanel jPanelRecipeOrder2;
     private javax.swing.JPanel jPanelRecipeOrder3;
     private javax.swing.JPanel jPanelRecipeOrder4;
     private javax.swing.JPanel jPanelRecipeOrder5;
-    private javax.swing.JPanel jPanelRecipeOrder6;
-    private javax.swing.JPanel jPanelRecipeOrder7;
-    private javax.swing.JPanel jPanelRecipeOrder8;
-    private javax.swing.JPanel jPanelRecipeOrder9;
     private javax.swing.JPanel jPanelRecipeTop10;
     private javax.swing.JScrollPane jScrollPaneNews;
     private javax.swing.JScrollPane jScrollPaneNotice;
@@ -1315,35 +984,20 @@ public class SubFrame extends javax.swing.JFrame {
     private javax.swing.JLabel lblNotice;
     private javax.swing.JLabel lblRecipe;
     private javax.swing.JLabel lblRecipeGrade1;
-    private javax.swing.JLabel lblRecipeGrade10;
     private javax.swing.JLabel lblRecipeGrade2;
     private javax.swing.JLabel lblRecipeGrade3;
     private javax.swing.JLabel lblRecipeGrade4;
     private javax.swing.JLabel lblRecipeGrade5;
-    private javax.swing.JLabel lblRecipeGrade6;
-    private javax.swing.JLabel lblRecipeGrade7;
-    private javax.swing.JLabel lblRecipeGrade8;
-    private javax.swing.JLabel lblRecipeGrade9;
     private javax.swing.JLabel lblRecipeOrder1;
-    private javax.swing.JLabel lblRecipeOrder10;
     private javax.swing.JLabel lblRecipeOrder2;
     private javax.swing.JLabel lblRecipeOrder3;
     private javax.swing.JLabel lblRecipeOrder4;
     private javax.swing.JLabel lblRecipeOrder5;
-    private javax.swing.JLabel lblRecipeOrder6;
-    private javax.swing.JLabel lblRecipeOrder7;
-    private javax.swing.JLabel lblRecipeOrder8;
-    private javax.swing.JLabel lblRecipeOrder9;
     private javax.swing.JLabel lblRecipeTitle1;
-    private javax.swing.JLabel lblRecipeTitle10;
     private javax.swing.JLabel lblRecipeTitle2;
     private javax.swing.JLabel lblRecipeTitle3;
     private javax.swing.JLabel lblRecipeTitle4;
     private javax.swing.JLabel lblRecipeTitle5;
-    private javax.swing.JLabel lblRecipeTitle6;
-    private javax.swing.JLabel lblRecipeTitle7;
-    private javax.swing.JLabel lblRecipeTitle8;
-    private javax.swing.JLabel lblRecipeTitle9;
     private javax.swing.JTextField txtSearch;
     // End of variables declaration//GEN-END:variables
 }

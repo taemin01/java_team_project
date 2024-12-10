@@ -507,17 +507,17 @@ public class RecipeListFrame extends javax.swing.JFrame {
 
     private void jPanelRecipeList1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanelRecipeList1MouseClicked
         // TODO add your handling code here:
-        new RecipeDetailFrame().setVisible(true);
+//        new RecipeDetailFrame().setVisible(true);
     }//GEN-LAST:event_jPanelRecipeList1MouseClicked
 
     private void jPanelRecipeList2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanelRecipeList2MouseClicked
         // TODO add your handling code here:
-        new RecipeDetailFrame().setVisible(true);
+//        new RecipeDetailFrame().setVisible(true);
     }//GEN-LAST:event_jPanelRecipeList2MouseClicked
 
     private void jPanelRecipeList3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanelRecipeList3MouseClicked
         // TODO add your handling code here:
-        new RecipeDetailFrame().setVisible(true);
+//        new RecipeDetailFrame().setVisible(true);
     }//GEN-LAST:event_jPanelRecipeList3MouseClicked
 
     private void btnMyProfileActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnMyProfileActionPerformed
